@@ -1,0 +1,139 @@
+// Typography.scss
+
+// Breakpoints
+$size-xs: 480px; // Mobile First (portrait phones)
+$size-sm: 768px; // Small devices (landscape phones and tablets)
+$size-md: 1024px; // Medium devices (tablets and small laptops)
+$size-lg: 1280px; // Large devices (laptops and desktops)
+$size-xl: 1440px; // Extra-large devices (4K displays)
+
+// Font Families
+$font-primary: 'Afacad Flux', sans-serif;
+$font-secondary: 'Sometype Mono', monospace;
+
+// Font Weights for Afacad Flux
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// Font Sizes for Mobile First (default - portrait phones)
+$font-size-h1: 2.5rem; // 40px
+$font-size-h2: 2rem; // 32px
+$font-size-h3: 1.75rem; // 28px
+$font-size-h4: 1.5rem; // 24px
+$font-size-h5: 1.25rem; // 20px
+$font-size-h6: 1.125rem; // 18px
+$font-size-body: 1rem; // 16px for body text
+$font-size-small: 0.875rem; // 14px for captions or secondary content
+
+// Line Heights
+$line-height-body: 1.8; // Looser for better readability on mobile
+$line-height-heading: 1.3; // Tight for headings
+
+// Base Styles for Typography
+body,
+p {
+    font-family: $font-secondary;
+    font-size: $font-size-body;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-body;
+}
+
+// Heading Styles (Mobile First)
+h1,
+.h1 {
+    font-family: $font-primary;
+    font-size: $font-size-h1;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-heading;
+}
+
+h2,
+.h2 {
+    font-family: $font-primary;
+    font-size: $font-size-h2;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-heading;
+}
+
+h3,
+.h3 {
+    font-family: $font-primary;
+    font-size: $font-size-h3;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-heading;
+}
+
+h4,
+.h4 {
+    font-family: $font-primary;
+    font-size: $font-size-h4;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-heading;
+}
+
+h5,
+.h5 {
+    font-family: $font-primary;
+    font-size: $font-size-h5;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-heading;
+}
+
+h6,
+.h6 {
+    font-family: $font-primary;
+    font-size: $font-size-h6;
+    font-weight: $font-weight-light;
+    line-height: $line-height-heading;
+}
+
+// Small Text
+.small-text,
+small {
+    font-family: $font-secondary;
+    font-size: $font-size-small;
+    line-height: 1.4;
+}
+
+// Responsive Typography for Larger Devices
+@media (min-width: $size-sm) {
+    // Adjusting font size for landscape phones and tablets
+    $font-size-h1: 3rem; // 48px
+    $font-size-h2: 2.5rem; // 40px
+    $font-size-h3: 2rem; // 32px
+    $font-size-h4: 1.75rem; // 28px
+    $font-size-h5: 1.5rem; // 24px
+    $font-size-h6: 1.25rem; // 20px
+}
+
+@media (min-width: $size-md) {
+    // Adjusting for tablets and small laptops
+    $font-size-h1: 3.75rem; // 60px
+    $font-size-h2: 3rem; // 48px
+    $font-size-h3: 2.5rem; // 40px
+    $font-size-h4: 2rem; // 32px
+    $font-size-h5: 1.75rem; // 28px
+    $font-size-h6: 1.5rem; // 24px
+}
+
+@media (min-width: $size-lg) {
+    // Adjusting for laptops and desktops
+    $font-size-h1: 4.5rem; // 72px
+    $font-size-h2: 3.75rem; // 60px
+    $font-size-h3: 3rem; // 48px
+    $font-size-h4: 2.5rem; // 40px
+    $font-size-h5: 2rem; // 32px
+    $font-size-h6: 1.75rem; // 28px
+}
+
+@media (min-width: $size-xl) {
+    // Extra-large devices (4K displays)
+    $font-size-h1: 5rem; // 80px
+    $font-size-h2: 4.25rem; // 68px
+    $font-size-h3: 3.5rem; // 56px
+    $font-size-h4: 3rem; // 48px
+    $font-size-h5: 2.5rem; // 40px
+    $font-size-h6: 2rem; // 32px
+}

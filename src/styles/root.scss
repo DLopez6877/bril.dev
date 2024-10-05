@@ -1,0 +1,26 @@
+:root {
+    // HEX
+    --green: #A9F43A;
+    --blue: #51ADA5;
+    --purple: #AC63CE;
+    --yellow: #F3D165;
+    --dark: #272727;
+    --light: #E2E4D0;
+
+    // rgb
+    --green-rgb: 169, 244, 58;
+    --blue-rgb: 81, 173, 165;
+    --purple-rgb: 172, 99, 206;
+    --yellow-rgb: 243, 209, 101;
+    --dark-rgb: 39, 39, 39;
+    --light-rgb: 226, 228, 208;
+
+    // FONTS
+    --sans: font-family: "Afacad Flux", sans-serif;
+    --mono: font-family: "Sometype Mono", monospace;
+
+    // ANIMATIONS
+    --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+    --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}

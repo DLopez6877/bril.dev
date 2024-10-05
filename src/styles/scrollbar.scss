@@ -1,0 +1,26 @@
+/* Hide scrollbars in WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox */
+html {
+    scrollbar-width: none;
+    /* Firefox only */
+}
+
+/* Hide scrollbar for IE and Edge */
+html,
+body {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+}
+
+/* Ensure scrolling is still possible */
+html,
+body {
+    overflow: -moz-scrollbars-none;
+    /* Fix for some older Firefox versions */
+    overflow: auto;
+    /* Ensure content remains scrollable */
+}
