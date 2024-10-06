@@ -18,3 +18,9 @@ input[type="reset"] {
     line-height: normal;
     cursor: pointer;
 }
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}

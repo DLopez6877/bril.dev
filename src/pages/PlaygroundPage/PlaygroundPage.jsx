@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import './PlaygroundPage.scss';
 import { Link } from 'react-router-dom';
-import image from '../../assets/coder.png';
 import InfiniteScrollText from '../../components/InfiniteScrollText/InfiniteScrollText';
-
+import SmoothScroll from '../../components/SmoothScroll';
 
 const PlaygroundPage = () => {
     useEffect(() => {
@@ -19,21 +18,30 @@ const PlaygroundPage = () => {
 
 
     return (
-        <>
+        <SmoothScroll>
+            <Link className="playground-link" to="/">H</Link>
+
+
             {/* ▂▃▅▇█▓▒░    TEMP CODE BELOW HERE    ░▒▓█▇▅▃▂ */}
-            <div className="playground-container" >
+            <div className="playground-container" data-scroll-container>
 
                 <div className="container">
-                    <InfiniteScrollText className="text">fsagasgsag</InfiniteScrollText>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                    <div className="text">fsagasgsag</div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                </div>
+                <div className="container">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
                 </div>
 
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
 
 
 
@@ -50,7 +58,7 @@ const PlaygroundPage = () => {
 
             </div >
             {/* END OF CODING AREA ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦ */}
-        </>
+        </SmoothScroll>
 
     );
 

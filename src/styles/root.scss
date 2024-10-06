@@ -7,7 +7,7 @@
     --dark: #272727;
     --light: #E2E4D0;
 
-    // rgb
+    // RGB
     --green-rgb: 169, 244, 58;
     --blue-rgb: 81, 173, 165;
     --purple-rgb: 172, 99, 206;
@@ -19,7 +19,10 @@
     --sans: font-family: "Afacad Flux", sans-serif;
     --mono: font-family: "Sometype Mono", monospace;
 
-    // ANIMATIONS
+    // EASINGS (Exponential)
+    // expoInOutFunc = (x) => {return x===0 ? 0: x===1 ? 1: x < 0.5 ? Math.pow(2, 20 * x - 10) / 2: (2 - Math.pow(2, -20 * x + 10)) / 2;}
+    // expoInFunc = (x)=> {return x===0 ? 0: Math.pow(2, 10 * x - 10);}
+    // expoOutFunc = (x)=> {return x===1 ? 1: 1 - Math.pow(2, -10 * x);}
     --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
     --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);

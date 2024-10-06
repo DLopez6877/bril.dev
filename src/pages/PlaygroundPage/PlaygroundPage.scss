@@ -1,14 +1,34 @@
+.playground-link {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: black;
+    z-index: 9001;
+    height: 40px;
+    width: 40px;
+    color: var(--green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .playground-container {
+    width: 100%;
+    position: relative;
 
     .container {
-        width: 500px;
-        overflow: hidden;
+        position: relative;
+        border-bottom: 2px solid blue;
     }
+
 
     .text {
         font-size: 4rem;
+        position: sticky;
+        top: 0;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
     }
-
 }
 
 

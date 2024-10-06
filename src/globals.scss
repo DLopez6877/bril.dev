@@ -1,22 +1,13 @@
 @import './styles/mixins.scss';
 @import './styles/root.scss';
-@import './styles/variables.scss';
+@import './styles/container.scss';
 @import './styles/normalize.scss';
 @import './styles/breakpoints.scss';
 @import './styles/colors.scss';
 @import './styles/typography.scss';
 @import './styles/scrollbar.scss';
+@import './styles/lenis.scss';
 
 body {
     height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-.glass {
-    background: rgba(0, 0, 0, 0.04);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(2.1px);
-    -webkit-backdrop-filter: blur(2.1px);
 }
