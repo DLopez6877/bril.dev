@@ -5,9 +5,9 @@ import ContactPage from './pages/ContactPage/ContactPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import WorkPage from './pages/WorkPage/WorkPage';
 import HomePage from './pages/HomePage/HomePage';
-
-import { AnimatePresence } from 'framer-motion'
 import PlaygroundPage from './pages/PlaygroundPage/PlaygroundPage';
+
+import { AnimatePresence } from 'framer-motion';
 
 function AnimatedRoutes() {
   const location = useLocation();

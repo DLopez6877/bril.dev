@@ -1,0 +1,22 @@
+.split-text-container {
+    overflow: hidden;
+
+    p {
+        display: inline-block;
+    }
+
+    .split-word {
+        display: inline-block;
+        opacity: 0;
+        transform: scale(0.8) rotate(15deg);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .gradient-text {
+        background: linear-gradient(90deg, var(--green), var(--purple), var(--blue));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+    }
+}

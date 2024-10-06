@@ -1,6 +1,7 @@
 import React from 'react';
 import './About.scss'
 import aboutbg from '../../assets/aboutbg.png';
+import SplitText from '../SplitText/SplitText';
 
 const About = () => {
     return (
@@ -9,10 +10,11 @@ const About = () => {
                 <img className="about-bg-img" src={aboutbg} alt="Background of orange geometric trees with a blue sunrise." />
                 <div className="about-grid">
                     <div className="about-headline"><span>ABOUT ME</span></div>
-                    <div className="about-textbox">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae perferendis recusandae aspernatur, maiores itaque molestias ad officia voluptatem expedita, asperiores eum! Perspiciatis eius quidem nobis dolorum rem quibusdam, possimus voluptate.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit doloremque sit, omnis quidem maiores vero similique culpa dolore eius explicabo tenetur quam, at fugit mollitia est dolorum ipsam amet! Deserunt.</p>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore facilis aspernatur numquam illo. Voluptas velit saepe consequatur dignissimos facilis dolores soluta rem esse fugit, molestias, eos dolorem. Cum, officiis ipsam.</p>
+                    <p className='seeking-opportunities'>Currently seeking new opportunities.</p>
+                    <div className="about-textbox container">
+                        <SplitText><p>I’ve spent over seven years as a full-stack software engineer, but my heart belongs to frontend development. After years of venturing deeper and deeper into the dark depths of backend work, it’s time to grab this Balrog, known as my career, by the horns and take control.</p></SplitText>
+                        <SplitText><p>I’m only seeking Frontend or UX/UI opportunities at this time.</p></SplitText>
+                        <SplitText><p>I want to build Awwwards winning websites where I can let my creativity shine.</p></SplitText>
                     </div>
                 </div>
             </div>
