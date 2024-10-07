@@ -26,7 +26,7 @@ const SplitText = ({ children }) => {
         gsap.fromTo(
             words,
             {
-                opacity: 0.1,
+                opacity: 0.2,
                 scale: 0.8,
                 rotation: 15,
                 translateY: 10,
@@ -41,8 +41,8 @@ const SplitText = ({ children }) => {
                 stagger: 0.3,
                 scrollTrigger: {
                     trigger: wrapperRef.current,
-                    start: 'top 70%',
-                    end: 'bottom 20%',
+                    start: 'top 60%',
+                    end: 'bottom 40%',
                     scrub: 1,
                     scroller: document.body,
                 },

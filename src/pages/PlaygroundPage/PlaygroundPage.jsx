@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import './PlaygroundPage.scss';
 import { Link } from 'react-router-dom';
-import InfiniteScrollText from '../../components/InfiniteScrollText/InfiniteScrollText';
-import SmoothScroll from '../../components/SmoothScroll';
+import MouseTrail from '../../wrappers/RoundMouse/RoundMouse';
+import SmoothScroll from '../../wrappers/SmoothScroll';
 
 const PlaygroundPage = () => {
     useEffect(() => {
@@ -18,47 +18,40 @@ const PlaygroundPage = () => {
 
 
     return (
-        <SmoothScroll>
-            <Link className="playground-link" to="/">H</Link>
+        <>
+            <SmoothScroll>
+
+                <Link className="playground-link" to="/">H</Link>
 
 
-            {/* ▂▃▅▇█▓▒░    TEMP CODE BELOW HERE    ░▒▓█▇▅▃▂ */}
-            <div className="playground-container" data-scroll-container>
-
-                <div className="container">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
-                    <div className="text">fsagasgsag</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
-                </div>
-                <div className="container">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
-                </div>
-
-
-
-
-
-
-
-                {/* <div className="playground-container">
-                    <div className="navbar">
-                        <div className="glass left-section"></div>
-                        <div className="glass menu-button"></div>
+                <div className="playground-container" data-scroll-container>
+                    {/* ▂▃▅▇█▓▒░    TEMP CODE BELOW HERE    ░▒▓█▇▅▃▂ */}
+                    <div className="container cursor-pointer">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                        <div className="text">fsagasgsag</div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                        <MouseTrail>
+                            <div style={{ position: 'relative', padding: '50px', backgroundColor: '#f0f0f0' }}>
+                                <h1 className="text-content">Hover over this text to see the custom cursor</h1>
+                                <p className="text-content">This text will change when the custom circle cursor passes over it.</p>
+                            </div>
+                        </MouseTrail>
                     </div>
-                    <img src={image} />
-                </div> */}
+                    <div className="container">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam quibusdam placeat ex, rerum velit repudiandae. Cum, accusamus mollitia distinctio aperiam consequatur perspiciatis? Modi odit dicta voluptas animi aliquam assumenda.</p>
+                    </div>
 
-
-            </div >
-            {/* END OF CODING AREA ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦ */}
-        </SmoothScroll>
+                </div>
+                {/* END OF TEMP AREA  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦ */}
+            </SmoothScroll>
+        </>
 
     );
 

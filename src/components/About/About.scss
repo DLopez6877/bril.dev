@@ -49,7 +49,7 @@
         color: var(--light);
         z-index: 20;
         font-size: 3.3333333333vw;
-        transform: translateY(-5vh);
+        padding-bottom: 20vh;
     }
 
     .about-textbox {
@@ -59,6 +59,7 @@
         z-index: 1;
         text-align: justify;
         cursor: default;
+        padding-bottom: 20vh;
 
 
         p {
