@@ -14,37 +14,9 @@
     align-items: center;
 }
 
-#temp .teko {
-    font-weight: 900;
-    font-family: "Teko", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
+// ▓▒░  GLOBALS
 
-#temp .anton {
-    font-weight: 900;
-    font-family: "Anton", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-#temp .bebas {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-}
-
-#temp .teko {
-    font-weight: 900;
-}
-
-.teko {
-    font-weight: 900;
-}
-
-.teko {
-    font-weight: 900;
-}
+// END: GLOBALS  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦
 
 .playground-container {
 
@@ -74,7 +46,7 @@
         p {
             font-size: 5.5vw;
             font-weight: 1000;
-            font-family: $font-primary;
+            font-family: var(--font-primary);
         }
 
         .yo {

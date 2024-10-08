@@ -1,70 +1,74 @@
 @import './variables.scss';
 
-// Base Styles for Typography
 body,
 p {
-    font-family: $font-secondary;
+    font-family: var(--font-secondary);
     font-size: $font-size-body;
     font-weight: $font-weight-regular;
     line-height: $line-height-body;
 }
 
-// Heading Styles (Mobile First)
-h1,
-.h1 {
-    font-family: $font-primary;
-    font-size: $font-size-h1;
-    font-weight: $font-weight-bold;
-    line-height: $line-height-heading;
+// Heading Styles
+html {
+
+    h1,
+    .h1 {
+        font-family: var(--font-primary);
+        font-size: $font-size-h1;
+        font-weight: $font-weight-bold;
+        line-height: $line-height-heading;
+    }
+
+    h2,
+    .h2 {
+        font-family: var(--font-primary);
+        font-size: $font-size-h2;
+        font-weight: $font-weight-bold;
+        line-height: $line-height-heading;
+    }
+
+    h3,
+    .h3 {
+        font-family: var(--font-primary);
+        font-size: $font-size-h3;
+        font-weight: $font-weight-medium;
+        line-height: $line-height-heading;
+    }
+
+    h4,
+    .h4 {
+        font-family: var(--font-primary);
+        font-size: $font-size-h4;
+        font-weight: $font-weight-regular;
+        line-height: $line-height-heading;
+    }
+
+    h5,
+    .h5 {
+        font-family: var(--font-primary);
+        font-size: $font-size-h5;
+        font-weight: $font-weight-regular;
+        line-height: $line-height-heading;
+    }
+
+    h6,
+    .h6 {
+        font-family: var(--font-primary);
+        font-size: $font-size-h6;
+        font-weight: $font-weight-light;
+        line-height: $line-height-heading;
+    }
 }
 
-h2,
-.h2 {
-    font-family: $font-primary;
-    font-size: $font-size-h2;
-    font-weight: $font-weight-bold;
-    line-height: $line-height-heading;
-}
-
-h3,
-.h3 {
-    font-family: $font-primary;
-    font-size: $font-size-h3;
-    font-weight: $font-weight-medium;
-    line-height: $line-height-heading;
-}
-
-h4,
-.h4 {
-    font-family: $font-primary;
-    font-size: $font-size-h4;
-    font-weight: $font-weight-regular;
-    line-height: $line-height-heading;
-}
-
-h5,
-.h5 {
-    font-family: $font-primary;
-    font-size: $font-size-h5;
-    font-weight: $font-weight-regular;
-    line-height: $line-height-heading;
-}
-
-h6,
-.h6 {
-    font-family: $font-primary;
-    font-size: $font-size-h6;
-    font-weight: $font-weight-light;
-    line-height: $line-height-heading;
-}
-
-// Small Text
 .small-text,
 small {
-    font-family: $font-secondary;
+    font-family: var(--font-secondary);
     font-size: $font-size-small;
     line-height: 1.4;
 }
+
+
+// ▓▒░  Media Queries
 
 // Responsive Typography for Larger Devices
 @media (min-width: $size-sm) {

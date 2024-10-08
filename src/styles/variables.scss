@@ -1,5 +1,41 @@
+// Breakpoints
+$size-xs: 480px; // Mobile First (portrait phones)
+$size-sm: 768px; // Small devices (landscape phones and tablets)
+$size-md: 1024px; // Medium devices (tablets and small laptops)
+$size-lg: 1280px; // Large devices (laptops and desktops)
+$size-xl: 1440px; // Extra-large devices (4K displays)
+
+// Font Weights for Afacad Flux
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// Font Sizes for Mobile First (default - portrait phones)
+$font-size-h1: 2.5rem; // 40px
+$font-size-h2: 2rem; // 32px
+$font-size-h3: 1.75rem; // 28px
+$font-size-h4: 1.5rem; // 24px
+$font-size-h5: 1.25rem; // 20px
+$font-size-h6: 1.125rem; // 18px
+$font-size-body: 1rem; // 16px for body text
+$font-size-small: 0.875rem; // 14px for captions or secondary content
+
+// Line Heights
+$line-height-body: 1.8; // Looser for better readability on mobile
+$line-height-heading: 1.3; // Tight for headings
+
+
+// MISC
+$mouseDur: 1.6s;
+
+
 :root {
-    // HEX
+    // ▓▒░ Fonts
+    --font-primary: "Anton", sans-serif;
+    --font-secondary: "Sometype Mono", monospace;
+
+    // ▓▒░ Hex
     --green: #A9F43A;
     --blue: #51ADA5;
     --purple: #AC63CE;
@@ -7,7 +43,7 @@
     --dark: #272727;
     --light: #E2E4D0;
 
-    // RGB
+    // ▓▒░ RGB
     --green-rgb: 169, 244, 58;
     --blue-rgb: 81, 173, 165;
     --purple-rgb: 172, 99, 206;
@@ -15,11 +51,7 @@
     --dark-rgb: 39, 39, 39;
     --light-rgb: 226, 228, 208;
 
-    // FONTS
-    --sans: font-family: "Afacad Flux", sans-serif;
-    --mono: font-family: "Sometype Mono", monospace;
-
-    // EASINGS (Exponential)
+    // ▓▒░ EASINGS
     --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
     --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -29,19 +61,12 @@
 }
 
 
-// ▂▃▅▇█▓▒░    BREAKPOINTS    ░▒▓█▇▅▃▂
+// BREAKPOINTS
 $size-xs: 480px; // Mobile First (portrait phones)
 $size-sm: 768px; // Small devices (landscape phones and tablets)
 $size-md: 1024px; // Medium devices (tablets and small laptops)
 $size-lg: 1280px; // Large devices (laptops and desktops)
 $size-xl: 1440px; // Extra-large devices (4K displays)
-
-
-
-// ▂▃▅▇█▓▒░    TYPOGRAPHY    ░▒▓█▇▅▃▂
-// Font Families
-$font-primary: 'Afacad Flux', sans-serif;
-$font-secondary: 'Sometype Mono', monospace;
 
 // Font Weights for Afacad Flux
 $font-weight-light: 300;
@@ -65,5 +90,5 @@ $line-height-heading: 1.3; // Tight for headings
 
 
 
-// ▂▃▅▇█▓▒░    MISC    ░▒▓█▇▅▃▂
+// MISC
 $mouseDur: 1.6s;

@@ -49,7 +49,9 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
                     alt="Orange and blue background."
                 />
 
-
+                <h1 className="text parallax name">Bril Lopez</h1>
+                <h2 className="text parallax frontend">Frontend</h2>
+                <h2 className="text parallax developer">Developer</h2>
 
                 {/* css */}
                 <div className="parallax code css" style={{ transform: `translate(${xValue / 0.5}px, ${yValue / 0.5}px)` }}>
@@ -111,14 +113,6 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
                     <InfiniteScrollText scrollSpeed={0.18} direction='right' fontSize='0.80rem'>{kotlinCode}</InfiniteScrollText>
                 </div>
 
-
-
-
-
-
-                <h1 className="text parallax name">Bril Lopez</h1>
-                <h2 className="text parallax frontend">Frontend</h2>
-                <h2 className="text parallax developer">Developer</h2>
                 <img
                     className='parallax coder'
                     src={coder}
