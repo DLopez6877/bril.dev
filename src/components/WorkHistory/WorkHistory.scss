@@ -1,0 +1,44 @@
+.work-history-container {
+    .work-history-headline {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100svh;
+        text-align: center;
+        line-height: .8em;
+        color: var(--light);
+    }
+
+    .headline-text {
+        font-size: 8.3333333333vw;
+        line-height: .8em;
+        letter-spacing: .5em;
+    }
+
+    .work-history-bg {
+        opacity: 0.6;
+    }
+
+    .seeking-opportunities {
+        text-align: center;
+        color: var(--light);
+        z-index: 20;
+        padding-top: 10vh;
+    }
+
+    .work-history-bio {
+        display: flex;
+        flex-direction: column;
+        color: var(--light);
+        z-index: 100;
+        text-align: justify;
+        cursor: default;
+        padding-bottom: 20vh;
+
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
+}

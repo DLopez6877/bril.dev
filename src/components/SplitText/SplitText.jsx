@@ -41,10 +41,10 @@ const SplitText = ({ children }) => {
                 stagger: 0.3,
                 scrollTrigger: {
                     trigger: wrapperRef.current,
-                    start: 'top 60%',
-                    end: 'bottom 40%',
+                    start: 'bottom 100%',
+                    end: 'bottom 60%',
                     scrub: 1,
-                    scroller: document.body,
+                    scroller: document.querySelector('.lenis'),
                 },
                 ease: (x) => { return x === 0 ? 0 : Math.pow(2, 10 * x - 10); }
             }

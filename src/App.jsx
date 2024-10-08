@@ -4,7 +4,6 @@ import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import HomePage from './pages/HomePage/HomePage';
 import PlaygroundPage from './pages/PlaygroundPage/PlaygroundPage';
 
-
 function App() {
 
   return (

@@ -35,15 +35,13 @@ const RoundMouse = ({ children }) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            {visible && (
-                <div
-                    className="custom-cursor"
-                    style={{
-                        left: `${position.x}px`,
-                        top: `${position.y}px`,
-                    }}
-                />
-            )}
+            <div
+                className={`custom-cursor ${visible ? '' : 'hidden'}`}
+                style={{
+                    left: `${position.x}px`,
+                    top: `${position.y}px`,
+                }}
+            />
             {children}
         </div>
     );
