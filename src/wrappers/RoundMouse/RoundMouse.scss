@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .round-mouse-container {
     position: relative;
     display: inline-block;
@@ -19,13 +21,13 @@
         z-index: 9001;
         background-color: rgba(var(--light-rgb), 0);
         transform: translate(-50%, -50%) scale(0);
-        animation: roundMouseShow 0.3s var(--ease-in-out) forwards;
+        animation: roundMouseShow $mouseDur var(--ease-out) forwards;
     }
 
     .custom-cursor.hidden {
         background-color: rgba(var(--light-rgb), 1);
         transform: translate(-50%, -50%) scale(1);
-        animation: roundMouseHide 0.3s var(--ease-in-out) forwards;
+        animation: roundMouseHide $mouseDur var(--ease-out) forwards;
     }
 
     @keyframes roundMouseHide {

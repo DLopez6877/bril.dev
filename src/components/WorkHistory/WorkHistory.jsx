@@ -2,6 +2,8 @@ import React, { useRef, useLayoutEffect } from 'react';
 import './WorkHistory.scss'
 import workhistorybg from '../../assets/workhistorybg.png';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import UpwardSplitText from '../UpwardSplitText/UpwardSplitText';
+import TextAnimation from '../../wrappers/TextAnimation';
 
 const WorkHistory = () => {
     const containerRef = useRef(null);
@@ -32,13 +34,11 @@ const WorkHistory = () => {
             <img ref={bgImgRef} className="work-history-bg-img" src={workhistorybg} alt="Background image of ancient rome building interior with many plants. Watercolor painting." />
 
             <div className="container">
-                <p>This is the start of work history temp!!!!!!!!!</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, ex? Iusto a cupiditate modi minus culpa, quis eos ullam! Vero doloribus non sapiente sit enim quas ipsa, velit id. Soluta?</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, ex? Iusto a cupiditate modi minus culpa, quis eos ullam! Vero doloribus non sapiente sit enim quas ipsa, velit id. Soluta?</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, ex? Iusto a cupiditate modi minus culpa, quis eos ullam! Vero doloribus non sapiente sit enim quas ipsa, velit id. Soluta?</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, ex? Iusto a cupiditate modi minus culpa, quis eos ullam! Vero doloribus non sapiente sit enim quas ipsa, velit id. Soluta?</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, ex? Iusto a cupiditate modi minus culpa, quis eos ullam! Vero doloribus non sapiente sit enim quas ipsa, velit id. Soluta?</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, ex? Iusto a cupiditate modi minus culpa, quis eos ullam! Vero doloribus non sapiente sit enim quas ipsa, velit id. Soluta?</p>
+                {/* <UpwardSplitText><p>WORK HISTORY</p></UpwardSplitText> */}
+
+                <TextAnimation text='Work History'></TextAnimation>
+                {/* <TextAnimation>b</TextAnimation> */}
+                {/* <TextAnimation>shark</TextAnimation> */}
             </div>
         </div>
     );

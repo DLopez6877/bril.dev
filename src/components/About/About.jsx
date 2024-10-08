@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import './About.scss'
 import aboutbg from '../../assets/aboutbg.png';
-import SplitText from '../SplitText/SplitText';
+import SplitText from '../DullSplitText/DullSplitText';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import RoundMouse from '../../wrappers/RoundMouse/RoundMouse';
 

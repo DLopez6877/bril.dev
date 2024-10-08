@@ -1,19 +1,19 @@
 import React, { useRef, useEffect } from 'react';
+import './DullSplitText.scss';
 import { gsap } from 'gsap';
-import './SplitText.scss';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
 
-const SplitText = ({ children }) => {
+const DullSplitText = ({ children }) => {
     const wrapperRef = useRef(null);
 
-    const splitText = (text) => {
+    const dullSplitText = (text) => {
         return text.split(' ').map((word, index) => (
             <span
                 key={index}
-                className={`split-word ${word === 'Awwwards' ? 'gradient-text' : ''}`}
+                className={`dull-split-word ${word === 'Awwwards' ? 'gradient-text' : ''}`}
             >
                 {word}&nbsp;
             </span>
@@ -21,7 +21,7 @@ const SplitText = ({ children }) => {
     };
 
     useEffect(() => {
-        const words = gsap.utils.toArray('.split-word');
+        const words = gsap.utils.toArray('.dull-split-word');
 
         gsap.fromTo(
             words,
@@ -74,10 +74,10 @@ const SplitText = ({ children }) => {
     }, []);
 
     return (
-        <div ref={wrapperRef} className="split-text-container">
-            <p>{splitText(children.props.children)}</p>
+        <div ref={wrapperRef} className="dull-split-text-container">
+            <p>{dullSplitText(children.props.children)}</p>
         </div>
     );
 };
 
-export default SplitText;
+export default DullSplitText;

@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .playground-link {
     position: fixed;
     bottom: 0;
@@ -12,9 +14,44 @@
     align-items: center;
 }
 
+#temp .teko {
+    font-weight: 900;
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+#temp .anton {
+    font-weight: 900;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#temp .bebas {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+#temp .teko {
+    font-weight: 900;
+}
+
+.teko {
+    font-weight: 900;
+}
+
+.teko {
+    font-weight: 900;
+}
+
 .playground-container {
+
     width: 100%;
     position: relative;
+
+    .lorem {}
 
     .container {
         position: relative;
@@ -29,39 +66,19 @@
         border-top: 2px solid black;
         border-bottom: 2px solid black;
     }
+
+    .temop {
+        text-align: center;
+
+        span,
+        p {
+            font-size: 5.5vw;
+            font-weight: 1000;
+            font-family: $font-primary;
+        }
+
+        .yo {
+            font-size: 20vw;
+        }
+    }
 }
-
-
-
-
-
-
-
-
-// .playground-container {
-//     position: relative;
-
-//     .navbar {
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         display: flex;
-//         justify-content: space-between;
-//         align-items: center;
-//         margin-top: 20px;
-//     }
-
-//     .left-section {
-//         width: 70%;
-//         height: 60px;
-//         margin-left: 20px;
-//     }
-
-//     .menu-button {
-//         height: 60px;
-//         width: 60px;
-//         margin-right: 20px;
-//         border-radius: 50%;
-//     }
-// }
