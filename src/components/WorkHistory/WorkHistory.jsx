@@ -1,47 +1,55 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import './WorkHistory.scss'
-import workhistorybg from '../../assets/workhistorybg.png';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import UpwardSplitText from '../UpwardSplitText/UpwardSplitText';
-import TextAnimation from '../../wrappers/TextAnimation';
+import TextSplitter from '../../wrappers/TextSplitter';
+import { gsap } from 'gsap';
 
 const WorkHistory = () => {
-    const containerRef = useRef(null);
-    const bgImgRef = useRef(null);
+    useEffect(() => {
+        const timeline = gsap.timeline();
 
-    useLayoutEffect(() => {
-        const container = containerRef.current;
-        const bgImg = bgImgRef.current;
-
-        ScrollTrigger.refresh();
-
-        const scrollTrigger = ScrollTrigger.create({
-            trigger: container,
-            start: 'top top',
-            end: () => `${container.offsetHeight - window.innerHeight}px`,
-            pin: bgImg,
-            pinSpacing: true,
-            scrub: 1,
-        });
-
-        return () => {
-            scrollTrigger.kill();
-        };
+        timeline.to('.section-header', {
+            y: 40
+        })
     }, []);
 
     return (
-        <div ref={containerRef} className="work-history-container">
-            <img ref={bgImgRef} className="work-history-bg-img" src={workhistorybg} alt="Background image of ancient rome building interior with many plants. Watercolor painting." />
-
+        <div className="work-history-container">
             <div className="container">
-                {/* <UpwardSplitText><p>WORK HISTORY</p></UpwardSplitText> */}
-
-                <TextAnimation text='Work History'></TextAnimation>
-                {/* <TextAnimation>b</TextAnimation> */}
-                {/* <TextAnimation>shark</TextAnimation> */}
+                <TextSplitter text='WORK HISTORY' spaceLength='1rem' className='section-header'></TextSplitter>
+                <p>some text</p>
+                <p>WH Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa aut sequi iste maxime quibusdam repudiandae, accusamus repellat itaque eveniet architecto nobis id praesentium! Repellendus ut impedit neque ipsum inventore sint?</p>
+                <p>WH Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa aut sequi iste maxime quibusdam repudiandae, accusamus repellat itaque eveniet architecto nobis id praesentium! Repellendus ut impedit neque ipsum inventore sint?</p>
             </div>
-        </div>
+            {/* <TextSplitter text='WO' stickyRef={textRef} className='section-header'></TextSplitter> */}
+            <div className="temp">
+                <h2>2 TEMP WORK HISTORY</h2>
+                <p>WH Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa aut sequi iste maxime quibusdam repudiandae, accusamus repellat itaque eveniet architecto nobis id praesentium! Repellendus ut impedit neque ipsum inventore sint?</p>
+                <p>WH Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa aut sequi iste maxime quibusdam repudiandae, accusamus repellat itaque eveniet architecto nobis id praesentium! Repellendus ut impedit neque ipsum inventore sint?</p>
+                <p>WH Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa aut sequi iste maxime quibusdam repudiandae, accusamus repellat itaque eveniet architecto nobis id praesentium! Repellendus ut impedit neque ipsum inventore sint?</p>
+                <p>WH Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa aut sequi iste maxime quibusdam repudiandae, accusamus repellat itaque eveniet architecto nobis id praesentium! Repellendus ut impedit neque ipsum inventore sint?</p>
+            </div>
+        </div >
     );
 };
 
 export default WorkHistory;
+
+
+// useLayoutEffect(() => {
+//     const container = containerRef.current;
+
+//     ScrollTrigger.refresh();
+
+//     const scrollTrigger = ScrollTrigger.create({
+//         trigger: container,
+//         start: 'top top',
+//         end: () => `bottom bottom`,
+//         pin: textRef.current,
+//         pinSpacing: true,
+//         scrub: 1,
+//     });
+
+//     return () => {
+//         scrollTrigger.kill();
+//     };
+// }, []);

@@ -1,5 +1,6 @@
 @import '../../styles/variables.scss';
 
+// region ▂▃▅▇█▓▒░    CONSTANTS    ░▒▓█▇▅▃▂
 .playground-link {
     position: fixed;
     bottom: 0;
@@ -14,43 +15,11 @@
     align-items: center;
 }
 
-// ▓▒░  GLOBALS
+// endregion END CONSTANTS  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦
 
-// END: GLOBALS  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦
 
 .playground-container {
-
     width: 100%;
     position: relative;
 
-    .lorem {}
-
-    .container {
-        position: relative;
-        border-bottom: 2px solid blue;
-    }
-
-
-    .text {
-        font-size: 4rem;
-        position: sticky;
-        top: 0;
-        border-top: 2px solid black;
-        border-bottom: 2px solid black;
-    }
-
-    .temop {
-        text-align: center;
-
-        span,
-        p {
-            font-size: 5.5vw;
-            font-weight: 1000;
-            font-family: var(--font-primary);
-        }
-
-        .yo {
-            font-size: 20vw;
-        }
-    }
 }

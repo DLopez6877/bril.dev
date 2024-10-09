@@ -25,11 +25,20 @@
     }
 
     .name {
+        position: relative;
         z-index: 17;
-        top: 10%;
+        top: 0%;
         left: 10%;
         font-size: 8rem;
         line-height: 0.88;
+
+        &::after {
+            position: absolute;
+            top: 0;
+
+            @media (min-width: 450px) {}
+        }
+
     }
 
     h2 {

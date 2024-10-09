@@ -49,10 +49,12 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
                     alt="Orange and blue background."
                 />
 
+                {/* TEXT */}
                 <h1 className="text parallax name">Bril Lopez</h1>
                 <h2 className="text parallax frontend">Frontend</h2>
                 <h2 className="text parallax developer">Developer</h2>
 
+                {/* #region Code */}
                 {/* css */}
                 <div className="parallax code css" style={{ transform: `translate(${xValue / 0.5}px, ${yValue / 0.5}px)` }}>
                     <InfiniteScrollText scrollSpeed={0.05} fontSize='3.07rem'>{cssCode}</InfiniteScrollText>
@@ -112,6 +114,7 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
                 <div className="parallax code kotlin" style={{ transform: `translate(${xValue / 3}px, ${yValue / 3}px)` }}>
                     <InfiniteScrollText scrollSpeed={0.18} direction='right' fontSize='0.80rem'>{kotlinCode}</InfiniteScrollText>
                 </div>
+                {/* endregion */}
 
                 <img
                     className='parallax coder'
