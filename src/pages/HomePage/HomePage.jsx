@@ -6,7 +6,10 @@ import About from '../../components/About/About';
 import { motion as m, useScroll, useTransform } from 'framer-motion';
 import SmoothScroll from '../../wrappers/SmoothScroll';
 import ErrorBoundary from '../../wrappers/ErrorBoundary';
-import WorkHistory from '../../components/WorkHistory/WorkHistory';
+// import WorkHistory from '../../components/WorkHistory/WorkHistory';
+import Skills from '../../components/Skills/Skills';
+import Contact from '../../components/Contact/Contact';
+import WorkExperience from '../../components/WorkExperience/WorkExperience';
 
 const HomePage = () => {
     const { scrollYProgress } = useScroll();
@@ -22,15 +25,9 @@ const HomePage = () => {
                     <Nav />
                     <ParallaxHero opacity={opacity} scale={scale} translateY={translateY} />
                     <About />
-                    <WorkHistory />
-                    <div className="tempabout" style={{ padding: 30 }}>
-                        <h1>TEMP</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa aut sequi iste maxime quibusdam repudiandae, accusamus repellat itaque eveniet architecto nobis id praesentium! Repellendus ut impedit neque ipsum inventore sint?</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa aut sequi iste maxime quibusdam repudiandae, accusamus repellat itaque eveniet architecto nobis id praesentium! Repellendus ut impedit neque ipsum inventore sint?</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa aut sequi iste maxime quibusdam repudiandae, accusamus repellat itaque eveniet architecto nobis id praesentium! Repellendus ut impedit neque ipsum inventore sint?</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa aut sequi iste maxime quibusdam repudiandae, accusamus repellat itaque eveniet architecto nobis id praesentium! Repellendus ut impedit neque ipsum inventore sint?</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa aut sequi iste maxime quibusdam repudiandae, accusamus repellat itaque eveniet architecto nobis id praesentium! Repellendus ut impedit neque ipsum inventore sint?</p>
-                    </div>
+                    <WorkExperience />
+                    <Skills />
+                    <Contact />
                 </div>
             </SmoothScroll>
         </ErrorBoundary>

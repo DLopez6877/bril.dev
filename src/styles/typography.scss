@@ -69,11 +69,14 @@ html {
     }
 }
 
-.small-text,
-small {
+.small {
     font-family: var(--font-secondary);
     font-size: $font-size-small;
     line-height: 1.4;
+}
+
+.xsmall {
+    font-size: $font-size-xsmall;
 }
 
 

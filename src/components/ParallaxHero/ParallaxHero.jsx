@@ -7,13 +7,13 @@ import InfiniteScrollText from '../InfiniteScrollText/InfiniteScrollText';
 import { motion as m } from 'framer-motion';
 
 const ParallaxHero = ({ opacity, scale, translateY }) => {
-    const cssCode = 'body { background-color: #1d1f21; color: #c5c8c6; font-family: \'Courier New\', monospace; } h1 { font-size: 4em; text-shadow: 2px 2px #00ff00; }                                                                                                                                                                                               ';
+    const cssCode = 'body { background-color: #1d1f21; color: #c5c8c6; font-family: \'Courier New\', monospace; } h1 { font-size: 4em; text-shadow: 2px 2px #00ff00; }                        ';
     const jsCode = 'const generateRandomCode = () => { const chars = \'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\'; let code = \'\'; for (let i = 0; i < 8; i++) { code += chars.charAt(Math.floor(Math.random() * chars.length)); } return code; }; console.log(generateRandomCode());                                                         ';
     const htmlCode = '<p>Why don\'t skeletons fight each other? <span style="visibility:hidden;">Because they don\'t have the guts!</span> But seriously, I think they just prefer to keep things < span style = "visibility:hidden;" > bare - bones.</span ></p >                                                                                                   ';
     const pythonCode = 'developer = {"code_quality": "works on my machine", "bugs": "features", "coffee": "empty"}; print(f"Code Quality: {developer[\'code_quality\']}, Bugs: {developer[\'bugs\']} - Solution: Refill coffee cup and remember: \'If it works on my machine, it\'s a deployment issue.\'")                                                          ';
     const csharpCode = 'using System; class Program { static void Main() { int num1 = 5, num2 = 10; Console.WriteLine("Sum: " + (num1 + num2)); } }                                                                                                                                                                                                                  ';
     const sqlCode = 'SELECT * FROM developers WHERE caffeine_level > 100 AND sleep_hours < 4; SELECT * FROM relationships WHERE status = \'complicated\';                                                                                                                                                                                                            ';
-    const javaCode = 'public class Main { public static void main(String[] args) { int a = 5, b = 10; System.out.println("Sum: " + (a + b)); } }                                                                                                                                                                                                                     ';
+    const javaCode = 'public class Main { public static void main(String[] args) { int a = 5, b = 10; System.out.println("Sum: " + (a + b)); } }                                                                                                                                                                                                             ';
     const testCode = 'test(\'adds 10 + 20 to equal 30 and multiplies 2 * 5 to equal 10, and checks if 5 is greater than 3\', () => { expect(10 + 20).toBe(30); expect(2 * 5).toBe(10); expect(5).toBeGreaterThan(3); });                                                                                                                                             ';
     const powershellCode = '$developer = @{ "CodeReview" = "Pending"; "TestCoverage" = "Optional"; "Deadline" = "Yesterday" }; Write-Host "Code Review: $($developer.CodeReview), Test Coverage: $($developer.TestCoverage), Deadline: $($developer.Deadline) - Ah, the perfect development cycle!"                                                                  ';
     const goCode = 'package main; import "fmt"; func main() { for i := 1; i <= 100; i++ { if i%15 == 0 { fmt.Println("FizzBuzz") } else if i%3 == 0 { fmt.Println("Fizz") } else if i%5 == 0 { fmt.Println("Buzz") } else { fmt.Println(i) } } }                                                                                                                     ';
@@ -52,6 +52,7 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
                 {/* TEXT */}
                 <h1 className="text parallax name">Bril Lopez</h1>
                 <h2 className="text parallax frontend">Frontend</h2>
+                <h2 className="text parallax developer dev">Dev</h2>
                 <h2 className="text parallax developer">Developer</h2>
 
                 {/* #region Code */}

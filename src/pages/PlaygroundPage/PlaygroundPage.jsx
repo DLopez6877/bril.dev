@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import './PlaygroundPage.scss';
 import { Link } from 'react-router-dom';
 import SmoothScroll from '../../wrappers/SmoothScroll';
-import TextSplitter from '../../wrappers/TextSplitter';
-import TimeLine from '../../components/TimeLine/TimeLine';
 
 const PlaygroundPage = () => {
     useEffect(() => {
@@ -16,6 +14,7 @@ const PlaygroundPage = () => {
 
     return (
         <>
+            hello
             <SmoothScroll>
                 <Link className="playground-link" to="/">H</Link>
                 <div className="playground-container" data-scroll-container>
@@ -24,16 +23,6 @@ const PlaygroundPage = () => {
 
 
                     {/* ▂▃▅▇█▓▒░    TEMP CODE BELOW HERE    ░▒▓█▇▅▃▂ */}
-
-
-                    <TimeLine></TimeLine>
-
-
-
-
-
-
-
 
 
 
