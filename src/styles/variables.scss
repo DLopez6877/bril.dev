@@ -1,27 +1,3 @@
-// COLORS
-$green: #86C05A;
-$blue: #429A96;
-$purple: #8A52B3;
-$yellow: #E4BA52;
-$dark: #272727;
-$light: #E2E4D0;
-
-// HSL COLORS
-$green-hsl: hsla(84, 45%, 58%, 1);
-$blue-hsl: hsla(175, 39%, 43%, 1);
-$purple-hsl: hsla(272, 44%, 52%, 1);
-$yellow-hsl: hsla(46, 73%, 61%, 1);
-$dark-hsl: hsla(0, 0%, 15%, 1);
-$light-hsl: hsla(66, 27%, 85%, 1);
-
-// RGB COLORS
-$green-rgb: rgba(134, 192, 90, 1);
-$blue-rgb: rgba(66, 154, 150, 1);
-$purple-rgb: rgba(138, 82, 179, 1);
-$yellow-rgb: rgba(228, 186, 82, 1);
-$dark-rgb: rgba(39, 39, 39, 1);
-$light-rgb: rgba(226, 228, 208, 1);
-
 // Breakpoints
 $size-xs: 480px; // Mobile First (portrait phones)
 $size-sm: 768px; // Small devices (landscape phones and tablets)
@@ -83,16 +59,14 @@ $gutter-lg: 2rem; // 32px
     // ▓▒░ HEX
     --green: #A9F43A;
     --blue: #51ADA5;
-    --purple: #AC63CE;
-    --yellow: #F3D165;
+    --orange: #F86E01;
     --dark: #272727;
     --light: #E2E4D0;
 
     // ▓▒░ RGB
     --green-rgb: 169, 244, 58;
     --blue-rgb: 81, 173, 165;
-    --purple-rgb: 172, 99, 206;
-    --yellow-rgb: 243, 209, 101;
+    --orange-rgb: 248, 110, 1;
     --dark-rgb: 39, 39, 39;
     --light-rgb: 226, 228, 208;
 

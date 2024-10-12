@@ -35,13 +35,13 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
         <m.div
             className="overlay"
             style={{ opacity }}
-            transition={{ ease: [0.16, 1, 0.3, 1] }}
+            transition={{ ease: "easeIn" }}
         >
             <m.div
                 className="parallax-hero-container"
                 onMouseMove={handleMouseMove}
                 style={{ scale, translateY }}
-                transition={{ ease: [0.16, 1, 0.3, 1] }}>
+                transition={{ ease: "easeIn" }}>
 
                 <img
                     className='parallax bg-img'
@@ -49,73 +49,73 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
                     alt="Orange and blue background."
                 />
 
-                {/* TEXT */}
-                <h1 className="text parallax name">Bril Lopez</h1>
-                <h2 className="text parallax frontend">Frontend</h2>
-                <h2 className="text parallax developer dev">Dev</h2>
-                <h2 className="text parallax developer">Developer</h2>
+                <>{/* #region __________ CODE __________ */}
+                    <h1 className="text parallax name">Bril Lopez</h1>
+                    <h2 className="text parallax frontend">Frontend</h2>
+                    <h2 className="text parallax developer dev">Dev</h2>
+                    <h2 className="text parallax developer">Developer</h2>
 
-                {/* #region Code */}
-                {/* css */}
-                <div className="parallax code css" style={{ transform: `translate(${xValue / 0.5}px, ${yValue / 0.5}px)` }}>
-                    <InfiniteScrollText scrollSpeed={0.05} fontSize='3.07rem'>{cssCode}</InfiniteScrollText>
-                </div>
+                    {/* #region Code */}
+                    {/* css */}
+                    <div className="parallax code css" style={{ transform: `translate(${xValue / 0.5}px, ${yValue / 0.5}px)` }}>
+                        <InfiniteScrollText scrollSpeed={0.05} fontSize='3.07rem'>{cssCode}</InfiniteScrollText>
+                    </div>
 
-                {/* js */}
-                <div className="parallax code js" style={{ transform: `translate(${xValue / 0.6}px, ${yValue / 0.6}px)` }}>
-                    <InfiniteScrollText scrollSpeed={0.03} fontSize='2.92rem' direction='right' reverseOnScroll='false'>{jsCode}</InfiniteScrollText>
-                </div>
+                    {/* js */}
+                    <div className="parallax code js" style={{ transform: `translate(${xValue / 0.6}px, ${yValue / 0.6}px)` }}>
+                        <InfiniteScrollText scrollSpeed={0.03} fontSize='2.92rem' direction='right' reverseOnScroll='false'>{jsCode}</InfiniteScrollText>
+                    </div>
 
-                {/* html */}
-                <div className="parallax code html" style={{ transform: `translate(${xValue / 0.7}px, ${yValue / 0.7}px)` }}>
-                    <InfiniteScrollText scrollSpeed={0.013} fontSize='2.85rem'>{htmlCode}</InfiniteScrollText>
-                </div>
+                    {/* html */}
+                    <div className="parallax code html" style={{ transform: `translate(${xValue / 0.7}px, ${yValue / 0.7}px)` }}>
+                        <InfiniteScrollText scrollSpeed={0.013} fontSize='2.85rem'>{htmlCode}</InfiniteScrollText>
+                    </div>
 
-                {/* python */}
-                <div className="parallax code python" style={{ transform: `translate(${xValue / 0.8}px, ${yValue / 0.8}px)` }}>
-                    <InfiniteScrollText scrollSpeed={0.05} fontSize='2.62rem'>{pythonCode}</InfiniteScrollText>
-                </div>
+                    {/* python */}
+                    <div className="parallax code python" style={{ transform: `translate(${xValue / 0.8}px, ${yValue / 0.8}px)` }}>
+                        <InfiniteScrollText scrollSpeed={0.05} fontSize='2.62rem'>{pythonCode}</InfiniteScrollText>
+                    </div>
 
-                {/* csharp */}
-                <div className="parallax code csharp" style={{ transform: `translate(${xValue / 0.9}px, ${yValue / 0.9}px)` }}>
-                    <InfiniteScrollText scrollSpeed={0.003} fontSize='2.39rem'>{csharpCode}</InfiniteScrollText>
-                </div>
+                    {/* csharp */}
+                    <div className="parallax code csharp" style={{ transform: `translate(${xValue / 0.9}px, ${yValue / 0.9}px)` }}>
+                        <InfiniteScrollText scrollSpeed={0.003} fontSize='2.39rem'>{csharpCode}</InfiniteScrollText>
+                    </div>
 
-                {/* sql */}
-                <div className="parallax code sql" style={{ transform: `translate(${xValue / 1.0}px, ${yValue / 1.0}px)` }}>
-                    <InfiniteScrollText scrollSpeed={0.01} fontSize='2.16rem'>{sqlCode}</InfiniteScrollText>
-                </div>
+                    {/* sql */}
+                    <div className="parallax code sql" style={{ transform: `translate(${xValue / 1.0}px, ${yValue / 1.0}px)` }}>
+                        <InfiniteScrollText scrollSpeed={0.01} fontSize='2.16rem'>{sqlCode}</InfiniteScrollText>
+                    </div>
 
-                {/* java */}
-                <div className="parallax code java" style={{ transform: `translate(${xValue / 1.1}px, ${yValue / 1.1}px)` }}>
-                    <InfiniteScrollText scrollSpeed={0.02} fontSize='1.94rem'>{javaCode}</InfiniteScrollText>
-                </div>
+                    {/* java */}
+                    <div className="parallax code java" style={{ transform: `translate(${xValue / 1.1}px, ${yValue / 1.1}px)` }}>
+                        <InfiniteScrollText scrollSpeed={0.02} fontSize='1.94rem'>{javaCode}</InfiniteScrollText>
+                    </div>
 
-                {/* test */}
-                <div className="parallax code test" style={{ transform: `translate(${xValue / 1.3}px, ${yValue / 1.3}px)` }}>
-                    <InfiniteScrollText scrollSpeed={0.01} direction='right' fontSize='1.71rem'>{testCode}</InfiniteScrollText>
-                </div>
+                    {/* test */}
+                    <div className="parallax code test" style={{ transform: `translate(${xValue / 1.3}px, ${yValue / 1.3}px)` }}>
+                        <InfiniteScrollText scrollSpeed={0.01} direction='right' fontSize='1.71rem'>{testCode}</InfiniteScrollText>
+                    </div>
 
-                {/* powershell */}
-                <div className="parallax code powershell" style={{ transform: `translate(${xValue / 1.5}px, ${yValue / 1.5}px)` }}>
-                    <InfiniteScrollText scrollSpeed={0.014} fontSize='1.48rem'>{powershellCode}</InfiniteScrollText>
-                </div>
+                    {/* powershell */}
+                    <div className="parallax code powershell" style={{ transform: `translate(${xValue / 1.5}px, ${yValue / 1.5}px)` }}>
+                        <InfiniteScrollText scrollSpeed={0.014} fontSize='1.48rem'>{powershellCode}</InfiniteScrollText>
+                    </div>
 
-                {/* go */}
-                <div className="parallax code go" style={{ transform: `translate(${xValue / 1.8}px, ${yValue / 1.8}px)` }}>
-                    <InfiniteScrollText scrollSpeed={0.01} fontSize='1.25rem'>{goCode}</InfiniteScrollText>
-                </div>
+                    {/* go */}
+                    <div className="parallax code go" style={{ transform: `translate(${xValue / 1.8}px, ${yValue / 1.8}px)` }}>
+                        <InfiniteScrollText scrollSpeed={0.01} fontSize='1.25rem'>{goCode}</InfiniteScrollText>
+                    </div>
 
-                {/* ruby */}
-                <div className="parallax code ruby" style={{ transform: `translate(${xValue / 2}px, ${yValue / 2}px)` }}>
-                    <InfiniteScrollText scrollSpeed={0.19} direction='left' fontSize='1.03rem'>{rubyCode}</InfiniteScrollText>
-                </div>
+                    {/* ruby */}
+                    <div className="parallax code ruby" style={{ transform: `translate(${xValue / 2}px, ${yValue / 2}px)` }}>
+                        <InfiniteScrollText scrollSpeed={0.19} direction='left' fontSize='1.03rem'>{rubyCode}</InfiniteScrollText>
+                    </div>
 
-                {/* kotlin */}
-                <div className="parallax code kotlin" style={{ transform: `translate(${xValue / 3}px, ${yValue / 3}px)` }}>
-                    <InfiniteScrollText scrollSpeed={0.18} direction='right' fontSize='0.80rem'>{kotlinCode}</InfiniteScrollText>
-                </div>
-                {/* endregion */}
+                    {/* kotlin */}
+                    <div className="parallax code kotlin" style={{ transform: `translate(${xValue / 3}px, ${yValue / 3}px)` }}>
+                        <InfiniteScrollText scrollSpeed={0.18} direction='right' fontSize='0.80rem'>{kotlinCode}</InfiniteScrollText>
+                    </div>
+                </>{/* #endregion CODE  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦ */}
 
                 <img
                     className='parallax coder'

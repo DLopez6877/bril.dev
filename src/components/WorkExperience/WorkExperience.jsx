@@ -3,8 +3,8 @@ import './WorkExperience.scss'
 
 const WorkExperience = () => {
     return (
-        <div className="work-experience-container">
-            <h1>WorkExperience</h1>
+        <div className="work-experience-container container">
+            <h2>WorkExperience</h2>
         </div>
     );
 };

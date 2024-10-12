@@ -18,7 +18,7 @@ const InfiniteScrollText = ({ children, className, direction, scrollSpeed = 1, f
         const handleScroll = () => {
             if (reverseOnScroll !== 'true') return;
             const scrollPos = window.scrollY;
-            const directionFactor = scrollPos > 0 ? 1 : -1;
+            const directionFactor = scrollPos > 300 ? 1 : -1;
             scrollDirectionRef.current = directionFactor;
         };
 

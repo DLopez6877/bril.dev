@@ -14,23 +14,24 @@ import WorkExperience from '../../components/WorkExperience/WorkExperience';
 const HomePage = () => {
     const { scrollYProgress } = useScroll();
 
-    const opacity = useTransform(scrollYProgress, [0, 0.7], [1, -1]);
+    const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
     const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
     const translateY = useTransform(scrollYProgress, [0, 1], [0, 1200]);
 
     return (
-        <ErrorBoundary>
-            <SmoothScroll>
-                <div className="home-page-container" data-scroll-container>
-                    <Nav />
-                    <ParallaxHero opacity={opacity} scale={scale} translateY={translateY} />
-                    <About />
-                    <WorkExperience />
-                    <Skills />
-                    <Contact />
-                </div>
-            </SmoothScroll>
-        </ErrorBoundary>
+        // <ErrorBoundary>
+        //     <SmoothScroll>
+        //         <div className="home-page-container" data-scroll-container>
+        //             <Nav />
+        //             <ParallaxHero opacity={opacity} scale={scale} translateY={translateY} />
+        //             <About id="about" />
+        //             <WorkExperience id="work" />
+        //             <Skills />
+        //             <Contact id="contact" />
+        //         </div>
+        //     </SmoothScroll>
+        // </ErrorBoundary>
+        <Skills />
     );
 };
 

@@ -4,6 +4,7 @@ import logo from '../../assets/logo-filled.png';
 import DrawerContent from '../DrawerContent/DrawerContent';
 import { motion as m, AnimatePresence } from "framer-motion"
 import { Link } from 'react-router-dom';
+import { NavButtonVariants } from '../../lib/variants';
 
 const Nav = () => {
     const [bottomConstraint, setBottomConstraint] = useState(0);
@@ -51,7 +52,6 @@ const Nav = () => {
     }, [isDrawerOpen]);
 
     const handleMenuNavClick = () => {
-        console.log('clicked')
         if (isDragging) return;
 
         if (menuNavRef.current) {
@@ -136,6 +136,33 @@ const Nav = () => {
                             exit={{ opacity: 0 }}
                             transition={{ type: 'spring', stiffness: 120, damping: 20, }}
                         />
+                        <m.button
+                            onClick={closeDrawer}
+                            className={`close-button ${drawerSide === 'left' ? 'drawer-left' : ''}`}
+                            aria-label="Close Drawer"
+                            type="button"
+                            custom={drawerSide}
+                            variants={NavButtonVariants}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                        >
+                            <div className="x">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </div>
+                            <div className='x-glass-hack glass' />
+                        </m.button>
                     </>
                 )}
             </AnimatePresence>
@@ -144,3 +171,4 @@ const Nav = () => {
 };
 
 export default Nav;
+

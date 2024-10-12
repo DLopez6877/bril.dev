@@ -11,33 +11,22 @@
         align-items: center;
         text-align: center;
         height: 15vh;
+        font-size: 3rem;
+        font-weight: bold;
+        cursor: pointer;
+        color: var(--orange);
+        background-color: rgba(var(--green-rgb), 0.08);
+        margin-top: 8px;
+        transition: background-color 0.3s ease, color 0.3s ease;
 
-        &:first-of-type {
-            margin-bottom: auto;
-        }
-    }
-
-    .close-button {
-        width: 100%;
-        padding: 20px;
-        text-align: right;
-
-        svg {
-            width: 60px;
-            height: 60px;
+        &:hover {
+            background-color: rgba(var(--green-rgb), 0.08);
             color: var(--green);
         }
     }
 
-    .drawer-content {
-        .drawer-row {
-            font-weight: bold;
-            font-size: 3rem;
-        }
-
-        .word-text {
-            position: relative;
-            width: 100%;
-        }
+    .word-text {
+        position: relative;
+        width: 100%;
     }
 }

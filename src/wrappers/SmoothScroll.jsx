@@ -10,7 +10,8 @@ function SmoothScroll({ children }) {
 
     useEffect(() => {
         function update(time) {
-            lenisRef.current?.lenis?.raf(time * 1000)
+            lenisRef.current?.lenis?.raf(time * 1000);
+            ScrollTrigger.update();
         }
 
         gsap.ticker.add(update)
@@ -21,13 +22,17 @@ function SmoothScroll({ children }) {
     }, []);
 
     return (
-        <ReactLenis ref={lenisRef} autoRaf={false} root options={{
-            smoothTouch: true,
-            lerp: 0.07,
-            gestureDirection: "vertical",
-            smooth: true,
-            touchMultiplier: 2,
-        }}>
+        <ReactLenis
+            ref={lenisRef}
+            autoRaf={false}
+            root
+            options={{
+                smoothTouch: true,
+                lerp: 0.07,
+                gestureDirection: "vertical",
+                smooth: true,
+                touchMultiplier: 2,
+            }}>
             {children}
         </ReactLenis>
     );
