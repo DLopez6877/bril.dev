@@ -1,9 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import './DullSplitText.scss';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 
 const DullSplitText = ({ children }) => {

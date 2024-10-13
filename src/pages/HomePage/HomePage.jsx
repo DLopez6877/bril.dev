@@ -25,6 +25,7 @@ const HomePage = () => {
                     <Nav />
                     <ParallaxHero opacity={opacity} scale={scale} translateY={translateY} />
                     <About id="about" />
+                    {/* Moving start up 100px  */}
                     <WorkExperience id="work" />
                     <Skills />
                     <Contact id="contact" />

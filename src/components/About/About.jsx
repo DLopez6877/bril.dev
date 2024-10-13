@@ -2,11 +2,8 @@ import React, { useLayoutEffect, useRef } from 'react';
 import './About.scss'
 import aboutbg from '../../assets/aboutbg.png';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import RoundMouse from '../../wrappers/RoundMouse/RoundMouse';
 import Typewriter from '../Typewriter/Typewriter';
-
-// gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
     const containerRef = useRef(null);
