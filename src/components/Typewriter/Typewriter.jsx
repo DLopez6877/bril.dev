@@ -1,12 +1,8 @@
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect, useState } from "react";
-import TypewriterBioText from "./TypewriterBioText";
-import CursorBlinker from "./CursorBlinker";
+import { useEffect } from "react";
 
-
-const Typewriter = ({ delay }) => {
-    const [done, setDone] = useState(false);
-    const baseText = "Dear Hiring Manager, ";
+const Typewriter = ({ delay, className }) => {
+    const baseText = "Currently seeking new opportunities.";
     const count = useMotionValue(0);
     const rounded = useTransform(count, (latest) => Math.round(latest));
     const displayText = useTransform(rounded, (latest) =>
@@ -18,24 +14,14 @@ const Typewriter = ({ delay }) => {
             type: "tween",
             delay: delay,
             duration: 1,
-            ease: "easeInOut",
-            onComplete: () => {
-                setDone(true);
-            }
+            ease: "easeInOut"
         });
         return controls.stop;
     }, []);
 
     return (
-        <span className="">
+        <span className={className}>
             <motion.span>{displayText}</motion.span>
-            {done && (
-                <>
-                    <br /> <br />
-                </>
-            )}
-            <TypewriterBioText delay={delay + 1} />
-            <CursorBlinker />
         </span>
     );
 };

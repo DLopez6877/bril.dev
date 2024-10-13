@@ -19,19 +19,18 @@ const HomePage = () => {
     const translateY = useTransform(scrollYProgress, [0, 1], [0, 1200]);
 
     return (
-        // <ErrorBoundary>
-        //     <SmoothScroll>
-        //         <div className="home-page-container" data-scroll-container>
-        //             <Nav />
-        //             <ParallaxHero opacity={opacity} scale={scale} translateY={translateY} />
-        //             <About id="about" />
-        //             <WorkExperience id="work" />
-        //             <Skills />
-        //             <Contact id="contact" />
-        //         </div>
-        //     </SmoothScroll>
-        // </ErrorBoundary>
-        <Skills />
+        <ErrorBoundary>
+            <SmoothScroll>
+                <div className="home-page-container" data-scroll-container>
+                    <Nav />
+                    <ParallaxHero opacity={opacity} scale={scale} translateY={translateY} />
+                    <About id="about" />
+                    <WorkExperience id="work" />
+                    <Skills />
+                    <Contact id="contact" />
+                </div>
+            </SmoothScroll>
+        </ErrorBoundary>
     );
 };
 

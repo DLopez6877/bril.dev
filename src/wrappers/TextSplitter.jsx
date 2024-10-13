@@ -1,24 +1,36 @@
-import React from "react";
+class TextSplitter {
+    constructor(selector, spaceLength = '0.5em', className = '') {
+        this.elements = document.querySelectorAll(selector);
+        this.spaceLength = spaceLength;
+        this.className = className;
+        this.splitText();
+    }
 
-const TextSplitter = ({ text, className, spaceLength = '0.5em' }) => {
-    return (
-        <div className="text-splitter-wrapper">
-            <p className="animated-text">
-                {text.split("").map((letter, index) => (
-                    letter === " " ? (
-                        <span key={index} style={{ display: "inline-block", width: spaceLength }}>
-                            &nbsp;
-                        </span>
-                    ) : (
-                        <span key={index} className={className}>
-                            {letter}
-                        </span>
-                    )
-                ))}
-            </p>
-        </div>
-    );
-};
+    splitText() {
+        this.elements.forEach(element => {
+            const text = element.innerText;
+            const splitTextArray = text.split("");
+
+            element.innerHTML = ''; // Clear original text
+
+            splitTextArray.forEach((letter, index) => {
+                if (letter === " ") {
+                    const spaceSpan = document.createElement('span');
+                    spaceSpan.style.width = this.spaceLength;
+                    spaceSpan.style.display = 'inline-block';
+                    spaceSpan.innerHTML = '&nbsp;';
+                    element.appendChild(spaceSpan);
+                } else {
+                    const span = document.createElement('span');
+                    span.style.display = 'inline-block';
+                    span.innerText = letter;
+                    if (this.className) { span.classList.add(this.className, index); }
+                    element.appendChild(span);
+                }
+            });
+        });
+    }
+}
 
 export default TextSplitter;
 

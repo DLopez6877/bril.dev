@@ -5,27 +5,27 @@ import gsap from 'gsap';
 const Skills = () => {
     const stickyContainerRef = useRef(null);
 
-    useLayoutEffect(() => {
-        const stickyContainer = stickyContainerRef.current;
-        const stickyContainerWidth = stickyContainer.scrollWidth;
+    // useLayoutEffect(() => {
+    //     const stickyContainer = stickyContainerRef.current;
+    //     const stickyContainerWidth = stickyContainer.scrollWidth;
 
-        const sections = gsap.utils.toArray('.panel', stickyContainer);
+    //     const sections = gsap.utils.toArray('.panel', stickyContainer);
 
-        gsap.to(sections, {
-            xPercent: -100 * (sections.length - 1),
-            ease: 'none',
-            scrollTrigger: {
-                trigger: stickyContainer,
-                pin: true,
-                pinSpacing: true,
-                scrub: 1,
-                start: 'top, top',
-                snap: 1 / (sections.length - 1),
-                end: () => '+=' + stickyContainerWidth,
-                markers: true
-            }
-        })
-    }, []);
+    //     gsap.to(sections, {
+    //         xPercent: -100 * (sections.length - 1),
+    //         ease: 'none',
+    //         scrollTrigger: {
+    //             trigger: stickyContainer,
+    //             pin: true,
+    //             pinSpacing: true,
+    //             scrub: 1,
+    //             start: 'top, top',
+    //             snap: 1 / (sections.length - 1),
+    //             end: () => '+=' + stickyContainerWidth,
+    //             markers: true
+    //         }
+    //     })
+    // }, []);
 
     return (
         <div className="skills-container">

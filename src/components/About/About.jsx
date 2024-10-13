@@ -72,15 +72,17 @@ const About = () => {
                 <div className="about-content">
                     <h2 ref={headerRef} className="glow headline-text">ABOUT ME</h2>
                     <div ref={bioRef} className="about-bio container">
-                        {/* <Typewriter delay={0} /> */}
+                        <Typewriter delay={0} />
 
-                        <p className='typewriter-text text1'>I'm a PC gamer, former Magic: The Gathering pro, current Hearthstone Battlegrounds enthusiast, board game aficionado, Lord of the Rings fanboy, and all-around nerd. When I discovered coding, I was instantly hooked. It was the creative outlet I had been looking for... the ability to let my imagination shine and transform a blank canvas (the web browser) into whatever I could envision.</p>
+                        <p className='bio-text text1'>I'm a PC gamer, former Magic the Gathering pro, current Hearthstone Battlegrounds enthusiast, board game aficionado, Lord of the Rings fanboy, and all-around nerd.</p>
 
-                        <p className='typewriter-text text2'>For the past seven years, I've worked as a full-stack software engineer. I started off as a frontend engineer but as time went on, I found myself increasingly focused on backend work, losing the creative outlet I craved. After years of navigating the dark depths of backend code and deployment pipelines, it's time to grab this Balrog of a career by the horns and take control.</p>
+                        <p className='bio-text text2'>For the past seven years, I've worked as a full-stack software engineer. I started off as a frontend engineer, but as time went on, I found myself increasingly focused on backend work.</p>
 
-                        <p className='typewriter-text text2'>I'm seeking a role as a senior frontend developer or an entry-level designer working with a world-class team. Let's build Awwwards winning websites together.</p>
+                        <p className='bio-text text3'>Its been great, but what drove me to this career was the creative outlet that frontend work provided me. I'm one of those crazies that love CSS. After years of navigating the dark depths of backend code and deployment pipelines, it's time to grab this Balrog of a career path by the horns and steer it in the direction I want.</p>
 
-                        <p className='seeking-opportunities small'>Currently seeking new opportunities.</p>
+                        <p className='bio-text text4'>I'm seeking a role as a senior frontend developer or an entry-level designer working with a world-class team.</p>
+
+                        <p className='bio-text text5'>Let's build Awwwards winning websites together.</p>
 
 
 

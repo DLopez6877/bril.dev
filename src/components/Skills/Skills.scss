@@ -1,44 +1,51 @@
-.skills-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+body {
+    margin: 0;
+    background: #15151e;
+    overflow-x: hidden;
+}
+
+
+
+.races {
+    width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.races h2 {
+    font-family: 'Staatliches', cursive;
+    font-size: 30vw;
+    flex-shrink: 0;
+    padding-right: 0.3em;
+    padding-left: 0.3em;
+    color: #e10600;
+
+    margin: 0;
+}
+
+.races h2:last-of-type {
+    background: #e1e1ff;
+}
+
+.lightBG {
+    background: #313143;
+}
+
+.space-20vh {
+    height: 20vh;
+}
+
+.space-30vh {
+    height: 30vh;
+}
+
+.space-50vh {
+    height: 50vh;
+}
+
+.space-100vh {
     height: 100vh;
-
-    .panels {
-        position: relative;
-        display: flex;
-        height: 100%;
-        width: 500%;
-
-        .panel {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 6rem;
-            color: rebeccapurple;
-        }
-
-        .intro {
-            background-color: var(--green);
-        }
-
-        .scroll {
-            background-color: var(--light);
-        }
-
-        .cursor {
-            background-color: var(--dark);
-        }
-
-        .cursor {
-            background-color: var(--orange);
-        }
-
-        .cursor {
-            background-color: var(--blue);
-        }
-    }
-
 }
