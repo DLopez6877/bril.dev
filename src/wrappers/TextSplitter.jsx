@@ -11,7 +11,7 @@ class TextSplitter {
             const text = element.innerText;
             const splitTextArray = text.split("");
 
-            element.innerHTML = ''; // Clear original text
+            element.innerHTML = '';
 
             splitTextArray.forEach((letter, index) => {
                 if (letter === " ") {

@@ -1,8 +1,4 @@
 .work-container {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    z-index: 1;
 
     .bg-pin-trigger {
         height: 200vh;
@@ -22,6 +18,20 @@
         background-color: red;
         z-index: -1;
         text-align: right;
+    }
+
+    .work-history-header {
+        will-change: transform;
+    }
+
+    .split-text {
+        text-align: center;
+        font-size: 6rem;
+    }
+
+    .vh100 {
+        width: 100%;
+        height: 100vh;
     }
 
     .work-experience-container {
