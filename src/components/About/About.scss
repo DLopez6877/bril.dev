@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     color: var(--light);
-    padding-top: 40vh;
+    padding-top: 50vh;
     height: fit-content;
 
 
@@ -24,7 +24,7 @@
         margin: 0;
         text-align: center;
         font-size: 9.3333333333vw;
-        line-height: .8em;
+        line-height: .8rem;
         letter-spacing: .3rem;
         font-family: var(--font-secondary);
     }
@@ -40,12 +40,11 @@
         display: flex;
         flex-direction: column;
         color: var(--light);
-        // text-align: justify;
         cursor: default;
         margin-top: 30vh;
 
         p {
-            font-size: 1.2rem;
+            font-size: 0.9rem;
         }
 
         .typewriter-text {
@@ -63,29 +62,5 @@
             height: 100%;
             white-space: nowrap;
         }
-
-        &.pinned {
-            // color: red;
-        }
     }
-
-    .glow {
-        color: var(--light);
-        animation: glow 4s ease-in-out infinite alternate;
-        text-shadow: 0 0 10px var(--green), 0 0 15px var(--green);
-    }
-
-    @keyframes glow {
-
-        0%,
-        75% {
-            text-shadow: 0 0 10px var(--green), 0 0 15px var(--green);
-        }
-
-        100% {
-            text-shadow: 0 0 10px var(--green), 0 0 15px var(--green), 0 0 20px var(--green);
-        }
-    }
-
-
 }

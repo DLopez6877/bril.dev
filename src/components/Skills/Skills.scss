@@ -1,5 +1,98 @@
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-
 .skills-container {
-    background-color: forestgreen;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--blue);
+    height: 60vh;
+    padding-top: 20px;
+    padding: 10px;
+
+    .headline-text {
+        padding-top: 10px;
+        text-align: center;
+        font-size: 9.3333333333vw;
+        line-height: .8em;
+        letter-spacing: .3rem;
+        font-family: var(--font-secondary);
+    }
+
+    .search-input {
+        padding: 10px;
+        margin-bottom: 20px;
+        width: 100%;
+        height: 60px;
+        background-color: transparent;
+        border: 2px solid var(--light);
+    }
+
+    .suggestions-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        max-width: 400px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+
+        li {
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #ccc;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                background-color: #f0f0f0;
+            }
+
+        }
+    }
+
+    .flex-wrapper {
+        display: flex;
+
+        .tags-container {
+            flex: 1;
+            margin-bottom: 20px;
+
+            .tag {
+                padding: 5px 10px;
+                margin: 5px;
+                border: 1px solid #ccc;
+                border-radius: 15px;
+                cursor: pointer;
+                background-color: #f1f1f1;
+                display: inline-block;
+            }
+
+            .selected {
+                background-color: #007bff;
+                color: white;
+            }
+        }
+
+
+        .skills-list {
+            flex: 3;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .skill-pill {
+                font-size: 0.7rem;
+                padding: 2px 8px 1px;
+                margin: 5px;
+                border-radius: 20px;
+                background-color: rgba($color: white, $alpha: 0.1);
+                color: var(--orange);
+                cursor: default;
+            }
+        }
+    }
+
+
 }
