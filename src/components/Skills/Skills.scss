@@ -1,98 +1,158 @@
 .skills-container {
-    width: 100%;
-    max-width: 800px;
     margin: 0 auto;
-    text-align: center;
-    background-color: var(--blue);
-    height: 60vh;
-    padding-top: 20px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light);
     padding: 10px;
+    padding-top: 20px;
+    border-top: 1px solid var(--orange);
 
-    .headline-text {
-        padding-top: 10px;
-        text-align: center;
-        font-size: 9.3333333333vw;
-        line-height: .8em;
-        letter-spacing: .3rem;
-        font-family: var(--font-secondary);
+    .scroll-text {
+        color: var(--orange);
+        font-family: var(--font-primary);
     }
 
-    .search-input {
-        padding: 10px;
-        margin-bottom: 20px;
-        width: 100%;
-        height: 60px;
-        background-color: transparent;
-        border: 2px solid var(--light);
-    }
+    .input-wrapper {
+        position: relative;
 
-    .suggestions-list {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        max-width: 400px;
-        margin: 0 auto;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #fff;
-
-        li {
+        .search-input {
+            height: 60px;
             padding: 10px;
-            cursor: pointer;
-            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+            width: 100%;
+            background-color: transparent;
+            border: 4px solid var(--orange);
+            outline: none;
+            font-size: 1.6rem;
+            font-family: var(--font-primary);
+            color: var(--orange);
 
-            &:last-child {
-                border-bottom: none;
+            &::-webkit-input-placeholder {
+                color: var(--orange);
             }
 
-            &:hover {
-                background-color: #f0f0f0;
+            &::-moz-placeholder {
+                color: var(--orange);
             }
 
+            &:-ms-input-placeholder {
+                color: var(--orange);
+            }
+
+            &::-ms-input-placeholder {
+                color: var(--orange);
+            }
+        }
+
+        .suggestions-list {
+            position: absolute;
+            width: 100%;
+            top: 60px;
+            background-color: var(--orange);
+            color: var(--light);
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                border-bottom: 1px solid var(--light);
+                padding-left: 10px;
+                cursor: pointer;
+                letter-spacing: 0.1rem;
+                will-change: letter-spacing;
+                transition: letter-spacing 0.3s ease-out;
+
+                &:hover {
+                    font-weight: bold;
+                    letter-spacing: 0.5rem;
+                    color: var(--green);
+                }
+            }
         }
     }
 
-    .flex-wrapper {
+    .wrapper {
         display: flex;
+        flex-grow: 1;
+        margin-bottom: 10px;
+        overflow: hidden;
 
         .tags-container {
-            flex: 1;
-            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--orange);
+            padding-right: 10px;
+            margin-right: 10px;
+            flex-shrink: 0;
 
             .tag {
                 padding: 5px 10px;
-                margin: 5px;
-                border: 1px solid #ccc;
-                border-radius: 15px;
+                border: 1px solid var(--orange);
+                border-radius: 3px;
+                font-size: 0.85rem;
+                color: var(--orange);
+                margin-bottom: 10px;
                 cursor: pointer;
-                background-color: #f1f1f1;
-                display: inline-block;
+                text-align: center;
+                text-transform: uppercase;
             }
 
             .selected {
-                background-color: #007bff;
-                color: white;
+                border: none;
+                background-color: var(--orange);
+                color: var(--light);
             }
         }
 
-
         .skills-list {
-            flex: 3;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            align-content: flex-start;
+            justify-content: flex-start;
+            overflow-y: auto;
+            width: 100%;
+            padding-right: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--orange) transparent;
 
-            .skill-pill {
-                font-size: 0.7rem;
+            &::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--orange);
+                border-radius: 10px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: transparent;
+            }
+
+            .pill {
+                color: var(--orange);
+                font-size: 0.75rem;
                 padding: 2px 8px 1px;
                 margin: 5px;
                 border-radius: 20px;
-                background-color: rgba($color: white, $alpha: 0.1);
+                background-color: rgba(var(--orange-rgb), 0.1);
+                border: 1px solid var(--orange);
+            }
+
+            .no-results {
                 color: var(--orange);
-                cursor: default;
             }
         }
     }
 
-
+    .result-counter {
+        min-height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid var(--orange);
+        font-size: 1.4rem;
+        font-family: var(--font-primary);
+        color: var(--orange);
+    }
 }

@@ -50,7 +50,14 @@
         }
 
         .shoutout {
+            display: flex;
+            align-items: center;
             grid-area: 3 / 2 / 5 / 3;
+            font-size: 8.6vw;
+            margin: 0;
+            font-family: var(--font-primary);
+            line-height: 8.8vw;
+            text-transform: uppercase;
         }
     }
 

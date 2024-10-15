@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import HomePage from './pages/HomePage/HomePage';
 import PlaygroundPage from './pages/PlaygroundPage/PlaygroundPage';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 function App() {
 

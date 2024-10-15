@@ -3,6 +3,7 @@
     .slider {
         position: relative;
         white-space: nowrap;
+        will-change: transform;
     }
 
     .slider p {

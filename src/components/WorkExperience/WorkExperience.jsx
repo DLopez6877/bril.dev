@@ -94,7 +94,7 @@ const WorkExperience = () => {
                 <img src={tablet} alt="Ai generated image of a lion drawn on a tablet." className="tablet" />
                 <img src={working} alt="Ai generated image of a software engineer sitting at a desk with four monitors." className="working" />
                 <img src={portland} alt="Ai generate image of Portland, Oregon." className="portland" />
-                <p className="shoutout">7+ years experience as a full stack software engineer.</p>
+                <p className="shoutout">Portland based fullstack software engineer with over 7 years of experience.</p>
             </div>
 
             <div className="text-3d">

@@ -228,7 +228,7 @@ const skillsData = [
         "tags": ["design"]
     },
     {
-        "name": "Responsive and Mobile First Design",
+        "name": "Responsive/Mobile First Design",
         "tags": ["frontend", "design"]
     },
     {
@@ -256,7 +256,7 @@ const skillsData = [
         "tags": ["frontend", "backend"]
     },
     {
-        "name": "Continuous Integration/Continuous Deployment (CI/CD)",
+        "name": "Continuous Integration/Deployment (CI/CD)",
         "tags": ["devops"]
     },
     {
@@ -316,7 +316,7 @@ const skillsData = [
         "tags": ["design"]
     },
     {
-        "name": "Object Oriented Programming (OOP)",
+        "name": "Object Oriented Programming",
         "tags": ["backend"]
     },
     {
