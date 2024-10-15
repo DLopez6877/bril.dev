@@ -8,6 +8,10 @@
     padding-top: 20px;
     border-top: 1px solid var(--orange);
 
+    @media only screen and (max-width: 768px) and (orientation: landscape) {
+        height: auto;
+    }
+
     .scroll-text {
         color: var(--orange);
         font-family: var(--font-primary);

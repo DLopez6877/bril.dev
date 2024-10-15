@@ -29,8 +29,8 @@
         z-index: 17;
         top: 0%;
         left: 10%;
-        font-size: 8rem;
-        line-height: 0.88;
+        font-size: 7rem;
+        line-height: 1;
 
         &::after {
             position: absolute;
@@ -45,7 +45,7 @@
         z-index: 15;
         top: 50%;
         left: 10%;
-        font-size: 4.5rem;
+        font-size: 4.2rem;
         line-height: 0.88;
         font-family: var(--secondary);
 
@@ -53,8 +53,12 @@
             z-index: 18;
         }
 
+        &.dev {
+            z-index: 18;
+        }
+
         &.developer {
-            top: calc(50% + 4.5rem)
+            top: calc(50% + 3.9rem)
         }
     }
 
@@ -224,12 +228,12 @@
 
         .text.frontend {
             top: 28%;
-            left: 50%;
+            left: 45%;
         }
 
         .text.developer {
             top: calc(28% + 4.5rem);
-            left: 60%;
+            left: 50%;
         }
 
         .code.js {
@@ -249,11 +253,11 @@
         }
     }
 
-    // @media (min-width: 1280px) {
+    @media only screen and (max-width: 768px) and (orientation: landscape) {
 
-    //     .coder,
-    //     .glasses {
-    //         left: -20%;
-    //     }
-    // }
+        .coder,
+        .glasses {
+            left: 50%;
+        }
+    }
 }

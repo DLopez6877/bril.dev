@@ -61,6 +61,43 @@
         }
     }
 
+    @media (min-width: 1024px) {
+        .headline {
+            font-size: 8rem;
+        }
+
+        .pic-section {
+            max-width: 1600px;
+            margin: 0 auto;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+
+            .collab {
+                grid-area: 4 / 2 / 7 / 5;
+                transform: translateY(100px);
+            }
+
+            .portland {
+                grid-area: 2 / 5 / 5 / 8;
+            }
+
+            .working {
+                grid-area: 1 / 2 / 3 / 5;
+            }
+
+            .tablet {
+                grid-area: 5 / 5 / 8 / 8;
+            }
+
+            .shoutout {
+                z-index: 1;
+                font-size: 4rem;
+                line-height: 4.5rem;
+                grid-area: 2 / 1 / 5 / 5;
+            }
+        }
+    }
+
     .entries {
         padding: 10px 0px;
         background-color: var(--light);
@@ -77,21 +114,32 @@
                 display: flex;
                 align-items: flex-end;
 
+                @media (min-width: 1024px) {
+                    height: 90px;
+                    padding-left: 80px;
+                }
+
                 .date {
                     position: absolute;
                     top: 0px;
                     left: 0px;
                     font-size: 0.65rem;
+
+                    @media (min-width: 1024px) {
+                        padding-left: 80px;
+                    }
                 }
 
                 .tab-label {
                     font-weight: 800;
                     font-size: 1.4rem;
                     margin-bottom: 5px;
+
                 }
             }
 
             .contents {
+                position: relative;
                 background-color: var(--light);
                 border-bottom-left-radius: 5px;
                 border-bottom-right-radius: 5px;
@@ -120,6 +168,19 @@
                 .wave {
                     width: 100%;
                     height: 100%;
+                }
+
+                @media (min-width: 1024px) {
+                    padding: 20px 0 20px 80px;
+                    width: 50%;
+
+                    .doodad {
+                        position: absolute;
+                        width: 50%;
+                        top: 0;
+                        right: -75%;
+                        height: 80%;
+                    }
                 }
             }
         }
