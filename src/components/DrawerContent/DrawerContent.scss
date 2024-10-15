@@ -1,3 +1,5 @@
+@import '../../styles/placeholders.scss';
+
 .drawer-content-container {
     display: flex;
     flex-direction: column;
@@ -9,20 +11,34 @@
         width: 100%;
         display: flex;
         align-items: center;
-        text-align: center;
         height: 15vh;
-        font-size: 3rem;
+        font-size: 3.8rem;
         font-weight: bold;
         cursor: pointer;
-        color: var(--orange);
         background-color: rgba(var(--green-rgb), 0.08);
         margin-top: 8px;
         transition: background-color 0.3s ease, color 0.3s ease;
+        color: var(--green);
+
+        .word-text {
+            position: relative;
+            margin: 0 auto;
+            width: fit-content;
+        }
+
+        span {
+            position: absolute;
+            top: 0;
+            left: 0px;
+            opacity: 0;
+        }
 
         &:hover {
+            @extend %glitch-effect;
+            color: var(--orange);
             background-color: rgba(var(--green-rgb), 0.08);
-            color: var(--green);
         }
+
     }
 
     .word-text {

@@ -9,6 +9,10 @@
         height: 100vh;
     }
 
+    @media screen and (min-aspect-ratio: 2/1) {
+        height: 50vh;
+    }
+
     .visible-content-container {
         position: fixed;
         width: 100%;
@@ -21,6 +25,11 @@
         @media only screen and (max-width: 768px) and (orientation: landscape) {
             height: 100vh;
         }
+
+
+        @media screen and (min-aspect-ratio: 2/1) {
+            height: 50vh;
+        }
     }
 
     .content {
@@ -28,10 +37,6 @@
         flex-direction: column;
         flex: 1;
         justify-content: center;
-
-        @media (min-width: 1024px) {
-            // flex-direction: row;
-        }
 
         h2 {
             font-size: 6rem;

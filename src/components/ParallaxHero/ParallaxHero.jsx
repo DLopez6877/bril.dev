@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ParallaxHero.scss';
 import bg from '../../assets/herobg.png';
 import coder from '../../assets/coder.png';
+import coder2 from '../../assets/coder2.png';
 import glasses from '../../assets/glasses.png';
+import glasses2 from '../../assets/glasses2.png';
 import InfiniteScrollText from '../InfiniteScrollText/InfiniteScrollText';
 import { motion as m } from 'framer-motion';
 
@@ -22,6 +24,12 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
 
     const [xValue, setXValue] = useState(0);
     const [yValue, setYValue] = useState(0);
+
+    const [useCoder2, setUseCoder2] = useState(false);
+
+    useEffect(() => {
+        setUseCoder2(Math.random() < 0.5);
+    }, []);
 
     const handleMouseMove = (e) => {
         const xOffset = (window.innerWidth / 2 - e.clientX) / 25;
@@ -119,13 +127,13 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
 
                 <img
                     className='parallax coder'
-                    src={coder}
+                    src={useCoder2 ? coder2 : coder}
                     alt="A headshot of a programmer wearing a hoodie."
                     style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
                 />
                 <img
                     className='parallax glasses'
-                    src={glasses}
+                    src={useCoder2 ? glasses2 : glasses}
                     alt="A headshot of a programmer wearing a hoodie."
                     style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
                 />

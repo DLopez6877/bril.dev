@@ -20,7 +20,9 @@ const DrawerContent = ({ drawerSide }) => {
                     className="drawer-row"
                     variants={NavWordVariants}
                 >
-                    <m.div className='word-text'>{word}</m.div>
+                    <m.div className='word-text'><span aria-hidden="true">{word}</span>
+                        {word}
+                        <span aria-hidden="true">{word}</span></m.div>
                 </m.div>
             ))}
 

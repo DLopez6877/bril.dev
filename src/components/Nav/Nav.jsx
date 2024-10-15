@@ -76,11 +76,18 @@ const Nav = () => {
             <div className="full-nav dark-glass">
                 <Link to="/" className='logo'><img height={30} src={logo} alt="Bril Logo." /></Link>
                 <div className="links">
-                    <Link to="#about" className='nav-link xsmall'>About</Link>
-                    <Link to="#work" className='nav-link xsmall'>Work</Link>
-                    <Link to="#skills" className='nav-link xsmall'>Skills</Link>
-                    <Link to="#contact" className='nav-link xsmall'>Contact</Link>
-                    <Link to="/playground" className='nav-link xsmall'>pg</Link>
+                    <Link to="#about" className='nav-link'><span aria-hidden="true">About</span>
+                        About
+                        <span aria-hidden="true">About</span></Link>
+                    <Link to="#work" className='nav-link'><span aria-hidden="true">Work</span>
+                        Work
+                        <span aria-hidden="true">Work</span></Link>
+                    <Link to="#skills" className='nav-link'><span aria-hidden="true">Skills</span>
+                        Skills
+                        <span aria-hidden="true">Skills</span></Link>
+                    <Link to="#contact" className='nav-link'><span aria-hidden="true">Contact</span>
+                        Contact
+                        <span aria-hidden="true">Contact</span></Link>
                 </div>
             </div>
             <m.button
