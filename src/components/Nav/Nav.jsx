@@ -12,8 +12,19 @@ const Nav = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [drawerSide, setDrawerSide] = useState(null);
     const [isDragging, setIsDragging] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
     const menuNavRef = useRef(null);
     const drawerRef = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 100);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
 
     useEffect(() => {
         const calculateConstraint = () => {
@@ -73,7 +84,12 @@ const Nav = () => {
 
     return (
         <div className="nav-container">
-            <div className="full-nav dark-glass">
+            <m.div
+                className="full-nav dark-glass"
+                initial={{ y: 0 }}
+                animate={{ y: isScrolled ? '-100%' : 0 }}
+                transition={{ type: 'spring', stiffness: 150, damping: 10, delay: isScrolled ? 0 : 0.6 }}
+            >
                 <Link to="/" className='logo'><img height={30} src={logo} alt="Bril Logo." /></Link>
                 <div className="links">
                     <Link to="#about" className='nav-link'><span aria-hidden="true">About</span>
@@ -89,7 +105,7 @@ const Nav = () => {
                         Contact
                         <span aria-hidden="true">Contact</span></Link>
                 </div>
-            </div>
+            </m.div>
             <m.button
                 ref={menuNavRef}
                 className="menu-nav glass"
@@ -100,10 +116,9 @@ const Nav = () => {
                 onDragStart={() => setIsDragging(true)}
                 onDragEnd={() => setTimeout(() => setIsDragging(false), 100)}
 
-                initial={{ x: drawerSide === 'left' ? '-100%' : '100%' }}
-                animate={{ x: 0 }}
-                exit={{ x: drawerSide === 'left' ? '-100%' : '100%' }}
-                transition={{ type: 'spring', stiffness: 150, damping: 50 }}
+                initial={{ scale: 0 }}
+                animate={{ scale: isScrolled ? 1 : 0 }}
+                transition={{ type: 'spring', stiffness: 150, damping: 10, delay: isScrolled ? 0.6 : 0 }}
 
                 dragConstraints={{
                     top: 0,
