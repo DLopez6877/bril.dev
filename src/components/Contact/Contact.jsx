@@ -1,5 +1,6 @@
 import React from 'react';
 import './Contact.scss';
+import GradientCanvas from '../GradientCanvas/GradientCanvas';
 
 const Contact = () => {
     return (
@@ -7,6 +8,7 @@ const Contact = () => {
             <div className="visible-content-container">
 
                 <div className="content">
+                    <GradientCanvas id='contact-gradient' />
                     <h2>LET'S</h2>
                     <h2>CONNECT</h2>
                     <p className='interests'>CURRENTLY INTERESTED IN:</p>

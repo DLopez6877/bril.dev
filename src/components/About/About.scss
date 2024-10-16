@@ -13,7 +13,7 @@
         height: 100vh;
         width: 100%;
         object-fit: cover;
-        z-index: -1;
+        z-index: 0;
     }
 
     .about-content {
@@ -43,8 +43,10 @@
         margin-top: 30vh;
         max-width: 1000px;
 
-        p {
+        .bio-text {
+            opacity: 0; // Start hidden
             font-size: 1.1rem;
+            transition: opacity 0.3s ease-in-out;
         }
 
         .typewriter-text {
@@ -61,6 +63,10 @@
             width: 100%;
             height: 100%;
             white-space: nowrap;
+        }
+
+        .bio-text:last-child {
+            margin-bottom: 20vh;
         }
     }
 }
