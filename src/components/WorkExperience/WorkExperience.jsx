@@ -7,7 +7,6 @@ import collab from '../../assets/collab.jpg';
 import tablet from '../../assets/tablet.jpg';
 import portland from '../../assets/portland.jpg';
 import working from '../../assets/working.jpg';
-import WorkEntries from '../WorkEntries/WorkEntries';
 
 
 const WorkExperience = () => {
@@ -117,7 +116,6 @@ const WorkExperience = () => {
                 <img src={portland} alt="Ai generate image of Portland, Oregon." className="portland" />
                 <p className="shoutout">Portland based fullstack software engineer with over 7 years of experience.</p>
             </div>
-            <WorkEntries />
         </div>
     );
 };

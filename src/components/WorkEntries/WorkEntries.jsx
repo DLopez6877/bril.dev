@@ -1,12 +1,39 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './WorkEntries.scss'
 import wave from '../../assets/wave.svg';
 import { Link } from 'react-router-dom';
+import gsap from 'gsap';
 
 const WorkEntries = () => {
+
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        const container = containerRef.current;
+        const entries = gsap.utils.toArray('.entry');
+
+        entries.forEach((entry, index) => {
+            const offset = index * 70;
+
+            gsap.to(entry, {
+                scrollTrigger: {
+                    trigger: entry,
+                    start: `top-=${offset} top`,
+                    endTrigger: container,
+                    end: `bottom bottom`,
+                    pin: true,
+                    pinSpacing: false,
+                    scrub: true,
+                },
+            });
+        });
+    }, []);
+
+
+
     return (
-        <div className="work-entries-container">
-            <div className="entry entry1">
+        <div ref={containerRef} className="work-entries-container">
+            <div className="entry">
                 <div className="tab">
                     <p className="date">2006 - 2014</p>
                     <p className="tab-label">Army National Guard</p>
@@ -21,7 +48,7 @@ const WorkEntries = () => {
                 </div>
             </div>
 
-            <div className="entry entry2">
+            <div className="entry">
                 <div className="tab">
                     <p className="date">2017 - 2020</p>
                     <p className="tab-label">Zapproved</p>
@@ -36,7 +63,7 @@ const WorkEntries = () => {
                 </div>
             </div>
 
-            <div className="entry entry3">
+            <div className="entry">
                 <div className="tab">
                     <p className="date">2020 - 2021</p>
                     <p className="tab-label">Serverless Guru</p>
@@ -51,7 +78,7 @@ const WorkEntries = () => {
                 </div>
             </div>
 
-            <div className="entry entry4">
+            <div className="entry">
                 <div className="tab">
                     <p className="date">2021 - 2023</p>
                     <p className="tab-label">Ruby</p>
@@ -66,7 +93,7 @@ const WorkEntries = () => {
                 </div>
             </div>
 
-            <div className="entry entry5">
+            <div className="entry">
                 <div className="tab">
                     <p className="date">2022 - 2023</p>
                     <p className="tab-label">Pure Chat</p>

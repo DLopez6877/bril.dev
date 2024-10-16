@@ -10,6 +10,7 @@ import ErrorBoundary from '../../wrappers/ErrorBoundary';
 import Skills from '../../components/Skills/Skills';
 import Contact from '../../components/Contact/Contact';
 import WorkExperience from '../../components/WorkExperience/WorkExperience';
+import WorkEntries from '../../components/WorkEntries/WorkEntries';
 
 const HomePage = () => {
     const { scrollYProgress } = useScroll();
@@ -25,8 +26,8 @@ const HomePage = () => {
                     <Nav />
                     <ParallaxHero opacity={opacity} scale={scale} translateY={translateY} />
                     <About id="about" />
-                    {/* Moving start up 100px  */}
                     <WorkExperience id="work" />
+                    <WorkEntries />
                     <Skills />
                     <Contact id="contact" />
                 </div>

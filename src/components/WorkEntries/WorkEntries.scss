@@ -4,8 +4,10 @@
     color: var(--dark);
 
     .entry {
+        position: relative;
         min-height: 300px;
         margin: 10px;
+        background-color: var(--light);
 
         .tab {
             position: relative;
