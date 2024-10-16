@@ -117,6 +117,11 @@
         z-index: 999;
         border-radius: 8px;
 
+        &:hover {
+            @extend %glitch-effect;
+            color: var(--orange);
+        }
+
         &.drawer-left {
             justify-content: flex-end;
             left: calc(87.5vw - 30px);

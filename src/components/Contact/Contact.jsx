@@ -25,7 +25,7 @@ const Contact = () => {
                 </div>
 
                 <footer>
-                    <button aria-label="Send an email">SEND AN EMAIL <i className="fas fa-arrow-right" /></button>
+                    <button aria-label="Send an email">EMAIL ME <i className="fas fa-arrow-right" /></button>
 
                     <div className="socials">
                         <a href="https://www.linkedin.com/in/dlopez6877" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">

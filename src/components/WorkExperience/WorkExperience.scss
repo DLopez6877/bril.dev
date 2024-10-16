@@ -12,6 +12,9 @@
         font-weight: 200;
 
         .headerline-letter {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(100px);
             will-change: transform;
         }
     }
@@ -96,95 +99,5 @@
                 grid-area: 2 / 1 / 5 / 5;
             }
         }
-    }
-
-    .entries {
-        padding: 10px 0px;
-        background-color: var(--light);
-        color: var(--dark);
-
-        .entry {
-            min-height: 300px;
-            margin: 10px;
-
-            .tab {
-                position: relative;
-                border-top: 1px dashed var(--dark);
-                height: 70px;
-                display: flex;
-                align-items: flex-end;
-
-                @media (min-width: 1024px) {
-                    height: 90px;
-                    padding-left: 80px;
-                }
-
-                .date {
-                    position: absolute;
-                    top: 0px;
-                    left: 0px;
-                    font-size: 0.65rem;
-
-                    @media (min-width: 1024px) {
-                        padding-left: 80px;
-                    }
-                }
-
-                .tab-label {
-                    font-weight: 800;
-                    font-size: 1.4rem;
-                    margin-bottom: 5px;
-
-                }
-            }
-
-            .contents {
-                position: relative;
-                background-color: var(--light);
-                border-bottom-left-radius: 5px;
-                border-bottom-right-radius: 5px;
-
-                p {
-                    font-size: 0.8rem;
-                    line-height: 1.1rem;
-                    font-weight: 500;
-                }
-
-                .work-link {
-                    padding: 5px 10px;
-                    border: 1px solid var(--dark);
-                    border-radius: 3px;
-                    font-size: 0.85rem;
-                    text-decoration: none;
-                }
-
-                .doodad {
-                    width: 100%;
-                    background-color: gray;
-                    height: 150px;
-                    margin-top: 20px;
-                }
-
-                .wave {
-                    width: 100%;
-                    height: 100%;
-                }
-
-                @media (min-width: 1024px) {
-                    padding: 20px 0 20px 80px;
-                    width: 50%;
-
-                    .doodad {
-                        position: absolute;
-                        width: 50%;
-                        top: 0;
-                        right: -75%;
-                        height: 80%;
-                    }
-                }
-            }
-        }
-
-
     }
 }

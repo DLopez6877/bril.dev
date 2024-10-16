@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import './About.scss';
 import aboutbg from '../../assets/aboutbg.png';
 import gsap from 'gsap';
@@ -7,13 +7,12 @@ import RoundMouse from '../../wrappers/RoundMouse/RoundMouse';
 import Typewriter from '../Typewriter/Typewriter';
 import GradientCanvas from '../GradientCanvas/GradientCanvas';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const About = () => {
     const containerRef = useRef(null);
     const bgImgRef = useRef(null);
     const headerRef = useRef(null);
     const bioRef = useRef(null);
+    const [isBioPinned, setIsBioPinned] = useState(false);
 
     useLayoutEffect(() => {
         const container = containerRef.current;
@@ -25,7 +24,7 @@ const About = () => {
         // Pin background image
         gsap.to(bgImg, {
             opacity: 0,
-            ease: 'power1.out',
+            ease: 'expo.inOut',
             scrollTrigger: {
                 trigger: container,
                 start: 'top top',
@@ -57,9 +56,9 @@ const About = () => {
                 scrub: true,
                 pin: bio,
                 pinSpacing: true,
-                onEnter: () => bio.classList.add('pinned'),
-                onLeave: () => bio.classList.remove('pinned'),
-                onLeaveBack: () => bio.classList.add('pinned'),
+                onEnter: () => setIsBioPinned(true),
+                // onLeave: () => setIsBioPinned(false),
+                onLeaveBack: () => setTimeout(setIsBioPinned(false), 1000),
                 onComplete: () => {
                     ScrollTrigger.getById('bioScrollTrigger').kill();
                 },
@@ -91,12 +90,12 @@ const About = () => {
                 <div className="about-content">
                     <h2 ref={headerRef} className="glow headline-text">ABOUT ME</h2>
                     <div ref={bioRef} className="about-bio container">
-                        <Typewriter delay={0} />
-                        <p className='bio-text text1'>I'm a PC gamer, former Magic the Gathering pro, current Hearthstone Battlegrounds enthusiast, board game aficionado, Lord of the Rings fanboy, and all-around nerd.</p>
-                        <p className='bio-text text2'>For the past seven years, I've worked as a full-stack software engineer. I started off as a frontend engineer, but as time went on, I found myself increasingly focused on backend work.</p>
-                        <p className='bio-text text3'>Its been great, but what drove me to this career was the creative outlet that frontend work provided me. I'm one of those crazies that love CSS. After years of navigating the dark depths of backend code and deployment pipelines, it's time to grab this Balrog of a career path by the horns and steer it in the direction I want.</p>
-                        <p className='bio-text text4'>I'm seeking a role as a senior frontend developer or an entry-level designer working with a world-class team.</p>
-                        <p className='bio-text text5'>Let's build Awwwards winning websites together.</p>
+                        {isBioPinned && <Typewriter className='seeking-opportunities' />}
+                        <p className='bio-text'>I'm a PC gamer, former Magic the Gathering pro, current Hearthstone Battlegrounds enthusiast, board game aficionado, Lord of the Rings fanboy, and all-around nerd.</p>
+                        <p className='bio-text'>For the past seven years, I've worked as a full-stack software engineer. I started off as a frontend engineer, but as time went on, I found myself increasingly focused on backend work.</p>
+                        <p className='bio-text'>Its been great, but what drove me to this career was the creative outlet that frontend work provided me. I'm one of those crazies that love CSS. After years of navigating the dark depths of backend code and deployment pipelines, it's time to grab this Balrog of a career path by the horns and steer it in the direction I want.</p>
+                        <p className='bio-text'>I'm seeking a role as a senior frontend developer or an entry-level designer working with a world-class team.</p>
+                        <p className='bio-text'>Let's build <span className='gradient'>Awwwards</span> winning websites together.</p>
                     </div>
                 </div>
             </div>
