@@ -3,32 +3,32 @@
     background-color: var(--dark);
     color: var(--light);
     clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
-    height: 40vh;
+    height: 40svh;
 
     @media only screen and (max-width: 768px) and (orientation: landscape) {
-        height: 100vh;
+        height: 100svh;
     }
 
     @media screen and (min-aspect-ratio: 2/1) {
-        height: 50vh;
+        height: 50svh;
     }
 
     .visible-content-container {
         position: fixed;
         width: 100%;
-        height: 40vh;
+        height: 40svh;
         bottom: 0;
         padding: 20px 20px 0px 20px;
         display: flex;
         flex-direction: column;
 
         @media only screen and (max-width: 768px) and (orientation: landscape) {
-            height: 100vh;
+            height: 100svh;
         }
 
 
         @media screen and (min-aspect-ratio: 2/1) {
-            height: 50vh;
+            height: 50svh;
         }
     }
 

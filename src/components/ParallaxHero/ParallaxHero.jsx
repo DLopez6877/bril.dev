@@ -40,30 +40,28 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
 
     return (
 
+
         <m.div
-            className="overlay"
-            style={{ opacity }}
-            transition={{ ease: "easeIn" }}
-        >
-            <m.div
-                className="parallax-hero-container"
-                onMouseMove={handleMouseMove}
-                style={{ scale, translateY }}
-                transition={{ ease: "easeIn" }}>
+            className="parallax-hero-container"
+            onMouseMove={handleMouseMove}
+            style={{ scale, translateY }}
+            transition={{ ease: "easeIn" }}>
 
-                <img
-                    className='parallax bg-img'
-                    src={bg}
-                    alt="Orange and blue background."
-                />
+            <img
+                className='parallax bg-img'
+                src={bg}
+                alt="Orange and blue background."
+            />
 
-                <>{/* #region __________ CODE __________ */}
-                    <h1 className="text parallax name">Bril Lopez</h1>
-                    <h2 className="text parallax frontend">Frontend</h2>
-                    <h2 className="text parallax developer dev">Dev</h2>
-                    <h2 className="text parallax developer">Developer</h2>
+            <>{/* #region __________ CODE __________ */}
+                <h1 className="text parallax name">Bril Lopez</h1>
+                <h2 className="text parallax frontend">Frontend</h2>
+                <h2 className="text parallax developer dev">Dev</h2>
+                <h2 className="text parallax developer">Developer</h2>
 
-                    {/* #region Code */}
+                {/* #region Code */}
+                <div className="code-text">
+
                     {/* css */}
                     <div className="parallax code css" style={{ transform: `translate(${xValue / 0.5}px, ${yValue / 0.5}px)` }}>
                         <InfiniteScrollText scrollSpeed={0.05} fontSize='3.07rem'>{cssCode}</InfiniteScrollText>
@@ -123,21 +121,21 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
                     <div className="parallax code kotlin" style={{ transform: `translate(${xValue / 3}px, ${yValue / 3}px)` }}>
                         <InfiniteScrollText scrollSpeed={0.18} direction='right' fontSize='0.80rem'>{kotlinCode}</InfiniteScrollText>
                     </div>
-                </>{/* #endregion CODE  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦ */}
 
-                <img
-                    className='parallax coder'
-                    src={useCoder2 ? coder2 : coder}
-                    alt="A headshot of a programmer wearing a hoodie."
-                    style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
-                />
-                <img
-                    className='parallax glasses'
-                    src={useCoder2 ? glasses2 : glasses}
-                    alt="A headshot of a programmer wearing a hoodie."
-                    style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
-                />
-            </m.div>
+                </div>
+            </>{/* #endregion CODE  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦ */}
+            <img
+                className='parallax coder'
+                src={useCoder2 ? coder2 : coder}
+                alt="A headshot of a programmer wearing a hoodie."
+                style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
+            />
+            <img
+                className='parallax glasses'
+                src={useCoder2 ? glasses2 : glasses}
+                alt="A headshot of a programmer wearing a hoodie."
+                style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
+            />
         </m.div>
     );
 };

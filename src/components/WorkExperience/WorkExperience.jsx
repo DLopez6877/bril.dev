@@ -39,7 +39,7 @@ const WorkExperience = () => {
 
         letterTimeline.fromTo(
             letters,
-            { y: '100vh' },
+            { y: '100svh' },
             { y: 0, duration: 0.5, stagger: 0.1 }
         );
 
@@ -88,7 +88,7 @@ const WorkExperience = () => {
 
         gsap.fromTo(
             shoutout,
-            { x: '100vw' },
+            { x: '100svw' },
             {
                 x: 0,
                 duration: 0.5,

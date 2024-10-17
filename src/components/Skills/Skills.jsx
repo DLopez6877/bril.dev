@@ -42,7 +42,7 @@ const Skills = () => {
 
     return (
         <div className="skills-container">
-            <InfiniteScrollText className='scroll-text' scrollSpeed={0.3} direction='left' reverseOnScroll='false' fontSize='13.5vw'>SOME MAD SKILLS</InfiniteScrollText>
+            <InfiniteScrollText className='scroll-text' scrollSpeed={0.3} direction='left' reverseOnScroll='false' fontSize='13.5svw'>SOME MAD SKILLS</InfiniteScrollText>
             <div className="input-wrapper">
                 <input
                     type="text"

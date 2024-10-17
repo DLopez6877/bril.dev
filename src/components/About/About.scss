@@ -3,14 +3,14 @@
     display: flex;
     flex-direction: column;
     color: var(--light);
-    padding-top: 50vh;
+    padding-top: 50svh;
     height: fit-content;
 
 
     .about-bg-img {
         position: absolute;
         top: 0;
-        height: 100vh;
+        height: 100svh;
         width: 100%;
         object-fit: cover;
         z-index: 0;
@@ -23,7 +23,7 @@
     .headline-text {
         margin: 0;
         text-align: center;
-        font-size: 9.3333333333vw;
+        font-size: 9.3333333333svw;
         line-height: .8rem;
         letter-spacing: .3rem;
         font-family: var(--font-secondary);
@@ -37,7 +37,7 @@
         display: flex;
         flex-direction: column;
         color: var(--light);
-        margin-top: 30vh;
+        margin-top: 30svh;
         max-width: 1000px;
 
         .bio-text {
@@ -63,7 +63,7 @@
         }
 
         .bio-text:last-child {
-            margin-bottom: 20vh;
+            margin-bottom: 20svh;
         }
 
         .gradient {

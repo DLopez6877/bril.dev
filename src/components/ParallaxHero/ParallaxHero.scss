@@ -1,6 +1,7 @@
 .parallax-hero-container {
-    width: 100vw;
-    height: 100vh;
+    width: 100svw;
+    height: 100svh;
+    position: relative;
     overflow: hidden;
 
     .parallax {
@@ -75,9 +76,12 @@
         overflow: hidden;
     }
 
-    // ▓▒░  Code
+    // #region __________ CODE __________
     .code {
         position: absolute;
+        overflow-x: hidden;
+        width: 100svw;
+        text-wrap: nowrap;
         white-space: pre;
         color: rgba(var(--green-rgb), 0);
         font-family: --mono;
@@ -184,6 +188,8 @@
         }
     }
 
+    // #endregion END CODE  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦
+
     @keyframes code-anim {
         from {
             color: rgba(var(--green-rgb), 0);
@@ -199,13 +205,21 @@
         z-index: 16;
         width: auto;
         height: 100%;
-        left: clamp(-75%, -75% + (15 * ((100vw - 320px) / 70)), 0%);
+        left: clamp(-75%, -75% + (15 * ((100svw - 320px) / 70)), 0%);
         bottom: -20px;
         object-fit: contain;
     }
 
     .glasses {
         z-index: 19;
+    }
+
+    @media (min-width: 415px) {
+
+        .text.developer:not(.dev) {
+            font-size: 1rem;
+            opacity: 0;
+        }
     }
 
     @media (min-width: 450px) {

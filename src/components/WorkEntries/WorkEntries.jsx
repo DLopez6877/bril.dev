@@ -18,11 +18,11 @@ const WorkEntries = () => {
             gsap.to(entry, {
                 scrollTrigger: {
                     trigger: entry,
-                    start: `top-=${offset} top`,
+                    start: `top top+=${offset}`,
                     endTrigger: container,
-                    end: `bottom bottom`,
+                    end: `bottom 50%`,
                     pin: true,
-                    pinSpacing: false,
+                    pinSpacing: index === entries.length - 1 ? true : false,
                     scrub: true,
                 },
             });

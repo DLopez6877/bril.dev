@@ -183,7 +183,7 @@ export const pulse = {
 };
 
 export const swingIn = {
-    hidden: { x: '-100vw' },
+    hidden: { x: '-100svw' },
     visible: {
         x: 0,
         transition: {
