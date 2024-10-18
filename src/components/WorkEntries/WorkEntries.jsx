@@ -32,7 +32,7 @@ const WorkEntries = () => {
 
 
     return (
-        <div ref={containerRef} className="work-entries-container">
+        <div id="work" ref={containerRef} className="work-entries-container">
             <div className="entry">
                 <div className="tab">
                     <p className="date">2006 - 2014</p>

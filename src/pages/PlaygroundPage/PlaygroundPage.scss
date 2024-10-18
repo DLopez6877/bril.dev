@@ -1,6 +1,6 @@
 @import '../../styles/variables.scss';
 
-// region ▂▃▅▇█▓▒░    CONSTANTS    ░▒▓█▇▅▃▂
+// #region __________ CONSTANTS __________
 .playground-link {
     position: fixed;
     bottom: 0;
@@ -15,12 +15,18 @@
     align-items: center;
 }
 
+.playground-container {
+    position: relative;
+    background-color: rebeccapurple;
+    min-height: 100vh;
+}
+
 // endregion END CONSTANTS  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦
 
 
 .playground-container {
-    position: relative;
     // __________ CODE BELOW HERE __________
+
 
 
 

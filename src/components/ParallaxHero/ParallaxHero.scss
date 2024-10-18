@@ -44,9 +44,9 @@
 
     h2 {
         z-index: 15;
-        top: 50%;
+        top: 70%;
         left: 10%;
-        font-size: 4.2rem;
+        font-size: 3.5rem;
         line-height: 0.88;
         font-family: var(--secondary);
 
@@ -59,7 +59,7 @@
         }
 
         &.developer {
-            top: calc(50% + 3.9rem)
+            top: calc(70% + 3.9rem)
         }
     }
 
@@ -79,10 +79,6 @@
     // #region __________ CODE __________
     .code {
         position: absolute;
-        overflow-x: hidden;
-        width: 100svw;
-        text-wrap: nowrap;
-        white-space: pre;
         color: rgba(var(--green-rgb), 0);
         font-family: --mono;
         animation: code-anim 5s var(--ease-in-out) forwards;
@@ -93,6 +89,7 @@
             top: 75.62%;
             opacity: 1;
             animation-delay: 0.22s;
+            font-size: 3.07rem;
         }
 
         // js
@@ -102,6 +99,7 @@
             opacity: 0.8;
             color: var(--green);
             animation: none;
+            font-size: 2.92rem;
         }
 
         // html
@@ -111,22 +109,25 @@
             opacity: 0.8;
             color: var(--green);
             animation: none;
+            font-size: 2.85rem;
         }
 
         // python
         &.python {
             z-index: 4;
-            top: 6.48%;
+            top: 56.48%;
             opacity: 0.7;
             animation-delay: 0.74s;
+            font-size: 2.62rem;
         }
 
         // csharp
         &.csharp {
             z-index: 5;
-            top: 24.92%;
+            top: 32.92%;
             opacity: 0.5;
             animation-delay: 1.84s;
+            font-size: 2.39rem;
         }
 
         // sql
@@ -135,6 +136,7 @@
             top: 45.37%;
             opacity: 0.7;
             animation-delay: 2.36s;
+            font-size: 2.16rem;
         }
 
         // java
@@ -143,6 +145,7 @@
             top: 85.00%;
             opacity: 0.9;
             animation-delay: 2.64s;
+            font-size: 1.94rem;
         }
 
         // test
@@ -151,6 +154,7 @@
             top: 65.21%;
             opacity: 0.45;
             animation-delay: 1.29s;
+            font-size: 1.71rem;
         }
 
         // powershell
@@ -159,6 +163,7 @@
             top: 20.58%;
             opacity: 0.35;
             animation-delay: 2.85s;
+            font-size: 1.48rem;
         }
 
         // go
@@ -167,6 +172,7 @@
             top: 50.98%;
             opacity: 0.25;
             animation-delay: 3.02s;
+            font-size: 1.25rem;
         }
 
         // ruby
@@ -176,6 +182,7 @@
             opacity: 0.85;
             color: var(--green);
             animation: none;
+            font-size: 1.03rem;
         }
 
         // kotlin
@@ -185,6 +192,7 @@
             opacity: 0.3;
             color: var(--green);
             animation: none;
+            font-size: 0.80rem;
         }
     }
 
@@ -251,7 +259,7 @@
         }
 
         .code.js {
-            top: 55%
+            top: 25%
         }
 
         .code.css {

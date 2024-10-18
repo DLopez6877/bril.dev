@@ -24,6 +24,11 @@
             position: relative;
             margin: 0 auto;
             width: fit-content;
+
+            a {
+                color: var(--green);
+                text-decoration: none;
+            }
         }
 
         span {
@@ -35,8 +40,10 @@
 
         &:hover {
             @extend %glitch-effect;
-            color: var(--orange);
-            background-color: rgba(var(--green-rgb), 0.08);
+
+            a {
+                color: var(--orange);
+            }
         }
 
     }

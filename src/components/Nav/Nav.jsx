@@ -3,8 +3,9 @@ import './Nav.scss';
 import logo from '../../assets/logo-filled.png';
 import DrawerContent from '../DrawerContent/DrawerContent';
 import { motion as m, AnimatePresence } from "framer-motion"
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { NavButtonVariants } from '../../lib/variants';
+import { useLenis } from '@studio-freight/react-lenis';
 
 const Nav = () => {
     const [bottomConstraint, setBottomConstraint] = useState(0);
@@ -15,6 +16,19 @@ const Nav = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const menuNavRef = useRef(null);
     const drawerRef = useRef(null);
+    const location = useLocation();
+    const lenis = useLenis();
+
+    useEffect(() => {
+        if (!lenis) return;
+        console.log('called')
+        if (location.hash) {
+            const element = document.querySelector(location.hash);
+            if (element) {
+                lenis.scrollTo(element, { duration: 1.2 });
+            }
+        }
+    }, [location]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -90,7 +104,7 @@ const Nav = () => {
                 animate={{ y: isScrolled ? '-100%' : 0 }}
                 transition={{ type: 'spring', stiffness: 200, damping: 20, delay: isScrolled ? 0 : 0.8 }}
             >
-                <Link to="/" className='logo'><img height={30} src={logo} alt="Bril Logo." /></Link>
+                <Link to="/playground" className='logo'><img height={30} src={logo} alt="Bril Logo." /></Link>
                 <div className="links">
                     <Link to="#about" className='nav-link'><span aria-hidden="true">About</span>
                         About

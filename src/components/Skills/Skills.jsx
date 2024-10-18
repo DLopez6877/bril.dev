@@ -41,8 +41,11 @@ const Skills = () => {
     const resultCount = filteredSkills.length;
 
     return (
-        <div className="skills-container">
-            <InfiniteScrollText className='scroll-text' scrollSpeed={0.3} direction='left' reverseOnScroll='false' fontSize='13.5svw'>SOME MAD SKILLS</InfiniteScrollText>
+        <div id="skills" className="skills-container">
+            <div className="marque-spacer" aria-hidden='true'>spacer</div>
+            <div className="marque">
+                <InfiniteScrollText className='scroll-text' scrollSpeed={0.7} direction='right'>SKILLS SKILLS SKILLS SKILLS SKILLS</InfiniteScrollText>
+            </div>
             <div className="input-wrapper">
                 <input
                     type="text"

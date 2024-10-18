@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './PlaygroundPage.scss';
 import { Link } from 'react-router-dom';
+import PageTransition from '../../wrappers/PageTransition/PageTransition';
 import SmoothScroll from '../../wrappers/SmoothScroll';
 
 const PlaygroundPage = () => {
@@ -14,21 +15,16 @@ const PlaygroundPage = () => {
 
     return (
         <>
-            hello
-            <SmoothScroll>
-                <Link className="playground-link" to="/">H</Link>
-                <div className="playground-container" data-scroll-container>
+            <PageTransition>
+                <SmoothScroll>
+                    <Link className="playground-link" to="/">H</Link>
+                    <div className="playground-container" data-scroll-container>
 
 
 
 
-                    {/* ▂▃▅▇█▓▒░    TEMP CODE BELOW HERE    ░▒▓█▇▅▃▂ */}
-
-
-
-
-
-
+                        {/* ▂▃▅▇█▓▒░    TEMP CODE BELOW HERE    ░▒▓█▇▅▃▂ */}
+                        hello world
 
 
 
@@ -61,9 +57,16 @@ const PlaygroundPage = () => {
 
 
 
-                </div>
-                {/* END OF TEMP AREA  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦ */}
-            </SmoothScroll>
+
+
+
+
+
+
+                    </div>
+                    {/* END OF TEMP AREA  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦ */}
+                </SmoothScroll>
+            </PageTransition>
         </>
 
     );

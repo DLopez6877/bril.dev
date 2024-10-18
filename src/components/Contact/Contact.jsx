@@ -4,7 +4,7 @@ import GradientCanvas from '../GradientCanvas/GradientCanvas';
 
 const Contact = () => {
     return (
-        <div className="contact-container">
+        <div id="contact" className="contact-container">
             <div className="visible-content-container">
 
                 <div className="content">

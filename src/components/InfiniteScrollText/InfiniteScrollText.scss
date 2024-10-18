@@ -1,9 +1,10 @@
 .infinite-scroll-text-container {
+    position: relative;
 
     .slider {
         position: relative;
         white-space: nowrap;
-        will-change: transform;
+        // will-change: transform;
     }
 
     .slider p {
