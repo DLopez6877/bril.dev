@@ -21,7 +21,6 @@ const Nav = () => {
 
     useEffect(() => {
         if (!lenis) return;
-        console.log('called')
         if (location.hash) {
             const element = document.querySelector(location.hash);
             if (element) {
@@ -45,10 +44,12 @@ const Nav = () => {
             if (menuNavRef.current) {
                 const viewportHeight = window.innerHeight;
                 const menuNavHeight = menuNavRef.current.offsetHeight;
-                setBottomConstraint(viewportHeight - menuNavHeight);
+                const bottomPaddingPx = 20;
+                setBottomConstraint(viewportHeight - menuNavHeight - bottomPaddingPx);
                 const viewportWidth = window.innerWidth;
                 const menuNavWidth = menuNavRef.current.offsetWidth;
-                setLeftConstraint(viewportWidth - menuNavWidth);
+                const leftPaddingPx = 20;
+                setLeftConstraint(viewportWidth - menuNavWidth - leftPaddingPx);
             }
         };
 
@@ -136,8 +137,8 @@ const Nav = () => {
 
                 dragConstraints={{
                     top: 0,
-                    left: 0,
-                    right: leftConstraint,
+                    left: leftConstraint * -1,
+                    right: 0,
                     bottom: bottomConstraint
                 }}
             >
@@ -153,8 +154,6 @@ const Nav = () => {
                             className={`drawer dark-glass ${drawerSide}`}
                             style={{
                                 [drawerSide]: 0,
-                                // borderLeft: drawerSide === 'left' ? 'none' : '8px solid rgb(169, 244, 58)',
-                                // borderRight: drawerSide === 'right' ? 'none' : '8px solid rgb(169, 244, 58)',
                             }}
                             initial={{ x: drawerSide === 'left' ? '-100%' : '100%' }}
                             animate={{ x: 0 }}

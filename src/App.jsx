@@ -43,7 +43,7 @@ function App() {
   B   B  R  R    I   L    
   BBBB   R   R  III  LLLLL    !!
   `);
-    // setLoading(false);
+    setLoading(false);
   };
 
   return (

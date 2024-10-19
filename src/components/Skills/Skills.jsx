@@ -42,10 +42,6 @@ const Skills = () => {
 
     return (
         <div id="skills" className="skills-container">
-            <div className="marque-spacer" aria-hidden='true'>spacer</div>
-            <div className="marque">
-                <InfiniteScrollText className='scroll-text' scrollSpeed={0.7} direction='right'>SKILLS SKILLS SKILLS SKILLS SKILLS</InfiniteScrollText>
-            </div>
             <div className="input-wrapper">
                 <input
                     type="text"
