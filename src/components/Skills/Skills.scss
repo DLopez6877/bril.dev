@@ -129,6 +129,7 @@
             padding-right: 10px;
             scrollbar-width: thin;
             scrollbar-color: var(--orange) transparent;
+            scrollbar-gutter: stable;
 
             &::-webkit-scrollbar {
                 width: 8px;

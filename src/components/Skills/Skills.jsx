@@ -1,13 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import './Skills.scss';
 import skillsData from './SkillsData.js';
-import InfiniteScrollText from '../InfiniteScrollText/InfiniteScrollText.jsx';
+import gsap from 'gsap';
 
 
 const Skills = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [suggestions, setSuggestions] = useState([]);
     const [selectedTag, setSelectedTag] = useState('');
+    const skillsListRef = useRef(null);
+    const containerRef = useRef(null);
+
+    useLayoutEffect(() => {
+        const skillsList = skillsListRef.current;
+        const container = containerRef.current;
+
+        gsap.fromTo(
+            skillsList,
+            { y: -60 },
+            {
+                y: 0,
+                duration: 1,
+                ease: 'bounce.out',
+                scrollTrigger: {
+                    trigger: container,
+                    start: 'bottom top'
+                },
+            }
+        );
+    })
 
     const handleInputChange = (e) => {
         const value = e.target.value;
@@ -41,7 +62,7 @@ const Skills = () => {
     const resultCount = filteredSkills.length;
 
     return (
-        <div id="skills" className="skills-container">
+        <div id="skills" useRef={containerRef} className="skills-container">
             <div className="input-wrapper">
                 <input
                     type="text"
@@ -78,7 +99,7 @@ const Skills = () => {
                     ))}
                 </div>
 
-                <div className="skills-list">
+                <div ref={skillsListRef} className="skills-list">
                     {resultCount > 0 ? (
                         filteredSkills.map(skill => (
                             <div key={skill.name} className="pill">

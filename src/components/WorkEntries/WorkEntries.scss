@@ -1,13 +1,20 @@
+$entry-padding: 10px;
+
 .work-entries-container {
-    padding: 10px 0px;
     background-color: var(--light);
     color: var(--dark);
 
     .entry {
         position: relative;
+        width: 100%;
         min-height: 300px;
-        margin: 10px;
+        margin: 0;
         background-color: var(--light);
+
+        .tab,
+        .contents {
+            padding: 0px $entry-padding;
+        }
 
         .tab {
             position: relative;
@@ -26,6 +33,7 @@
                 top: 0px;
                 left: 0px;
                 font-size: 0.65rem;
+                padding-left: $entry-padding;
 
                 @media (min-width: 1024px) {
                     padding-left: 80px;
@@ -36,6 +44,7 @@
                 font-weight: 800;
                 font-size: 1.4rem;
                 margin-bottom: 5px;
+                margin-top: 0;
 
             }
         }
@@ -45,6 +54,7 @@
             background-color: var(--light);
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
+            padding-bottom: $entry-padding;
 
             p {
                 font-size: 0.8rem;
@@ -58,6 +68,10 @@
                 border-radius: 3px;
                 font-size: 0.85rem;
                 text-decoration: none;
+                margin-left: auto;
+                display: block;
+                width: fit-content;
+                color: var(--dark);
             }
 
             .doodad {
