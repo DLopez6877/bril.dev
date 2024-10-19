@@ -11,10 +11,38 @@
     href="https://fonts.googleapis.com/css2?family=Anton&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap"
     rel="stylesheet">
   <title>Bril Lopez Portfolio</title>
+  <style>
+    #preloader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: black;
+      z-index: 999;
+    }
+  </style>
 </head>
 
 <body>
+  <div id="preloader">
+    <img src="./src/assets/logo-filled.png" alt="Loading Logo..." />
+  </div>
+
   <div id="root"></div>
+
+  <script>
+    window.addEventListener("load", () => {
+      const preloader = document.getElementById("preloader");
+      if (preloader) {
+        preloader.style.opacity = '0';
+        setTimeout(() => preloader.remove(), 500);
+      }
+    });
+  </script>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 

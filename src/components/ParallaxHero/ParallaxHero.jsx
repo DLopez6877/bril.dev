@@ -3,8 +3,10 @@ import './ParallaxHero.scss';
 import bg from '../../assets/herobg.png';
 import coder from '../../assets/coder.png';
 import coder2 from '../../assets/coder2.png';
+import coder3 from '../../assets/coder3.png';
 import glasses from '../../assets/glasses.png';
 import glasses2 from '../../assets/glasses2.png';
+import glasses3 from '../../assets/glasses3.png';
 import InfiniteScrollText from '../InfiniteScrollText/InfiniteScrollText';
 import { motion as m } from 'framer-motion';
 
