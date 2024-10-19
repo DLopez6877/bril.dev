@@ -61,7 +61,7 @@ const LoadingPage = ({ onComplete }) => {
             timers.push(timer);
         }
 
-        redirectIfLoaded(5000);
+        redirectIfLoaded(500);
 
         return () => {
             for (const timer of timers) {

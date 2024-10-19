@@ -1,24 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion as m } from 'framer-motion';
 import './DrawerContent.scss';
 import { NavContainerVariants, NavWordVariants } from '../../lib/variants';
-import { useLenis } from '@studio-freight/react-lenis';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const DrawerContent = ({ drawerSide }) => {
-    const location = useLocation();
-    const lenis = useLenis();
 
-    useEffect(() => {
-        if (!lenis) return;
-        if (location.hash) {
-            const element = document.querySelector(location.hash);
-            if (element) {
-                lenis.scrollTo(element, { duration: 1.2 });
-            }
-        }
-    }, [location]);
     return (
         <m.div
             className="drawer-content-container"
