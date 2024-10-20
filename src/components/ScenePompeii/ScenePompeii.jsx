@@ -39,7 +39,7 @@ const ScenePompeii = () => {
         let position = 0;
 
         const gltfLoader = new GLTFLoader();
-        gltfLoader.load('/public/assets/models/room_amorini_dorati_house__pompeii/scene.gltf', function (gltf) {
+        gltfLoader.load('/assets/models/room_amorini_dorati_house__pompeii/scene.gltf', function (gltf) {
             const model = gltf.scene;
             scene.add(model);
 

@@ -23,7 +23,7 @@ const HomePage = () => {
         <SmoothScroll>
             <div className="home-page-container" data-scroll-container>
                 <Nav />
-                <ParallaxHero opacity={opacity} scale={scale} translateY={translateY} />
+                <ParallaxHero />
                 <LazyAbout />
                 <LazyWorkExperience />
                 <LazyWorkEntries />

@@ -14,7 +14,7 @@ import glasses2 from '../../assets/glasses2.png';
 
 
 
-const ParallaxHero = ({ opacity, scale, translateY }) => {
+const ParallaxHero = () => {
     const cssCode = 'body { background-color: #1d1f21; color: #c5c8c6; font-family: \'Courier New\', monospace; } h1 { font-size: 4em; text-shadow: 2px 2px #00ff00; }';
     const jsCode = 'const generateRandomCode = () => { const chars = \'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\'; let code = \'\'; for (let i = 0; i < 8; i++) { code += chars.charAt(Math.floor(Math.random() * chars.length)); } return code; }; console.log(generateRandomCode());';
     const htmlCode = '<p>Why don\'t skeletons fight each other? <span style="visibility:hidden;">Because they don\'t have the guts!</span> But seriously, I think they just prefer to keep things < span style = "visibility:hidden;" > bare - bones.</span ></p>';
@@ -48,21 +48,6 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
         });
     }, []);
 
-    useEffect(() => {
-        const forceRepaint = () => {
-            document.body.style.transform = 'translateZ(0)';
-            setTimeout(() => {
-                document.body.style.transform = '';
-            }, 100);
-        };
-
-        window.addEventListener('load', forceRepaint);
-
-        return () => {
-            window.removeEventListener('load', forceRepaint);
-        };
-    }, []);
-
     const handleMouseMove = (e) => {
         const xOffset = (window.innerWidth / 2 - e.clientX) / 25;
         const yOffset = (window.innerHeight / 2 - e.clientY) / 25;
@@ -76,7 +61,6 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
         <m.div
             className="parallax-hero-container"
             onMouseMove={handleMouseMove}
-            style={{ scale, translateY }}
             transition={{ ease: "easeIn" }}>
 
             <img
