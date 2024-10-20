@@ -44,7 +44,7 @@ const WorkEntries = () => {
                     <p>As a Signal Support Systems Specialist in the Washington Army National Guard, I maintained and troubleshooted communication systems, including radios, satellites, and networks. I ensured secure, reliable connections and trained others to use the equipment, keeping operations running smoothly.</p>
                     <Link to="/playground" className='work-link'>Learn more</Link>
                     <div className="scene-container">
-                        <ScenePompeii />
+                        <SceneSimple />
                     </div>
                 </div>
             </div>

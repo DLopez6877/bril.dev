@@ -1,4 +1,4 @@
-class TextSplitter {
+class CharacterSplitter {
     constructor(selector, spaceLength = '0.5em', className = '') {
         this.elements = document.querySelectorAll(selector);
         this.spaceLength = spaceLength;
@@ -48,4 +48,4 @@ class TextSplitter {
     }
 }
 
-export default TextSplitter;
+export default CharacterSplitter;

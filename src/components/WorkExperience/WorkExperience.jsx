@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './WorkExperience.scss';
-import TextSplitter from '../../wrappers/TextSplitter';
+import CharacterSplitter from '../../wrappers/CharacterSplitter';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import collab from '../../assets/collab.jpg';
@@ -14,7 +14,7 @@ const WorkExperience = () => {
     const imagesRef = useRef(null);
 
     useEffect(() => {
-        new TextSplitter('.work-history', '0.5em', 'work-history-letter');
+        new CharacterSplitter('.work-history', '0.5em', 'work-history-letter');
 
         const letters = gsap.utils.toArray('.work-history-letter');
         const workingImage = imagesRef.current.querySelector('.working');

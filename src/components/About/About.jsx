@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Typewriter from '../Typewriter/Typewriter';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
-import TextSplitter from '../../wrappers/TextSplitter';
+import WordSplitter from '../../wrappers/WordSplitter';
 
 const About = () => {
     const containerRef = useRef(null);
@@ -64,7 +64,7 @@ const About = () => {
             },
         });
 
-        new TextSplitter('.bio-text');
+        new WordSplitter('.bio-text');
 
         const bioChars = bio.querySelectorAll('.bio-text span');
 
@@ -73,14 +73,14 @@ const About = () => {
             {
                 opacity: 0,
                 y: 20,
-                rotateX: 70,
+                rotateX: 100,
             },
             {
                 opacity: 1,
                 y: 0,
                 rotateX: 0,
-                stagger: 0.02,
-                duration: 10,
+                stagger: 0.22,
+                duration: 1,
                 scrollTrigger: {
                     trigger: bio,
                     start: 'top 20%',
@@ -108,7 +108,7 @@ const About = () => {
                     <p className='bio-text'>For the past seven years, I've worked as a full-stack software engineer. I started off as a frontend engineer, but as time went on, I found myself increasingly focused on backend work.</p>
                     <p className='bio-text'>Its been great, but what drove me to this career was the creative outlet that frontend work provided me. I'm one of those crazies that love CSS. After years of navigating the dark depths of backend code and deployment pipelines, it's time to grab this Balrog of a career path by the horns and steer it in the direction I want.</p>
                     <p className='bio-text'>I'm seeking a role as a senior frontend developer or an entry-level designer working with a world-class team.</p>
-                    <p className='bio-text'>Let's build <span className='gradient'>Awwwards</span> winning websites together.</p>
+                    <p className='bio-text'>Let's build Awwwards winning websites together.</p>
                 </div>
             </div>
         </div>
