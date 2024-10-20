@@ -4,7 +4,6 @@ import aboutbg from '../../assets/aboutbg.png';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Typewriter from '../Typewriter/Typewriter';
-import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import WordSplitter from '../../wrappers/WordSplitter';
 
 const About = () => {
@@ -98,7 +97,6 @@ const About = () => {
 
     return (
         <div id="about" ref={containerRef} className="about-container">
-            {/* <VideoPlayer /> */}
             <img ref={bgImgRef} className="about-bg-img" src={aboutbg} alt="Background of orange geometric trees with a blue sunrise." />
             <div className="about-content">
                 <h2 ref={headerRef} className="glow headline-text">ABOUT ME</h2>
