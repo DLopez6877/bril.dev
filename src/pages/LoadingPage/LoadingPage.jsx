@@ -4,6 +4,8 @@ import './LoadingPage.scss';
 import logo from '../../assets/logo-filled.png'
 import PageTransition from '../../wrappers/PageTransition/PageTransition';
 
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
 
 // LAZY LOADED ASSETS
 import bg from '../../assets/herobg.png';
@@ -20,6 +22,7 @@ const LoadingPage = ({ onComplete }) => {
         const preloadContent = () => {
             const imagesToPreload = [bg, coder, coder2, glasses, glasses2];
 
+            // preload images 
             const loadImages = imagesToPreload.map((src) => {
                 return new Promise((resolve, reject) => {
                     const img = new Image();
@@ -29,15 +32,32 @@ const LoadingPage = ({ onComplete }) => {
                 });
             });
 
-            Promise.all(loadImages)
+            // preload three.js
+            const preloadThreeJSAssets = () => {
+                return new Promise((resolve, reject) => {
+                    const gltfLoader = new GLTFLoader();
+
+                    gltfLoader.load('/public/assets/models/room_amorini_dorati_house__pompeii/scene.gltf', (gltf) => {
+                        console.log('GLTF model loaded');
+                        resolve();
+                    }, undefined, (error) => {
+                        console.error('Error loading GLTF model:', error);
+                        reject(error);
+                    });
+                });
+            };
+
+            // Wait for all assets
+            Promise.all([...loadImages, preloadThreeJSAssets()])
                 .then(() => {
-                    console.log('Loaded!');
+                    console.log('All assets loaded!');
                     setLoading(false);
                 })
                 .catch((error) => {
                     console.error('Error preloading assets', error);
                     setLoading(false);
                 });
+
         };
 
         preloadContent();

@@ -20,12 +20,16 @@ const Skills = () => {
             { y: -60 },
             {
                 y: 0,
-                duration: 1,
+                duration: 1.5,
+                delay: 0.7,
                 ease: 'bounce.out',
                 scrollTrigger: {
                     trigger: container,
                     start: 'bottom top'
                 },
+                onComplete: () => {
+                    skillsList.classList.add('completed');
+                }
             }
         );
     })
@@ -62,7 +66,7 @@ const Skills = () => {
     const resultCount = filteredSkills.length;
 
     return (
-        <div id="skills" useRef={containerRef} className="skills-container">
+        <div id="skills" ref={containerRef} className="skills-container">
             <div className="input-wrapper">
                 <input
                     type="text"

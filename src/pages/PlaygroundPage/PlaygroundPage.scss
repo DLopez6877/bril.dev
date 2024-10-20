@@ -16,8 +16,8 @@
 }
 
 .playground-container {
+    background-color: wheat;
     position: relative;
-    background-color: rebeccapurple;
     min-height: 100vh;
 }
 
@@ -26,7 +26,16 @@
 
 .playground-container {
     // __________ CODE BELOW HERE __________
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    .three-container {
+        width: 100%;
+        height: 300px;
+        border: 2px solid green;
+        background-color: blue;
+    }
 
 
 

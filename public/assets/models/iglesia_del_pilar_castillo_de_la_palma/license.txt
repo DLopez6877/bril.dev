@@ -1,0 +1,11 @@
+Model Information:
+* title:	Iglesia del Pilar, Castillo de la Palma
+* source:	https://sketchfab.com/3d-models/iglesia-del-pilar-castillo-de-la-palma-d8d812ca7f614816b8a00116f43bef38
+* author:	Alejandro Martínez (https://sketchfab.com/alexalcru)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Iglesia del Pilar, Castillo de la Palma" (https://sketchfab.com/3d-models/iglesia-del-pilar-castillo-de-la-palma-d8d812ca7f614816b8a00116f43bef38) by Alejandro Martínez (https://sketchfab.com/alexalcru) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

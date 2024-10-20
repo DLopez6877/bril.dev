@@ -124,12 +124,17 @@
             flex-wrap: wrap;
             align-content: flex-start;
             justify-content: flex-start;
-            overflow-y: auto;
+            overflow-y: scroll;
             width: 100%;
             padding-right: 10px;
             scrollbar-width: thin;
             scrollbar-color: var(--orange) transparent;
             scrollbar-gutter: stable;
+            will-change: transform;
+
+            &.completed {
+                transform: translateY(0px) !important;
+            }
 
             &::-webkit-scrollbar {
                 width: 8px;

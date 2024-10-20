@@ -3,6 +3,7 @@ import './PlaygroundPage.scss';
 import { Link } from 'react-router-dom';
 import PageTransition from '../../wrappers/PageTransition/PageTransition';
 import SmoothScroll from '../../wrappers/SmoothScroll';
+import ScenePompeii from '../../components/ScenePompeii/ScenePompeii';
 
 const PlaygroundPage = () => {
     useEffect(() => {
@@ -24,8 +25,9 @@ const PlaygroundPage = () => {
 
 
                         {/* ▂▃▅▇█▓▒░    TEMP CODE BELOW HERE    ░▒▓█▇▅▃▂ */}
-                        hello world
-
+                        <div className="three-container">
+                            <ScenePompeii />
+                        </div>
 
 
 
