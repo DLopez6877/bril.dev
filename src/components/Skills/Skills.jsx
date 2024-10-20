@@ -69,6 +69,7 @@ const Skills = () => {
         <div id="skills" ref={containerRef} className="skills-container">
             <div className="input-wrapper">
                 <input
+                    name='skills'
                     type="text"
                     placeholder="Search skills..."
                     value={searchTerm}

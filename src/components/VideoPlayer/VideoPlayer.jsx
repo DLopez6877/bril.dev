@@ -12,7 +12,7 @@ const VideoPlayer = () => {
             <video
                 src={fire}
                 autoPlay
-                loop={false}
+                loop
                 muted
                 playsInline
                 className="fullscreen-video"

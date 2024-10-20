@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './ParallaxHero.scss';
 import bg from '../../assets/herobg.png';
-import coder from '../../assets/coder.png';
-import coder2 from '../../assets/coder2.png';
-import glasses from '../../assets/glasses.png';
-import glasses2 from '../../assets/glasses2.png';
 import InfiniteScrollText from '../InfiniteScrollText/InfiniteScrollText';
 import { motion as m } from 'framer-motion';
+
+
+import coder1 from '../../assets/coder1.png';
+import coder2 from '../../assets/coder2.png';
+import glasses1 from '../../assets/glasses1.png';
+import glasses2 from '../../assets/glasses2.png';
+
+
+
+
 
 const ParallaxHero = ({ opacity, scale, translateY }) => {
     const cssCode = 'body { background-color: #1d1f21; color: #c5c8c6; font-family: \'Courier New\', monospace; } h1 { font-size: 4em; text-shadow: 2px 2px #00ff00; }';
@@ -22,14 +28,20 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
     const rubyCode = 'fibo = [0, 1]; (2..29).each { |i| fibo << fibo[-1] + fibo[-2] }; puts "First 30 Fibonacci numbers: " + fibo.map.with_index { |num, idx| "#{idx + 1}: #{num}" }.join(\', \')';
     const kotlinCode = 'class CardFactory { fun createCard(type: String): Card = when(type) { "creature" -> CreatureCard("Goblin", 1, 1); "spell" -> SpellCard("Fireball", "Deal 3 damage"); "artifact" -> ArtifactCard("Black Lotus", "Sacrifice for 3 mana of any color"); else -> LandCard("Mountain") } }';
 
+    const coderImages = [coder1, coder2];
+    const glassesImages = [glasses1, glasses2];
+
+    const [selectedCoder, setSelectedCoder] = useState(null);
+    const [selectedGlasses, setSelectedGlasses] = useState(null);
     const [xValue, setXValue] = useState(0);
     const [yValue, setYValue] = useState(0);
 
-    const [useCoder2, setUseCoder2] = useState(false);
-
     useEffect(() => {
-        const preloadImages = [bg, coder, coder2, glasses, glasses2];
+        const randomIndex = Math.floor(Math.random() * coderImages.length);
+        setSelectedCoder(coderImages[randomIndex]);
+        setSelectedGlasses(glassesImages[randomIndex]);
 
+        const preloadImages = [bg, ...coderImages, ...glassesImages];
         preloadImages.forEach(src => {
             const img = new Image();
             img.src = src;
@@ -49,10 +61,6 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
         return () => {
             window.removeEventListener('load', forceRepaint);
         };
-    }, []);
-
-    useEffect(() => {
-        setUseCoder2(Math.random() < 0.5);
     }, []);
 
     const handleMouseMove = (e) => {
@@ -77,13 +85,12 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
                 alt="Orange and blue background."
             />
 
-            <>{/* #region __________ CODE __________ */}
-                <h1 className="text parallax name">Bril Lopez</h1>
-                <h2 className="text parallax frontend">Frontend</h2>
-                <h2 className="text parallax developer dev">Dev</h2>
-                <h2 className="text parallax developer">Developer</h2>
+            <h1 className="text parallax name">Bril Lopez</h1>
+            <h2 className="text parallax frontend">Frontend</h2>
+            <h2 className="text parallax developer dev">Dev</h2>
+            <h2 className="text parallax developer">Developer</h2>
 
-                {/* #region Code */}
+            <>{/* #region __________ CODE __________ */}
                 <div className="code-text">
 
                     {/* css */}
@@ -148,18 +155,24 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
 
                 </div>
             </>{/* #endregion CODE  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦ */}
-            <img
-                className='parallax coder'
-                src={useCoder2 ? coder2 : coder}
-                alt="A headshot of a programmer wearing a hoodie."
-                style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
-            />
-            <img
-                className='parallax glasses'
-                src={useCoder2 ? glasses2 : glasses}
-                alt="A headshot of a programmer wearing a hoodie."
-                style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
-            />
+
+            {selectedCoder && (
+                <img
+                    className="parallax coder"
+                    src={selectedCoder}
+                    alt="A headshot of a coder."
+                    style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
+                />
+            )}
+
+            {selectedGlasses && (
+                <img
+                    className="parallax glasses"
+                    src={selectedGlasses}
+                    alt="Glasses of the coder."
+                    style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
+                />
+            )}
         </m.div>
     );
 };

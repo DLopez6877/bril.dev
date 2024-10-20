@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Typewriter from '../Typewriter/Typewriter';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
+import TextSplitter from '../../wrappers/TextSplitter';
 
 const About = () => {
     const containerRef = useRef(null);
@@ -18,7 +19,6 @@ const About = () => {
         const bgImg = bgImgRef.current;
         const header = headerRef.current;
         const bio = bioRef.current;
-        const bioLines = bio.querySelectorAll('.bio-text');
 
         // Pin background image
         gsap.to(bgImg, {
@@ -56,8 +56,7 @@ const About = () => {
                 pin: bio,
                 pinSpacing: true,
                 onEnter: () => setIsBioPinned(true),
-                // onLeave: () => setIsBioPinned(false),
-                onLeaveBack: () => setTimeout(setIsBioPinned(false), 1000),
+                onLeaveBack: () => setTimeout(setIsBioPinned(false), 100),
                 onComplete: () => {
                     ScrollTrigger.getById('bioScrollTrigger').kill();
                 },
@@ -65,15 +64,34 @@ const About = () => {
             },
         });
 
-        // Animate each line of text in the bio
-        bioLines.forEach((line, index) => {
-            bioTimeline.fromTo(
-                line,
-                { opacity: 0, y: 20 },
-                { opacity: 1, y: 0, duration: 0.5 },
-                `+=${index * 0.2}`
-            );
-        });
+        new TextSplitter('.bio-text');
+
+        const bioChars = bio.querySelectorAll('.bio-text span');
+
+        gsap.fromTo(
+            bioChars,
+            {
+                opacity: 0,
+                y: 20,
+                rotateX: 70,
+                clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)"
+            },
+            {
+                opacity: 1,
+                y: 0,
+                rotateX: 0,
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                stagger: 0.01,
+                duration: 6,
+                scrollTrigger: {
+                    trigger: bio,
+                    start: 'top 20%',
+                    end: '+=200%',
+                    scrub: true,
+                    markers: true
+                },
+            }
+        );
 
         return () => {
             ScrollTrigger.getById('bioScrollTrigger')?.kill();
@@ -83,7 +101,7 @@ const About = () => {
 
     return (
         <div id="about" ref={containerRef} className="about-container">
-            <VideoPlayer />
+            {/* <VideoPlayer /> */}
             <img ref={bgImgRef} className="about-bg-img" src={aboutbg} alt="Background of orange geometric trees with a blue sunrise." />
             <div className="about-content">
                 <h2 ref={headerRef} className="glow headline-text">ABOUT ME</h2>

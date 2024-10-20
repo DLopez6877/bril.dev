@@ -53,13 +53,28 @@
             }
         }
 
+        .pills-container {
+            @media (min-width: 1024px) {
+                position: absolute;
+                width: 48%;
+                left: 50%;
+                top: 30px;
+            }
+        }
+
         .pills {
             display: none;
+
 
             @media only screen and (min-height: 900px) {
                 display: flex;
                 flex-wrap: wrap;
             }
+
+            @media (max-width: 475px) {
+                display: none;
+            }
+
         }
 
         .pill {
@@ -86,24 +101,30 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        font-size: 3em;
         border-top: 2px solid var(--light);
+        font-size: 16px;
+        height: 30%;
 
         button {
-            font-size: 1.2rem;
+            font-size: 1.2em;
             background-color: var(--light);
             color: var(--dark);
             padding: 10px 20px;
             border-radius: 3px;
         }
 
+
         a {
+            font-size: 3em;
             color: var(--light);
+            margin-left: auto;
+            padding-top: 7px;
         }
 
         .github {
             margin-left: 20px;
         }
+
     }
 
 

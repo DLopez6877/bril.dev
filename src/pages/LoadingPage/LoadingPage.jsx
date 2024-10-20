@@ -2,17 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { motion as m } from 'framer-motion';
 import './LoadingPage.scss';
 import logo from '../../assets/logo-filled.png'
-import PageTransition from '../../wrappers/PageTransition/PageTransition';
+// import PageTransition from '../../wrappers/PageTransition/PageTransition';
 
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 
 // LAZY LOADED ASSETS
-import bg from '../../assets/herobg.png';
-import coder from '../../assets/coder.png';
-import coder2 from '../../assets/coder2.png';
-import glasses from '../../assets/glasses.png';
-import glasses2 from '../../assets/glasses2.png';
+// import bg from '../../assets/herobg.png';
+// import coder from '../../assets/coder.png';
+// import coder2 from '../../assets/coder2.png';
+// import glasses from '../../assets/glasses.png';
+// import glasses2 from '../../assets/glasses2.png';
 
 const LoadingPage = ({ onComplete }) => {
     const [loading, setLoading] = useState(false); //set to true when needed
