@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './WorkEntries.scss'
 import { Link } from 'react-router-dom';
 import ScenePompeii from '../ScenePompeii/ScenePompeii';
+import SceneSimple from '../SceneSimple/SceneSimple';
 import gsap from 'gsap';
 
 const WorkEntries = () => {
@@ -43,7 +44,7 @@ const WorkEntries = () => {
                     <p>As a Signal Support Systems Specialist in the Washington Army National Guard, I maintained and troubleshooted communication systems, including radios, satellites, and networks. I ensured secure, reliable connections and trained others to use the equipment, keeping operations running smoothly.</p>
                     <Link to="/playground" className='work-link'>Learn more</Link>
                     <div className="scene-container">
-                        <ScenePompeii />
+                        <SceneSimple />
                     </div>
                 </div>
             </div>
@@ -58,7 +59,7 @@ const WorkEntries = () => {
                     <p>Zapproved is a Portland-based SaaS company that specializes in cloud-based e-discovery software. I helped develop their flagship product, ZDiscovery, which is primarily used by corporate legal teams to help manage the entire litigation process, from data preservation to review.</p>
                     <Link to="/playground" className='work-link'>Learn more</Link>
                     <div className="scene-container">
-                        <ScenePompeii />
+                        <SceneSimple />
                     </div>
                 </div>
             </div>
@@ -73,7 +74,7 @@ const WorkEntries = () => {
                     <p>Serverless Guru is a cloud consulting company specializing in AWS serverless architecture. My role involved working closely with enterprise clients, including Air Canada, to architect, build, and deploy scalable serverless applications, as well as providing consulting services to enhance cloud adoption strategies.</p>
                     <Link to="/playground" className='work-link'>Learn more</Link>
                     <div className="scene-container">
-                        <ScenePompeii />
+                        <SceneSimple />
                     </div>
                 </div>
             </div>
@@ -88,7 +89,7 @@ const WorkEntries = () => {
                     <p>Ruby is a leading provider of virtual receptionist and live chat services, helping small businesses deliver exceptional customer experiences by managing phone calls, scheduling, and client interactions. I contributed to the development of internal applications used by receptionists for efficiently handling calls, scheduling appointments, and performing essential customer service task.</p>
                     <Link to="/playground" className='work-link'>Learn more</Link>
                     <div className="scene-container">
-                        <ScenePompeii />
+                        <SceneSimple />
                     </div>
                 </div>
             </div>

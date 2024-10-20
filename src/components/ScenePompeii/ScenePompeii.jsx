@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import gsap from 'gsap';
 import './ScenePompeii.scss';
@@ -7,12 +7,21 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 const ScenePompeii = () => {
     const containerRef = useRef(null);
     const rendererRef = useRef(null);
+    const [gl, setGl] = useState(null);
 
     useEffect(() => {
+        const canvas = document.createElement('canvas');
+        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+        if (!gl) return;
+
+
         const container = containerRef.current;
+
 
         if (!rendererRef.current) {
             const renderer = new THREE.WebGLRenderer({ antialias: true });
+            const dpr = window.devicePixelRatio || 1;
+            renderer.setPixelRatio(Math.min(dpr, 2));
             renderer.setSize(container.clientWidth, container.clientHeight);
             renderer.setClearColor(0xE2E4D0);
             renderer.outputEncoding = THREE.sRGBEncoding;

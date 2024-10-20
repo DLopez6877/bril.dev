@@ -15,53 +15,50 @@ import glasses from '../../assets/glasses.png';
 import glasses2 from '../../assets/glasses2.png';
 
 const LoadingPage = ({ onComplete }) => {
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false); //set to true when needed
     const [minLoadingTimeExceeded, setMinLoadingTimeExceeded] = useState(false);
 
-    useEffect(() => {
-        const preloadContent = () => {
-            const imagesToPreload = [bg, coder, coder2, glasses, glasses2];
+    // useEffect(() => {
+    //     const preloadContent = () => {
+    //         const imagesToPreload = [bg, coder, coder2, glasses, glasses2];
 
-            // preload images 
-            const loadImages = imagesToPreload.map((src) => {
-                return new Promise((resolve, reject) => {
-                    const img = new Image();
-                    img.src = src;
-                    img.onload = resolve;
-                    img.onerror = reject;
-                });
-            });
+    //         const loadImages = imagesToPreload.map((src) => {
+    //             return new Promise((resolve, reject) => {
+    //                 const img = new Image();
+    //                 img.src = src;
+    //                 img.onload = resolve;
+    //                 img.onerror = reject;
+    //             });
+    //         });
 
-            // preload three.js
-            const preloadThreeJSAssets = () => {
-                return new Promise((resolve, reject) => {
-                    const gltfLoader = new GLTFLoader();
+    //         const preloadThreeJSAssets = () => {
+    //             return new Promise((resolve, reject) => {
+    //                 const gltfLoader = new GLTFLoader();
 
-                    gltfLoader.load('/public/assets/models/room_amorini_dorati_house__pompeii/scene.gltf', (gltf) => {
-                        console.log('GLTF model loaded');
-                        resolve();
-                    }, undefined, (error) => {
-                        console.error('Error loading GLTF model:', error);
-                        reject(error);
-                    });
-                });
-            };
+    //                 gltfLoader.load('/public/assets/models/room_amorini_dorati_house__pompeii/scene.gltf', (gltf) => {
+    //                     console.log('GLTF model loaded');
+    //                     resolve();
+    //                 }, undefined, (error) => {
+    //                     console.error('Error loading GLTF model:', error);
+    //                     reject(error);
+    //                 });
+    //             });
+    //         };
 
-            // Wait for all assets
-            Promise.all([...loadImages, preloadThreeJSAssets()])
-                .then(() => {
-                    console.log('All assets loaded!');
-                    setLoading(false);
-                })
-                .catch((error) => {
-                    console.error('Error preloading assets', error);
-                    setLoading(false);
-                });
+    //         Promise.all([...loadImages, preloadThreeJSAssets()])
+    //             .then(() => {
+    //                 console.log('All assets loaded!');
+    //                 setLoading(false);
+    //             })
+    //             .catch((error) => {
+    //                 console.error('Error preloading assets', error);
+    //                 setLoading(false);
+    //             });
 
-        };
+    //     };
 
-        preloadContent();
-    }, [onComplete]);
+    //     preloadContent();
+    // }, [onComplete]);
 
     useEffect(() => {
         const timers = [];
@@ -81,7 +78,7 @@ const LoadingPage = ({ onComplete }) => {
             timers.push(timer);
         }
 
-        redirectIfLoaded(500);
+        redirectIfLoaded(2000);
 
         return () => {
             for (const timer of timers) {

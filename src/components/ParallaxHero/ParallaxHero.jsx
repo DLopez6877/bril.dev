@@ -28,6 +28,30 @@ const ParallaxHero = ({ opacity, scale, translateY }) => {
     const [useCoder2, setUseCoder2] = useState(false);
 
     useEffect(() => {
+        const preloadImages = [bg, coder, coder2, glasses, glasses2];
+
+        preloadImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    }, []);
+
+    useEffect(() => {
+        const forceRepaint = () => {
+            document.body.style.transform = 'translateZ(0)';
+            setTimeout(() => {
+                document.body.style.transform = '';
+            }, 100);
+        };
+
+        window.addEventListener('load', forceRepaint);
+
+        return () => {
+            window.removeEventListener('load', forceRepaint);
+        };
+    }, []);
+
+    useEffect(() => {
         setUseCoder2(Math.random() < 0.5);
     }, []);
 
