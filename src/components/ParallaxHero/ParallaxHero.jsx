@@ -5,8 +5,8 @@ import InfiniteScrollText from '../InfiniteScrollText/InfiniteScrollText';
 import { motion as m } from 'framer-motion';
 
 
-import coder1 from '../../assets/coder1.png';
-import coder2 from '../../assets/coder2.png';
+import coder1 from '../../assets/coder1b.png';
+import coder2 from '../../assets/coder2b.png';
 import glasses1 from '../../assets/glasses1.png';
 import glasses2 from '../../assets/glasses2.png';
 
@@ -46,6 +46,21 @@ const ParallaxHero = () => {
             const img = new Image();
             img.src = src;
         });
+    }, []);
+
+    useEffect(() => {
+        const forceRepaint = () => {
+            document.body.style.transform = 'translateZ(0)';
+            setTimeout(() => {
+                document.body.style.transform = '';
+            }, 100);
+        };
+
+        window.addEventListener('load', forceRepaint);
+
+        return () => {
+            window.removeEventListener('load', forceRepaint);
+        };
     }, []);
 
     const handleMouseMove = (e) => {
@@ -148,7 +163,7 @@ const ParallaxHero = () => {
                     style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
                 />
             )}
-
+            {/* 
             {selectedGlasses && (
                 <img
                     className="parallax glasses"
@@ -156,7 +171,7 @@ const ParallaxHero = () => {
                     alt="Glasses of the coder."
                     style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
                 />
-            )}
+            )} */}
         </m.div>
     );
 };
