@@ -74,15 +74,13 @@ const About = () => {
                 opacity: 0,
                 y: 20,
                 rotateX: 70,
-                clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)"
             },
             {
                 opacity: 1,
                 y: 0,
                 rotateX: 0,
-                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-                stagger: 0.01,
-                duration: 6,
+                stagger: 0.02,
+                duration: 10,
                 scrollTrigger: {
                     trigger: bio,
                     start: 'top 20%',
