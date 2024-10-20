@@ -18,6 +18,7 @@ const Nav = () => {
     const drawerRef = useRef(null);
     const location = useLocation();
     const lenis = useLenis();
+    const logoTo = import.meta.env.MODE === 'production' ? '/home' : '/playground';
 
     useEffect(() => {
         if (!lenis) return;
@@ -105,7 +106,7 @@ const Nav = () => {
                 animate={{ y: isScrolled ? '-100%' : 0 }}
                 transition={{ type: 'spring', stiffness: 200, damping: 20, delay: isScrolled ? 0 : 0.8 }}
             >
-                <Link to="/playground" className='logo'><img height={30} src={logo} alt="Bril Logo." /></Link>
+                <Link to={logoTo} className='logo'><img height={30} src={logo} alt="Bril Logo." /></Link>
                 <div className="links">
                     <Link to="#about" className='nav-link'><span aria-hidden="true">About</span>
                         About

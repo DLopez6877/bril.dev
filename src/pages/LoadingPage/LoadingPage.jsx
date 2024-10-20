@@ -92,22 +92,22 @@ const LoadingPage = ({ onComplete }) => {
     }, [loading, onComplete]);
 
     return (
-        <PageTransition>
-            <div>
-                <m.div
-                    className="loading-content"
-                    animate={{ scale: [0.8, 1.2, 1] }}
-                    transition={{
-                        repeat: Infinity,
-                        repeatType: 'mirror',
-                        duration: 1.5,
-                        ease: 'easeInOut',
-                    }}
-                >
-                    <img src={logo} alt="Bril Logo" />
-                </m.div>
-            </div>
-        </PageTransition>
+        // <PageTransition>
+        <div>
+            <m.div
+                className="loading-content"
+                animate={{ scale: [0.8, 1.2, 1] }}
+                transition={{
+                    repeat: Infinity,
+                    repeatType: 'mirror',
+                    duration: 1.5,
+                    ease: 'easeInOut',
+                }}
+            >
+                <img src={logo} alt="Bril Logo" />
+            </m.div>
+        </div>
+        // </PageTransition>
     );
 };
 

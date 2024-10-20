@@ -16,59 +16,59 @@ const PlaygroundPage = () => {
 
     return (
         <>
-            <PageTransition>
-                <SmoothScroll>
-                    <Link className="playground-link" to="/">H</Link>
-                    <div className="playground-container" data-scroll-container>
+            {/* <PageTransition> */}
+            <SmoothScroll>
+                <Link className="playground-link" to="/">H</Link>
+                <div className="playground-container" data-scroll-container>
 
 
 
 
-                        {/* ▂▃▅▇█▓▒░    TEMP CODE BELOW HERE    ░▒▓█▇▅▃▂ */}
-                        <div className="three-container">
-                            <ScenePompeii />
-                        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    {/* ▂▃▅▇█▓▒░    TEMP CODE BELOW HERE    ░▒▓█▇▅▃▂ */}
+                    <div className="three-container">
+                        <ScenePompeii />
                     </div>
-                    {/* END OF TEMP AREA  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦ */}
-                </SmoothScroll>
-            </PageTransition>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+                {/* END OF TEMP AREA  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦ */}
+            </SmoothScroll>
+            {/* </PageTransition> */}
         </>
 
     );

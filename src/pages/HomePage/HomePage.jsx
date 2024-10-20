@@ -19,19 +19,19 @@ const HomePage = () => {
     const translateY = useTransform(scrollYProgress, [0, 1], [0, 1200]);
 
     return (
-        <PageTransition>
-            <SmoothScroll>
-                <div className="home-page-container" data-scroll-container>
-                    <Nav />
-                    <ParallaxHero opacity={opacity} scale={scale} translateY={translateY} />
-                    <LazyAbout />
-                    <LazyWorkExperience />
-                    <LazyWorkEntries />
-                    <LazySkills />
-                    <LazyContact />
-                </div>
-            </SmoothScroll>
-        </PageTransition>
+        // <PageTransition>
+        <SmoothScroll>
+            <div className="home-page-container" data-scroll-container>
+                <Nav />
+                <ParallaxHero opacity={opacity} scale={scale} translateY={translateY} />
+                <LazyAbout />
+                <LazyWorkExperience />
+                <LazyWorkEntries />
+                <LazySkills />
+                <LazyContact />
+            </div>
+        </SmoothScroll>
+        // </PageTransition>
     );
 };
 
