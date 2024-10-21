@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion as m } from 'framer-motion';
 import './LoadingPage.scss';
-import logo from '../../assets/logo-filled.png'
+import logo from '../../assets/logo.png'
 // import PageTransition from '../../wrappers/PageTransition/PageTransition';
 
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';

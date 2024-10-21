@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Nav.scss';
-import logo from '../../assets/logo-filled.png';
+import logo from '../../assets/logo.png';
 import DrawerContent from '../DrawerContent/DrawerContent';
 import { motion as m, AnimatePresence } from "framer-motion"
 import { Link, useLocation } from 'react-router-dom';

@@ -68,14 +68,22 @@ const Skills = () => {
     return (
         <div id="skills" ref={containerRef} className="skills-container">
             <div className="input-wrapper">
-                <input
-                    name='skills'
-                    type="text"
-                    placeholder="Search skills..."
-                    value={searchTerm}
-                    onChange={handleInputChange}
-                    className="search-input"
-                />
+                <div className="input-field">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input
+                        name='skills'
+                        type="text"
+                        placeholder="Search skills.."
+                        value={searchTerm}
+                        onChange={handleInputChange}
+                        className="search-input"
+                    />
+                    <div className="ellipses"></div>
+                    <button onClick={handleInputChange}>
+                        SEARCH
+                    </button>
+                </div>
+
 
                 {suggestions.length > 0 && (
                     <ul className="suggestions-list">
