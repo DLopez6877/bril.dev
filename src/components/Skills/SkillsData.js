@@ -84,6 +84,10 @@ const skillsData = [
         "tags": ["devops"]
     },
     {
+        "name": "CloudWatch",
+        "tags": ["devops"]
+    },
+    {
         "name": "Terraform",
         "tags": ["devops"]
     },
@@ -121,6 +125,14 @@ const skillsData = [
     },
     {
         "name": "Graylog",
+        "tags": ["devops"]
+    },
+    {
+        "name": "Logstash",
+        "tags": ["devops"]
+    },
+    {
+        "name": "Kibana",
         "tags": ["devops"]
     },
     {
@@ -266,6 +278,14 @@ const skillsData = [
     {
         "name": "NPM",
         "tags": ["devops"]
+    },
+    {
+        "name": "AWS IAM",
+        "tags": ["devops"]
+    },
+    {
+        "name": "Google Analytics",
+        "tags": ["devops, frontend"]
     },
     {
         "name": "Yarn",

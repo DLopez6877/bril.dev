@@ -112,7 +112,7 @@ const WorkEntries = () => {
                 <div className="contents">
                     <p className="job-title">Software Engineer</p>
                     <p>Zapproved is a Portland-based SaaS company that specializes in cloud-based e-discovery software. I helped develop their flagship product, ZDiscovery, which is primarily used by corporate legal teams to help manage the entire litigation process, from data preservation to review.</p>
-                    <Link to="/playground" className='work-link'>Learn more</Link>
+                    <Link to="/zapproved" className='work-link'>Learn more</Link>
                     <div className="scene-container">
                         <SceneSimple />
                     </div>
@@ -127,7 +127,7 @@ const WorkEntries = () => {
                 <div className="contents">
                     <p className="job-title">Senior Serverless Engineer</p>
                     <p>Serverless Guru is a cloud consulting company specializing in AWS serverless architecture. My role involved working closely with enterprise clients, including Air Canada, to architect, build, and deploy scalable serverless applications, as well as providing consulting services to enhance cloud adoption strategies.</p>
-                    <Link to="/playground" className='work-link'>Learn more</Link>
+                    <Link to="/serverlessguru" className='work-link'>Learn more</Link>
                     <div className="scene-container">
                         <SceneSimple />
                     </div>
@@ -140,9 +140,9 @@ const WorkEntries = () => {
                     <p className="tab-label">Ruby</p>
                 </div>
                 <div className="contents">
-                    <p className="job-title">Senior Serverless Engineer</p>
+                    <p className="job-title">Senior Fullstack Engineer</p>
                     <p>Ruby is a leading provider of virtual receptionist and live chat services, helping small businesses deliver exceptional customer experiences by managing phone calls, scheduling, and client interactions. I contributed to the development of internal applications used by receptionists for efficiently handling calls, scheduling appointments, and performing essential customer service task.</p>
-                    <Link to="/playground" className='work-link'>Learn more</Link>
+                    <Link to="/ruby" className='work-link'>Learn more</Link>
                     <div className="scene-container">
                         <SceneSimple />
                     </div>
@@ -155,9 +155,9 @@ const WorkEntries = () => {
                     <p className="tab-label">Pure Chat</p>
                 </div>
                 <div className="contents">
-                    <p className="job-title">Senior Serverless Engineer</p>
+                    <p className="job-title">Senior Fullstack Engineer</p>
                     <p>After Ruby acquired Pure Chat, I took the lead on maintaining the product, ensuring its seamless integration into Ruby’s internal applications. I managed both the integration and continued support for Pure Chat’s existing customers, overseeing its functionality while maintaining its core features for real-time customer engagement and live chat service.</p>
-                    <Link to="/playground" className='work-link'>Learn more</Link>
+                    <Link to="/purechat" className='work-link'>Learn more</Link>
                     <div className="scene-container">
                         <ScenePompeii />
                     </div>

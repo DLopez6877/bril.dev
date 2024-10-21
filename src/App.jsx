@@ -5,6 +5,10 @@ import HomePage from './pages/HomePage/HomePage';
 import PlaygroundPage from './pages/PlaygroundPage/PlaygroundPage';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { AnimatePresence } from 'framer-motion';
+import ZapprovedPage from './pages/ZapprovedPage/ZapprovedPage';
+import PureChatPage from './pages/PurechatPage/PurechatPage';
+import RubyPage from './pages/RubyPage/RubyPage';
+import ServerlessGuruPage from './pages/ServerlessGuruPage/ServerlessGuruPage';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -16,6 +20,10 @@ function AnimatedRoutes() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/playground" element={<PlaygroundPage />} />
         <Route path="/loading" element={<LoadingPage />} />
+        <Route path="/zapproved" element={<ZapprovedPage />} />
+        <Route path="/purechat" element={<PureChatPage />} />
+        <Route path="/ruby" element={<RubyPage />} />
+        <Route path="/serverlessguru" element={<ServerlessGuruPage />} />
         <Route path="*" element={<Navigate to="/loading" replace />} />
       </Routes>
     </AnimatePresence>
