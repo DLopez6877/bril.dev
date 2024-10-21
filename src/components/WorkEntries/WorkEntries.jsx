@@ -4,16 +4,20 @@ import { Link } from 'react-router-dom';
 import ScenePompeii from '../ScenePompeii/ScenePompeii';
 import SceneSimple from '../SceneSimple/SceneSimple';
 import gsap from 'gsap';
+import { useLenis } from '@studio-freight/react-lenis';
 
 const WorkEntries = () => {
 
     const containerRef = useRef(null);
+    const lenis = useLenis();
+    const entryScrollPositionsRef = useRef({});
 
     useEffect(() => {
         const container = containerRef.current;
         const entries = gsap.utils.toArray('.entry');
 
         entries.forEach((entry, index) => {
+            const entryId = `entry-${index}`;
             const offset = index * 70;
 
             gsap.to(entry, {
@@ -25,15 +29,67 @@ const WorkEntries = () => {
                     pin: true,
                     pinSpacing: index === entries.length - 1 ? true : false,
                     scrub: true,
+                    onEnter: () => {
+                        const scrollY = window.scrollY;
+                        entryScrollPositionsRef.current[entryId] = scrollY;
+                    },
+                    onLeaveBack: () => {
+                        entryScrollPositionsRef.current[entryId] = null;
+                    },
                 },
             });
         });
     }, []);
 
+    useEffect(() => {
+        const container = containerRef.current;
+
+        const handleTabClick = (e) => {
+            if (!container || !lenis) return;
+
+            const clickX = e.clientX;
+            const clickY = e.clientY;
+            let foundTab = null;
+            const tabs = document.querySelectorAll('.tab');
+            const entries = gsap.utils.toArray('.entry');
+
+            tabs.forEach(tab => {
+                const rect = tab.getBoundingClientRect();
+
+                if (
+                    clickX >= rect.left &&
+                    clickX <= rect.right &&
+                    clickY >= rect.top &&
+                    clickY <= rect.bottom
+                ) {
+                    foundTab = tab;
+                }
+            });
+
+            if (foundTab) {
+                const entry = foundTab.closest('.entry');
+                if (entry) {
+                    const entryIndex = entries.indexOf(entry);
+                    const entryId = `entry-${entryIndex}`;
+
+                    const savedScrollY = entryScrollPositionsRef.current[entryId];
+
+                    if (savedScrollY !== null && savedScrollY !== undefined) {
+                        lenis.scrollTo(savedScrollY, { duration: 0.3 });
+                    }
+                }
+            }
+        };
+        container.addEventListener('click', handleTabClick);
+        return () => {
+            container.removeEventListener('click', handleTabClick);
+        };
+    }, [lenis]);
 
 
     return (
         <div id="work" ref={containerRef} className="work-entries-container">
+
             <div className="entry">
                 <div className="tab">
                     <p className="date">2006 - 2014</p>

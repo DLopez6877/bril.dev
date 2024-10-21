@@ -22,6 +22,7 @@ $entry-padding: 10px;
             height: 70px;
             display: flex;
             align-items: flex-end;
+            pointer-events: auto;
 
             @media (min-width: 1024px) {
                 height: 90px;
