@@ -37,11 +37,13 @@ const Skills = () => {
     const handleInputChange = (e) => {
         const value = e.target.value;
         setSearchTerm(value);
+    };
 
-        if (value.length > 0) {
+    const handleSearch = () => {
+        if (searchTerm.length > 0) {
             const filteredSuggestions = skillsData
                 .map(skill => skill.name)
-                .filter(skill => skill.toLowerCase().includes(value.toLowerCase()));
+                .filter(skill => skill.toLowerCase().includes(searchTerm.toLowerCase()));
             setSuggestions(filteredSuggestions);
         } else {
             setSuggestions([]);
@@ -69,7 +71,7 @@ const Skills = () => {
         <div id="skills" ref={containerRef} className="skills-container">
             <div className="input-wrapper">
                 <div className="input-field">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i className="fa-solid fa-magnifying-glass"></i>
                     <input
                         name='skills'
                         type="text"
@@ -79,7 +81,7 @@ const Skills = () => {
                         className="search-input"
                     />
                     <div className="ellipses"></div>
-                    <button onClick={handleInputChange}>
+                    <button onClick={handleSearch}>
                         SEARCH
                     </button>
                 </div>

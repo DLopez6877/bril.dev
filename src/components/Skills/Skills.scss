@@ -102,43 +102,19 @@
                     box-shadow: -2px -2px 10px rgba(0, 0, 0, .4) inset, 2px 2px 10px rgba(255, 255, 255, 0.5) inset;
                 }
             }
-
-            @media (min-width: 430px) {
-                height: 80px;
-
-                .search-input {
-                    font-size: 30px;
-                }
-
-                button {
-                    height: 55px;
-                    margin-right: 8px;
-                }
-            }
-
-            @media (min-width: 530px) {
-                height: 80px;
-
-                .fa-magnifying-glass {
-                    display: block;
-                }
-
-                button {
-                    padding: 0px 30px;
-                }
-            }
         }
 
 
         .suggestions-list {
             position: absolute;
             width: 100%;
-            top: 60px;
+            top: 61px;
             background-color: var(--orange);
             color: var(--light);
             list-style-type: none;
             margin: 0;
             padding: 0;
+            z-index: 1;
 
             li {
                 border-bottom: 1px solid var(--light);
@@ -252,5 +228,42 @@
         font-size: 1.4rem;
         font-family: var(--font-primary);
         color: var(--orange);
+    }
+
+
+
+    @media (min-width: 430px) {
+        .input-wrapper {
+
+            .input-field {
+                height: 80px;
+
+                .search-input {
+                    font-size: 30px;
+                }
+
+                button {
+                    height: 55px;
+                    margin-right: 8px;
+                }
+            }
+
+            .suggestions-list {
+                top: 81px;
+            }
+        }
+    }
+
+    @media (min-width: 530px) {
+        .input-wrapper .input-field {
+
+            .fa-magnifying-glass {
+                display: block;
+            }
+
+            button {
+                padding: 0px 30px;
+            }
+        }
     }
 }
