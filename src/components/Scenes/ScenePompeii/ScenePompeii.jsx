@@ -38,6 +38,7 @@ const ScenePompeii = () => {
         camera.position.set(5, 1.1, -7);
         let position = 0;
 
+
         const gltfLoader = new GLTFLoader();
         gltfLoader.load('/assets/models/room_amorini_dorati_house__pompeii/scene.gltf', function (gltf) {
             const model = gltf.scene;
@@ -67,7 +68,7 @@ const ScenePompeii = () => {
                         position = 4;
                         break;
                     case 4:
-                        moveCamera(5, 1.6, -7);
+                        moveCamera(5, 1.6, -7.3);
                         rotateCamera(0, 0.1, 0);
                         position = 0;
                         break;

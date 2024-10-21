@@ -4,8 +4,33 @@ import logo from '../../assets/logo-filled.png';
 import DrawerContent from '../DrawerContent/DrawerContent';
 import { motion as m, AnimatePresence } from "framer-motion"
 import { Link, useLocation } from 'react-router-dom';
-import { NavButtonVariants } from '../../lib/variants';
 import { useLenis } from '@studio-freight/react-lenis';
+
+export const NavButtonVariants = {
+    hidden: {
+        y: -100
+    },
+    visible: {
+        y: 30,
+        transition: {
+            type: 'spring',
+            delay: 0.5,
+            stiffness: 150,
+            damping: 10
+        }
+    },
+    exit: {
+        y: [80, -200],
+        transition: {
+            type: 'spring',
+            stiffness: 30,
+            damping: 10,
+            velocity: -100,
+            times: [0, 1],
+        }
+
+    },
+}
 
 const Nav = () => {
     const [bottomConstraint, setBottomConstraint] = useState(0);
@@ -101,7 +126,7 @@ const Nav = () => {
     return (
         <div className="nav-container">
             <m.div
-                className="full-nav dark-glass"
+                className="full-nav"
                 initial={{ y: 0 }}
                 animate={{ y: isScrolled ? '-100%' : 0 }}
                 transition={{ type: 'spring', stiffness: 200, damping: 20, delay: isScrolled ? 0 : 0.8 }}

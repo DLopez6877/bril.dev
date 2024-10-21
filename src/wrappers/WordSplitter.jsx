@@ -10,39 +10,40 @@ class WordSplitter {
         this.elements.forEach(element => {
             const childNodes = Array.from(element.childNodes);
             element.innerHTML = '';
-
             childNodes.forEach(node => {
                 if (node.nodeType === Node.TEXT_NODE) {
                     this.splitTextNode(node, element);
-                } else {
-                    element.appendChild(node);
+                }
+                else if (node.nodeType === Node.ELEMENT_NODE) {
+                    const wrapperSpan = document.createElement('span');
+                    wrapperSpan.style.display = 'inline-block';
+                    wrapperSpan.appendChild(node.cloneNode(true));
+                    if (this.className) wrapperSpan.classList.add(this.className);
+                    element.appendChild(wrapperSpan);
                 }
             });
         });
     }
 
     splitTextNode(textNode, parentElement) {
-        const text = textNode.nodeValue.trim();
-        const splitTextArray = text.split(" ");
-
-        splitTextArray.forEach((word, index) => {
+        const words = textNode.nodeValue.split(' ');
+        words.forEach((word, index) => {
             const span = document.createElement('span');
             span.style.display = 'inline-block';
             span.innerText = word;
 
-            if (index < splitTextArray.length - 1) {
-                span.style.marginRight = this.spaceLength;
-            }
+            if (this.className) span.classList.add(this.className);
 
-            if (this.className) {
-                span.classList.add(this.className, index);
+            parentElement.appendChild(span);
+
+            if (index < words.length - 1) {
+                const space = document.createTextNode(' ');
+                parentElement.appendChild(space);
             }
 
             if (word === 'Awwwards') {
                 span.classList.add('gradient');
             }
-
-            parentElement.appendChild(span);
         });
     }
 }

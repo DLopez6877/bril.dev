@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import './About.scss';
 import aboutbg from '../../assets/aboutbg.png';
 import gsap from 'gsap';
@@ -39,7 +39,7 @@ const About = () => {
                 trigger: header,
                 start: 'top 15%',
                 endTrigger: bio,
-                end: '+=185%',
+                end: '+=187%',
                 pin: header,
                 pinSpacing: false,
             },
@@ -89,14 +89,29 @@ const About = () => {
             }
         );
 
+
         return () => {
             ScrollTrigger.getById('bioScrollTrigger')?.kill();
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
     }, []);
 
+    useEffect(() => {
+        const container = containerRef.current;
+        container.addEventListener('click', handleIconClick);
+        return () => {
+            container.removeEventListener('click', handleIconClick);
+        };
+    })
+
+    const handleIconClick = (e) => {
+        if (e.target.id === 'awwwards-link') {
+            window.location.href = 'https://www.awwwards.com/';
+        }
+    }
+
     return (
-        <div id="about" ref={containerRef} className="about-container">
+        <div ref={containerRef} className="about-container">
             <img ref={bgImgRef} className="about-bg-img" src={aboutbg} alt="Background of orange geometric trees with a blue sunrise." />
             <div className="about-content">
                 <h2 ref={headerRef} className="glow headline-text">ABOUT ME</h2>
@@ -106,7 +121,7 @@ const About = () => {
                     <p className='bio-text'>For the past seven years, I've worked as a full-stack software engineer. I started off as a frontend engineer, but as time went on, I found myself increasingly focused on backend work.</p>
                     <p className='bio-text'>Its been great, but what drove me to this career was the creative outlet that frontend work provided me. I'm one of those crazies that love CSS. After years of navigating the dark depths of backend code and deployment pipelines, it's time to grab this Balrog of a career path by the horns and steer it in the direction I want.</p>
                     <p className='bio-text'>I'm seeking a role as a senior frontend developer or an entry-level designer working with a world-class team.</p>
-                    <p className='bio-text'>Let's build Awwwards winning websites together.</p>
+                    <p className='bio-text'>Let's build Awwwards <i id="awwwards-link" className="gradient fa-solid fa-arrow-up-right-from-square"></i> winning websites together.</p>
                 </div>
             </div>
         </div>

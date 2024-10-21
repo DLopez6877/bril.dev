@@ -63,12 +63,39 @@
             margin-bottom: 20svh;
         }
 
+        .fa-arrow-up-right-from-square {
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
         .gradient {
             background: linear-gradient(90deg, var(--green), var(--blue), var(--orange));
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             -webkit-text-fill-color: transparent;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .glow {
+        color: var(--light);
+        animation: glow 4s ease-in-out infinite alternate;
+        text-shadow: 0 0 10px var(--green), 0 0 15px var(--green);
+    }
+
+    @keyframes glow {
+
+        0%,
+        75% {
+            text-shadow: 0 0 10px var(--green), 0 0 15px var(--green);
+        }
+
+        100% {
+            text-shadow: 0 0 10px var(--green), 0 0 15px var(--green), 0 0 20px var(--green);
         }
     }
 }

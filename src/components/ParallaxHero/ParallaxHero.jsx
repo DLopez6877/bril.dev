@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './ParallaxHero.scss';
 import bg from '../../assets/herobg.png';
-import InfiniteScrollText from '../InfiniteScrollText/InfiniteScrollText';
+import InfiniteScrollText from '../../wrappers/InfiniteScrollText/InfiniteScrollText';
+import coder from '../../assets/coder.png';
+import glasses from '../../assets/glasses.png';
 import { motion as m } from 'framer-motion';
-
-
-import coder1 from '../../assets/coder1b.png';
-import coder2 from '../../assets/coder2b.png';
-import glasses1 from '../../assets/glasses1.png';
-import glasses2 from '../../assets/glasses2.png';
-
-
 
 
 
@@ -28,20 +22,11 @@ const ParallaxHero = () => {
     const rubyCode = 'fibo = [0, 1]; (2..29).each { |i| fibo << fibo[-1] + fibo[-2] }; puts "First 30 Fibonacci numbers: " + fibo.map.with_index { |num, idx| "#{idx + 1}: #{num}" }.join(\', \')';
     const kotlinCode = 'class CardFactory { fun createCard(type: String): Card = when(type) { "creature" -> CreatureCard("Goblin", 1, 1); "spell" -> SpellCard("Fireball", "Deal 3 damage"); "artifact" -> ArtifactCard("Black Lotus", "Sacrifice for 3 mana of any color"); else -> LandCard("Mountain") } }';
 
-    const coderImages = [coder1, coder2];
-    const glassesImages = [glasses1, glasses2];
-
-    const [selectedCoder, setSelectedCoder] = useState(null);
-    const [selectedGlasses, setSelectedGlasses] = useState(null);
     const [xValue, setXValue] = useState(0);
     const [yValue, setYValue] = useState(0);
 
     useEffect(() => {
-        const randomIndex = Math.floor(Math.random() * coderImages.length);
-        setSelectedCoder(coderImages[randomIndex]);
-        setSelectedGlasses(glassesImages[randomIndex]);
-
-        const preloadImages = [bg, ...coderImages, ...glassesImages];
+        const preloadImages = [bg, coder, glasses];
         preloadImages.forEach(src => {
             const img = new Image();
             img.src = src;
@@ -72,8 +57,8 @@ const ParallaxHero = () => {
 
     return (
 
-
         <m.div
+            id="about"
             className="parallax-hero-container"
             onMouseMove={handleMouseMove}
             transition={{ ease: "easeIn" }}>
@@ -155,23 +140,18 @@ const ParallaxHero = () => {
                 </div>
             </>{/* #endregion CODE  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦ */}
 
-            {selectedCoder && (
-                <img
-                    className="parallax coder"
-                    src={selectedCoder}
-                    alt="A headshot of a coder."
-                    style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
-                />
-            )}
-            {/* 
-            {selectedGlasses && (
-                <img
-                    className="parallax glasses"
-                    src={selectedGlasses}
-                    alt="Glasses of the coder."
-                    style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
-                />
-            )} */}
+            <img
+                className="parallax coder"
+                src={coder}
+                alt="A headshot of a coder."
+                style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
+            />
+            <img
+                className="parallax glasses"
+                src={glasses}
+                alt="Glasses of the coder."
+                style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
+            />
         </m.div>
     );
 };

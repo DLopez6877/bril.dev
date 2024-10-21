@@ -11,7 +11,9 @@
         justify-content: space-between;
         align-items: center;
         z-index: 25;
+        border-bottom: 1px solid var(--green);
         height: 60px;
+        background-color: rgba(var(--blue-rgb), 0.2);
 
 
         padding: 10px;
@@ -74,6 +76,7 @@
         border-radius: 8px;
         outline: none;
         z-index: 899;
+        mix-blend-mode: difference;
 
         .line {
             position: absolute;
@@ -127,6 +130,7 @@
         height: 60px;
         z-index: 899;
         border-radius: 8px;
+        mix-blend-mode: difference;
 
         &:hover {
             @extend %glitch-effect;
@@ -148,6 +152,25 @@
             filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));
             color: var(--green);
         }
+    }
+
+    .glass {
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        background-color: rgba($color: white, $alpha: 0.1);
+        box-shadow:
+            0 4px 30px rgba(0, 0, 0, 0.1),
+            inset 0 0 3px 2px rgba($color: white, $alpha: 0.1),
+            inset 2px -3px 2px 1px rgba($color: gray, $alpha: 0.08),
+            inset 2px -2px 2px 0px rgba($color: white, $alpha: 0.1),
+            inset -2px 2px 2px 2px rgba($color: black, $alpha: 0.08),
+    }
+
+    .dark-glass {
+        background-color: rgba(0, 0, 0, 0.5);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
     }
 
     .x-glass-hack {

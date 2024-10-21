@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import './WorkEntries.scss'
 import { Link } from 'react-router-dom';
-import ScenePompeii from '../ScenePompeii/ScenePompeii';
-import SceneSimple from '../SceneSimple/SceneSimple';
+import ScenePompeii from '../Scenes/ScenePompeii/ScenePompeii';
+import SceneSimple from '../Scenes/SceneSimple/SceneSimple';
 import gsap from 'gsap';
 import { useLenis } from '@studio-freight/react-lenis';
 
@@ -99,7 +99,7 @@ const WorkEntries = () => {
                     <p className="job-title">25U - Signal Support Systems Specialist</p>
                     <p>As a Signal Support Systems Specialist in the Washington Army National Guard, I maintained and troubleshooted communication systems, including radios, satellites, and networks. I ensured secure, reliable connections and trained others to use the equipment, keeping operations running smoothly.</p>
                     <Link to="/playground" className='work-link'>Learn more</Link>
-                    <div className="scene-container">
+                    <div className="scene-container roller-coaster-scene">
                         <SceneSimple />
                     </div>
                 </div>

@@ -1,9 +1,39 @@
 import React from 'react';
 import { motion as m } from 'framer-motion';
 import './DrawerContent.scss';
-import { NavContainerVariants, NavWordVariants } from '../../lib/variants';
 import { Link } from 'react-router-dom';
 
+
+export const NavContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1,
+            delayChildren: 0.4,
+        },
+    },
+};
+
+export const NavWordVariants = {
+    hidden: {
+        opacity: 0,
+        y: 100,
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            type: 'spring',
+            stiffness: 150,
+            damping: 50,
+        },
+    },
+    exit: {
+        opacity: 1,
+        y: 0,
+    }
+};
 
 const DrawerContent = ({ drawerSide }) => {
 

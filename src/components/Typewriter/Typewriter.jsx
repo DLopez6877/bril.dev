@@ -19,9 +19,9 @@ const Typewriter = ({ className }) => {
     }, []);
 
     return (
-        <span className={className}>
+        <p className={className}>
             <motion.span>{displayText}</motion.span>
-        </span>
+        </p>
     );
 };
 

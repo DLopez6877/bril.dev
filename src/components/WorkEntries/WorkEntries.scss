@@ -69,32 +69,23 @@ $entry-padding: 10px;
                 border-radius: 3px;
                 font-size: 0.85rem;
                 text-decoration: none;
-                margin-left: auto;
                 display: block;
                 width: fit-content;
                 color: var(--dark);
             }
 
+            // #region __________ SCENES __________
             .scene-container {
                 width: 100%;
                 background-color: gray;
                 height: 200px;
                 margin-top: 20px;
                 margin-right: $entry-padding;
+                max-width: 700px;
             }
 
-            @media (min-width: 1024px) {
-                padding: 20px 0 20px 80px;
-                width: 50%;
-
-                .doodad {
-                    position: absolute;
-                    width: 50%;
-                    top: 0;
-                    right: -75%;
-                    height: 80%;
-                }
-            }
+            // #endregion END SCENES  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦
         }
+
     }
 }
