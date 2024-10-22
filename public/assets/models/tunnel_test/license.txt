@@ -1,8 +1,0 @@
-Model Information:
-* title:	Tunnel Test
-* source:	https://sketchfab.com/3d-models/tunnel-test-6984811d83454439b17e4ccf06bc3fe8
-* author:	samixalam (https://sketchfab.com/samixalam)
-
-Model License:
-* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
-* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

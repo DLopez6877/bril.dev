@@ -85,28 +85,37 @@
 
         .grip {
             position: absolute;
-            top: 1px;
+            top: 4px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 2px;
-            justify-content: space-between;
             height: 8px;
             padding: 1px 4px;
+            width: 100%;
+
+            .bar {
+                position: absolute;
+                top: -5px;
+                left: 0;
+                width: 100%;
+                height: 5px;
+                background-color: rgba(var(--green-rgb), 0.2);
+            }
 
             .divets {
                 display: grid;
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(3, 1fr);
                 grid-template-rows: repeat(2, 1fr);
                 gap: 1px;
 
                 .divet {
                     border-radius: 50%;
-                    height: 3px;
-                    width: 3px;
-                    background-color: rgba(white, 0.2);
+                    height: 2px;
+                    width: 2px;
+                    background-color: rgba(var(--green-rgb), 0.2);
                 }
             }
 
@@ -119,7 +128,7 @@
 
             .line {
                 position: absolute;
-                width: 28px;
+                width: 24px;
                 height: 4px;
                 background-color: var(--green);
                 border-radius: 3px;
@@ -128,7 +137,7 @@
             }
 
             .top {
-                top: 17px;
+                top: 18px;
             }
 
             .middle {
@@ -136,7 +145,7 @@
             }
 
             .bottom {
-                top: 37px;
+                top: 36px;
             }
         }
 
@@ -172,7 +181,7 @@
         height: 60px;
         z-index: 899;
         border-radius: 8px;
-        mix-blend-mode: difference;
+        // filter: invert(100%);
 
         &:hover {
             @extend %glitch-effect;
@@ -193,7 +202,6 @@
         svg {
             filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));
             color: var(--green);
-            mix-blend-mode: normal;
         }
     }
 

@@ -46,6 +46,7 @@ const ParallaxHero = () => {
         setYValue(yOffset);
     };
 
+
     return (
 
         <m.div

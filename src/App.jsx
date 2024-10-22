@@ -17,13 +17,13 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/home" element={<HomePage />} />
+        {/* <Route path="/home" element={<HomePage />} /> */}
         <Route path="/playground" element={<PlaygroundPage />} />
-        <Route path="/loading" element={<LoadingPage />} />
+        {/* <Route path="/loading" element={<LoadingPage />} />
         <Route path="/zapproved" element={<ZapprovedPage />} />
         <Route path="/purechat" element={<PureChatPage />} />
         <Route path="/ruby" element={<RubyPage />} />
-        <Route path="/serverlessguru" element={<ServerlessGuruPage />} />
+        <Route path="/serverlessguru" element={<ServerlessGuruPage />} /> */}
         <Route path="*" element={<Navigate to="/loading" replace />} />
       </Routes>
     </AnimatePresence>
@@ -31,24 +31,6 @@ function AnimatedRoutes() {
 }
 
 function App() {
-
-  if (process.env.NODE_ENV === 'production') {
-    console.log(`
-    HH   HH  III       III '  MM    MM
-    HH   HH   I         I  '  MMM  MMM
-    HHHHHHH   I         I     MM MM MM
-    HH   HH   I         I     MM    MM
-    HH   HH  III       III    MM    MM
-  
-    `);
-    console.log(`
-    BBBB   RRRR   III  L       !!!!
-    B   B  R   R   I   L      !!!!!!
-    BBBB   RRRR    I   L       !!!!
-    B   B  R  R    I   L    
-    BBBB   R   R  III  LLLLL    !!
-    `);
-  }
 
   return (
     <>

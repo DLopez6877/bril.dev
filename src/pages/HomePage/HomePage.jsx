@@ -5,11 +5,11 @@ import Nav from '../../components/Nav/Nav';
 import { motion as m, useScroll, useTransform } from 'framer-motion';
 import SmoothScroll from '../../wrappers/SmoothScroll';
 import PageTransition from '../../wrappers/PageTransition/PageTransition';
-const LazyAbout = React.lazy(() => import('../../components/About/About'));
-const LazyWorkExperience = React.lazy(() => import('../../components/WorkExperience/WorkExperience'));
-const LazyWorkEntries = React.lazy(() => import('../../components/WorkEntries/WorkEntries'));
-const LazySkills = React.lazy(() => import('../../components/Skills/Skills'));
-const LazyContact = React.lazy(() => import('../../components/Contact/Contact'));
+import About from '../../components/About/About';
+import WorkExperience from '../../components/WorkExperience/WorkExperience';
+import WorkEntries from '../../components/WorkEntries/WorkEntries';
+import Skills from '../../components/Skills/Skills';
+import Contact from '../../components/Contact/Contact';
 
 const HomePage = () => {
     const { scrollYProgress } = useScroll();
@@ -18,17 +18,35 @@ const HomePage = () => {
     const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
     const translateY = useTransform(scrollYProgress, [0, 1], [0, 1200]);
 
+    if (process.env.NODE_ENV === 'production') {
+        console.log(`
+    HH   HH  III       III '  MM    MM
+    HH   HH   I         I  '  MMM  MMM
+    HHHHHHH   I         I     MM MM MM
+    HH   HH   I         I     MM    MM
+    HH   HH  III       III    MM    MM
+  
+    `);
+        console.log(`
+    BBBB   RRRR   III  L       !!!!
+    B   B  R   R   I   L      !!!!!!
+    BBBB   RRRR    I   L       !!!!
+    B   B  R  R    I   L    
+    BBBB   R   R  III  LLLLL    !!
+    `);
+    }
+
     return (
         // <PageTransition>
         <SmoothScroll>
             <div className="home-page-container" data-scroll-container>
                 <Nav />
                 <ParallaxHero />
-                <LazyAbout />
-                <LazyWorkExperience />
-                <LazyWorkEntries />
-                <LazySkills />
-                <LazyContact />
+                <About />
+                <WorkExperience />
+                <WorkEntries />
+                <Skills />
+                <Contact />
             </div>
         </SmoothScroll>
         // </PageTransition>
