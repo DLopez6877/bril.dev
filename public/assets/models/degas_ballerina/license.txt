@@ -1,8 +1,0 @@
-Model Information:
-* title:	Degas Ballerina
-* source:	https://sketchfab.com/3d-models/degas-ballerina-3412e14b4344460cb2e865eac0a7e81c
-* author:	Austin Beaulier (https://sketchfab.com/Austin.Beaulier)
-
-Model License:
-* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
-* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

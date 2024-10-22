@@ -3,7 +3,6 @@ import './ParallaxHero.scss';
 import bg from '../../assets/herobg.png';
 import InfiniteScrollText from '../../wrappers/InfiniteScrollText/InfiniteScrollText';
 import coder from '../../assets/coder.png';
-import glasses from '../../assets/glasses.png';
 import { motion as m } from 'framer-motion';
 
 
@@ -144,12 +143,6 @@ const ParallaxHero = () => {
                 className="parallax coder"
                 src={coder}
                 alt="A headshot of a coder."
-                style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
-            />
-            <img
-                className="parallax glasses"
-                src={glasses}
-                alt="Glasses of the coder."
                 style={{ transform: `translate(${xValue}px, ${yValue / 8}px)` }}
             />
         </m.div>

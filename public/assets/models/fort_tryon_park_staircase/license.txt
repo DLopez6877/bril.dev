@@ -1,8 +1,0 @@
-Model Information:
-* title:	Fort Tryon Park Staircase
-* source:	https://sketchfab.com/3d-models/fort-tryon-park-staircase-6d19979112b541aea02f9b68a66fbf7d
-* author:	Austin Beaulier (https://sketchfab.com/Austin.Beaulier)
-
-Model License:
-* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
-* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

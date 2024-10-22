@@ -181,18 +181,13 @@
 
     // #endregion END CODE  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦
 
-    .coder,
-    .glasses {
+    .coder {
         z-index: 16;
         width: auto;
         height: 100%;
         left: clamp(-75%, -75% + (15 * ((100svw - 320px) / 70)), 0%);
         bottom: -20px;
         object-fit: contain;
-    }
-
-    .glasses {
-        z-index: 19;
     }
 
     @media (min-width: 415px) {
@@ -205,8 +200,7 @@
 
     @media (min-width: 450px) {
 
-        .coder,
-        .glasses {
+        .coder {
             left: -50%;
         }
     }
@@ -242,16 +236,14 @@
 
     @media (min-width: 1024px) {
 
-        .coder,
-        .glasses {
+        .coder {
             left: -20%;
         }
     }
 
     @media only screen and (max-width: 768px) and (orientation: landscape) {
 
-        .coder,
-        .glasses {
+        .coder {
             left: 50%;
         }
     }
