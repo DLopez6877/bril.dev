@@ -3,7 +3,9 @@ import './PlaygroundPage.scss';
 import { Link } from 'react-router-dom';
 import PageTransition from '../../wrappers/PageTransition/PageTransition';
 import SmoothScroll from '../../wrappers/SmoothScroll';
-import SceneComb from '../../components/Scenes/SceneComb';
+import ScenePyhamaa from '../../components/Scenes/ScenePyhamaa';
+import SceneStaircase from '../../components/Scenes/SceneStaircase';
+import SceneTunnel from '../../components/Scenes/SceneTunnel';
 
 const PlaygroundPage = () => {
     useEffect(() => {
@@ -26,7 +28,8 @@ const PlaygroundPage = () => {
 
                     {/* ▂▃▅▇█▓▒░    TEMP CODE BELOW HERE    ░▒▓█▇▅▃▂ */}
                     <div className="three-container">
-                        <SceneComb />
+                        <ScenePyhamaa />
+                        {/* <SceneStaircase /> */}
                     </div>
 
 

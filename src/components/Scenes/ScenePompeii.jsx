@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import gsap from 'gsap';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { disposeModel } from '../../lib/Helpers';
 
 const ScenePompeii = () => {
     const containerRef = useRef(null);
     const rendererRef = useRef(null);
-    const [gl, setGl] = useState(null);
 
     useEffect(() => {
         const canvas = document.createElement('canvas');
@@ -39,8 +39,10 @@ const ScenePompeii = () => {
 
 
         const gltfLoader = new GLTFLoader();
+        let model;
+
         gltfLoader.load('/assets/models/room_amorini_dorati_house__pompeii/scene.gltf', function (gltf) {
-            const model = gltf.scene;
+            model = gltf.scene;
             scene.add(model);
 
             const handleMouseUp = (event) => {
@@ -118,9 +120,14 @@ const ScenePompeii = () => {
         window.addEventListener('resize', handleResize);
 
         return () => {
-            window.removeEventListener('resize', handleResize);
             if (rendererRef.current) {
+                rendererRef.current.setAnimationLoop(null);
                 rendererRef.current.dispose();
+            }
+
+            if (model) {
+                disposeModel(model);
+                scene.remove(model);
             }
         };
     }, []);

@@ -1,14 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import gsap from 'gsap';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { disposeModel } from '../../lib/Helpers';
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 const SceneComb = () => {
     const containerRef = useRef(null);
     const rendererRef = useRef(null);
-    const controlsRef = useRef(null);
-    const [gl, setGl] = useState(null);
+    // const controlsRef = useRef(null);
 
     useEffect(() => {
         const canvas = document.createElement('canvas');
@@ -47,8 +47,10 @@ const SceneComb = () => {
         // controlsRef.current = controls;
 
         const gltfLoader = new GLTFLoader();
+        let model;
+
         gltfLoader.load('/assets/models/comb_sisters/scene.gltf', function (gltf) {
-            const model = gltf.scene;
+            model = gltf.scene;
             scene.add(model);
 
             const handleMouseUp = (event) => {
@@ -155,9 +157,14 @@ const SceneComb = () => {
         window.addEventListener('resize', handleResize);
 
         return () => {
-            window.removeEventListener('resize', handleResize);
             if (rendererRef.current) {
+                rendererRef.current.setAnimationLoop(null);
                 rendererRef.current.dispose();
+            }
+
+            if (model) {
+                disposeModel(model);
+                scene.remove(model);
             }
 
             // if (controlsRef.current) {

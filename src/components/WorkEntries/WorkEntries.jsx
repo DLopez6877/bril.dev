@@ -2,10 +2,12 @@ import React, { useEffect, useRef } from 'react';
 import './WorkEntries.scss'
 import { Link } from 'react-router-dom';
 import ScenePompeii from '../Scenes/ScenePompeii';
-import SceneSimple from '../Scenes/SceneSimple';
 import SceneComb from '../Scenes/SceneComb';
 import gsap from 'gsap';
 import { useLenis } from '@studio-freight/react-lenis';
+import ScenePyhamaa from '../Scenes/ScenePyhamaa';
+import SceneSimple from '../Scenes/SceneSimple';
+import SceneTunnel from '../Scenes/SceneTunnel';
 
 const WorkEntries = () => {
 
@@ -115,7 +117,7 @@ const WorkEntries = () => {
                     <p>Zapproved is a Portland-based SaaS company that specializes in cloud-based e-discovery software. I helped develop their flagship product, ZDiscovery, which is primarily used by corporate legal teams to help manage the entire litigation process, from data preservation to review.</p>
                     <Link to="/zapproved" className='work-link'>Learn more</Link>
                     <div className="scene-container">
-                        <SceneSimple />
+                        <ScenePyhamaa />
                     </div>
                 </div>
             </div>
@@ -145,7 +147,7 @@ const WorkEntries = () => {
                     <p>Ruby is a leading provider of virtual receptionist and live chat services, helping small businesses deliver exceptional customer experiences by managing phone calls, scheduling, and client interactions. I contributed to the development of internal applications used by receptionists for efficiently handling calls, scheduling appointments, and performing essential customer service task.</p>
                     <Link to="/ruby" className='work-link'>Learn more</Link>
                     <div className="scene-container">
-                        <SceneSimple />
+                        <SceneTunnel />
                     </div>
                 </div>
             </div>

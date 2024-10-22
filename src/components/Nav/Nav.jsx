@@ -170,7 +170,7 @@ const Nav = () => {
             >
                 <div className="grip">
                     <div className="divets">
-                        {Array(24).fill().map((_, index) => (
+                        {Array(8).fill().map((_, index) => (
                             <div key={index} className="divet" />
                         ))}
                     </div>
