@@ -107,7 +107,7 @@
 
             .divets {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(4, 1fr);
                 grid-template-rows: repeat(2, 1fr);
                 gap: 1px;
 
@@ -128,7 +128,7 @@
 
             .line {
                 position: absolute;
-                width: 24px;
+                width: 30px;
                 height: 4px;
                 background-color: var(--green);
                 border-radius: 3px;
@@ -181,7 +181,6 @@
         height: 60px;
         z-index: 899;
         border-radius: 8px;
-        // filter: invert(100%);
 
         &:hover {
             @extend %glitch-effect;

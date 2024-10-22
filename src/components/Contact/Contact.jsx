@@ -1,10 +1,18 @@
 import React from 'react';
 import './Contact.scss';
 import GradientCanvas from '../GradientCanvas/GradientCanvas';
+import { motion as m } from 'framer-motion';
 
 const Contact = () => {
     const handleEmailClick = () => {
         window.location.href = 'mailto:dlopez6877@gmail.com?subject=Contact&body=Hello';
+    };
+
+    const arrowVariants = {
+        hover: {
+            x: 5,         // Moves to the right while hovering
+            transition: { type: 'spring', stiffness: 200, damping: 20 }
+        }
     };
 
     return (
@@ -31,7 +39,21 @@ const Contact = () => {
                 </div>
 
                 <footer>
-                    <button onClick={handleEmailClick} aria-label="Send an email to dlopez6877@gmail.com">EMAIL ME <i className="fas fa-arrow-right" /></button>
+                    <m.button
+                        onClick={handleEmailClick}
+                        aria-label="Send an email to dlopez6877@gmail.com"
+                        whileHover="hover"
+                        initial="initial"
+                        animate="spring"
+                    >
+                        EMAIL ME{' '}
+                        <m.i
+                            className="fas fa-arrow-right"
+                            variants={arrowVariants}
+                            animate={{ x: [5, 0] }}
+                            transition={{ type: "spring", duration: 3, bounce: 0.75, repeat: Infinity, repeatDelay: 5 }}
+                        />
+                    </m.button>
 
                     <a href="https://www.linkedin.com/in/dlopez6877" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
                         <i className="fab fa-linkedin" aria-hidden="true" />
