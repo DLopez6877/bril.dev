@@ -168,9 +168,18 @@ const Nav = () => {
                     bottom: bottomConstraint
                 }}
             >
-                <div className="line top"></div>
-                <div className="line middle"></div>
-                <div className="line bottom"></div>
+                <div className="grip">
+                    <div className="divets">
+                        {Array(24).fill().map((_, index) => (
+                            <div key={index} className="divet" />
+                        ))}
+                    </div>
+                </div>
+                <div className="lines">
+                    <div className="line top"></div>
+                    <div className="line middle"></div>
+                    <div className="line bottom"></div>
+                </div>
             </m.button>
             <AnimatePresence>
                 {isDrawerOpen && (

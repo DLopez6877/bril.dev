@@ -285,7 +285,7 @@ const skillsData = [
     },
     {
         "name": "Google Analytics",
-        "tags": ["devops, frontend"]
+        "tags": ["devops", "frontend"]
     },
     {
         "name": "Yarn",

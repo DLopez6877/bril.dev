@@ -6,7 +6,9 @@ const GradientCanvas = ({ id }) => {
     useEffect(() => {
         const gradient = new Gradient();
         gradient.initGradient(`#${id}`);
-        return () => { };
+        return () => {
+            gradient.disconnect(); // Assuming the `disconnect` method stops animations and releases WebGL context
+        };
     }, [])
 
     return (

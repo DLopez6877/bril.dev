@@ -72,32 +72,74 @@
         width: 60px;
         height: 60px;
         padding: 15px;
-        cursor: pointer;
+        cursor: grab;
         border-radius: 8px;
         outline: none;
         z-index: 899;
-        mix-blend-mode: difference;
+        filter: invert(100%);
 
-        .line {
+        &:active {
+            cursor: grabbing;
+        }
+
+        .grip {
+            filter: invert(100%);
             position: absolute;
-            width: 28px;
-            height: 4px;
-            background-color: var(--green);
-            border-radius: 3px;
-            box-shadow: 0px 1px 1px rgba(54, 54, 54, 0.3);
+            top: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+            justify-content: space-between;
+            height: 8px;
+            padding: 1px 4px;
+
+            .divets {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                gap: 1px;
+
+                .divet {
+                    border-radius: 50%;
+                    height: 2px;
+                    width: 2px;
+                    background-color: rgba(var(--green-rgb), 0.5);
+                }
+            }
+
         }
 
-        .top {
-            top: 17px;
+        .lines {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .line {
+                position: absolute;
+                width: 28px;
+                height: 4px;
+                background-color: var(--green);
+                border-radius: 3px;
+                box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);
+                filter: invert(100%);
+            }
+
+            .top {
+                top: 17px;
+            }
+
+            .middle {
+                top: 27px;
+            }
+
+            .bottom {
+                top: 37px;
+            }
         }
 
-        .middle {
-            top: 27px;
-        }
-
-        .bottom {
-            top: 37px;
-        }
     }
 
     .drawer {
@@ -151,6 +193,7 @@
         svg {
             filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));
             color: var(--green);
+            mix-blend-mode: normal;
         }
     }
 

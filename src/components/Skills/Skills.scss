@@ -30,7 +30,7 @@
 
     .input-wrapper {
         position: relative;
-        margin: 15px 0px 20px;
+        margin: 10px 0px 20px;
 
         .input-field {
             position: relative;
@@ -140,6 +140,7 @@
         flex-grow: 1;
         margin-bottom: 10px;
         overflow: hidden;
+        border-top: 1px solid var(--orange);
         border-bottom: 1px solid var(--orange);
 
         .tags-container {
@@ -148,7 +149,7 @@
             border-right: 1px solid var(--orange);
             padding-right: 10px;
             margin-right: 10px;
-            margin-top: 5px;
+            padding-top: 15px;
             flex-shrink: 0;
 
             .tag {
@@ -175,6 +176,7 @@
         }
 
         .skills-list {
+            padding-top: 10px;
             display: flex;
             flex-wrap: wrap;
             align-content: flex-start;
