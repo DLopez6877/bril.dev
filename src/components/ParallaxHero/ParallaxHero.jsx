@@ -25,14 +25,6 @@ const ParallaxHero = () => {
     const [yValue, setYValue] = useState(0);
 
     useEffect(() => {
-        const preloadImages = [bg, coder, glasses];
-        preloadImages.forEach(src => {
-            const img = new Image();
-            img.src = src;
-        });
-    }, []);
-
-    useEffect(() => {
         const forceRepaint = () => {
             document.body.style.transform = 'translateZ(0)';
             setTimeout(() => {
