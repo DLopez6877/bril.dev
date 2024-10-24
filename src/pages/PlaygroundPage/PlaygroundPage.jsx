@@ -4,7 +4,6 @@ import {Link} from "react-router-dom";
 import PageTransition from "../../wrappers/PageTransition/PageTransition";
 import SmoothScroll from "../../wrappers/SmoothScroll";
 import MinecraftWorld from "../../components/MinecraftWorld/MinecraftWorld";
-import {villageToTree, bridge, train, bookshelf, fullview} from "../../lib/MinecraftScenes";
 
 const PlayPen = () => {
   return (

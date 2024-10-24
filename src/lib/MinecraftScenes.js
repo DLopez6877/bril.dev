@@ -1,4 +1,4 @@
-const villageToTree = [
+const village = [
   {
     posX: -2.96,
     posY: 19.02,
@@ -269,4 +269,4 @@ const fullview = [
   },
 ];
 
-export {villageToTree, bridge, train, bookshelf, fullview};
+export {village, bridge, train, bookshelf, fullview};
