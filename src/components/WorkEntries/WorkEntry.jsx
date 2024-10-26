@@ -1,4 +1,4 @@
-import MinecraftWorld from "../MinecraftWorld/MinecraftWorld";
+import ThreeScene from "../ThreeScene/ThreeScene";
 import mouse from "../../assets/mouse.svg";
 import {Link} from "react-router-dom";
 import "./WorkEntry.scss";
@@ -21,7 +21,7 @@ const WorkEntry = ({date, label, title, description, link, cameraPosition, showI
         <div className={showIndicator ? "corner hidden" : "corner"}>
           <img src={mouse} alt="Mouse icon" />
         </div>
-        <MinecraftWorld cameraPositions={cameraPosition} />
+        <ThreeScene cameraPositions={cameraPosition} />
       </div>
     </div>
   </div>

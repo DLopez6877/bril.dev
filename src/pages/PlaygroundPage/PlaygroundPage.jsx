@@ -3,40 +3,21 @@ import "./PlaygroundPage.scss";
 import {Link} from "react-router-dom";
 import PageTransition from "../../wrappers/PageTransition/PageTransition";
 import SmoothScroll from "../../wrappers/SmoothScroll";
-import MinecraftWorld from "../../components/MinecraftWorld/MinecraftWorld";
+import ThreeScene from "../../components/ThreeScene/ThreeScene";
+import {kapprum, photos, stairs, photos2, bottom} from "../../lib/Scenes";
 
 const PlayPen = () => {
   return (
     <>
-      {/* <h2>FOREST</h2>
+      <h2>SCENE</h2>
       <div className="three-container">
-        <MinecraftWorld cameraPositions={villageToTree} />
-      </div> */}
-
-      {/* <h2>LODGE</h2>
-      <div className="three-container">
-        <MinecraftWorld cameraPositions={bookshelf} />
-      </div> */}
-
-      <h2>FULL</h2>
-      <div className="three-container">
-        <MinecraftWorld cameraPositions={fullview} />
+        <ThreeScene cameraPositions={kapprum} />
       </div>
 
       <h2>ORBIT CONTROLS</h2>
       <div className="three-container">
-        <MinecraftWorld />
+        <ThreeScene />
       </div>
-
-      {/* <h2>TRAIN</h2>
-      <div className="three-container">
-        <MinecraftWorld cameraPositions={train} />
-      </div> */}
-
-      {/* <h2>BRIDGE</h2>
-      <div className="three-container">
-        <MinecraftWorld cameraPositions={bridge} />
-      </div> */}
     </>
   );
 };
