@@ -49,8 +49,8 @@ const ParallaxHero = () => {
       <img className="parallax bg-img" src={bg} alt="Orange and blue background." />
 
       <h1 className="text parallax name">Bril Lopez</h1>
-      <h2 className="text parallax design">Web Designer &</h2>
-      <h2 className="text parallax dev">Developer</h2>
+      <h2 className="text parallax title-top">Web Developer</h2>
+      <h2 className="text parallax title-bottom">& Designer</h2>
 
       <>
         {/* #region __________ CODE __________ */}

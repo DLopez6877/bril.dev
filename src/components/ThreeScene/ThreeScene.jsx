@@ -19,9 +19,8 @@ const ThreeScene = ({cameraPositions}) => {
     const container = containerRef.current;
 
     if (!rendererRef.current) {
-      const isMobile = window.matchMedia("(max-width: 768px)").matches;
-      const renderer = new THREE.WebGLRenderer({antialias: !isMobile});
-      const dpr = isMobile ? window.devicePixelRatio * 0.5 : window.devicePixelRatio || 1;
+      const renderer = new THREE.WebGLRenderer({antialias: true});
+      const dpr = window.devicePixelRatio || 1;
       renderer.setPixelRatio(Math.min(dpr, 2));
       renderer.setSize(container.clientWidth, container.clientHeight);
       renderer.setClearColor(0xe2e4d0);

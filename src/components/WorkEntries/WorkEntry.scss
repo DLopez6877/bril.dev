@@ -72,6 +72,25 @@ $entry-padding: 10px;
       background-color: white;
     }
 
+    h3 {
+      font-size: 0.8rem;
+      font-family: var(--font-secondary);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      .skill {
+        color: var(--orange);
+        font-size: 0.75rem;
+        padding: 2px 8px 1px;
+        margin: 5px;
+        border-radius: 20px;
+        background-color: rgba(var(--orange-rgb), 0.1);
+        border: 1px solid var(--orange);
+      }
+    }
+
     .scene-container {
       overflow: hidden;
       cursor: pointer;

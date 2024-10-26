@@ -47,11 +47,11 @@
     line-height: 0.88;
     font-family: var(--secondary);
 
-    &.design {
+    &.title-top {
       z-index: 18;
     }
 
-    &.dev {
+    &.title-bottom {
       z-index: 18;
       top: calc(70% + 3.9rem);
     }
@@ -191,19 +191,19 @@
   }
 
   @media (min-width: 630px) {
-    .text.dev {
+    .text.title-bottom {
       z-index: 18;
       left: 30%;
     }
   }
 
   @media (min-width: 768px) {
-    .text.design {
+    .text.title-top {
       top: 28%;
       left: 45%;
     }
 
-    .text.dev {
+    .text.title-bottom {
       top: calc(28% + 4.5rem);
       left: 50%;
     }
