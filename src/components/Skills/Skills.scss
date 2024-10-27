@@ -1,271 +1,266 @@
 .skills-container {
-    margin: 0 auto;
-    height: 80svh;
-    display: flex;
-    flex-direction: column;
+  margin: 0 auto;
+  height: 80svh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light);
+  padding: 10px;
+  border-top: 1px solid var(--orange);
+
+  @media only screen and (max-width: 768px) and (orientation: landscape) {
+    height: auto;
+  }
+
+  .marque {
+    position: absolute;
+  }
+
+  .marque-spacer {
+    font-size: 5rem;
+    font-family: var(--font-primary);
+    opacity: 0;
+  }
+
+  .scroll-text {
+    color: var(--orange);
+    font-size: 5rem;
+    font-family: var(--font-primary);
     background-color: var(--light);
-    padding: 10px;
-    border-top: 1px solid var(--orange);
+  }
 
-    @media only screen and (max-width: 768px) and (orientation: landscape) {
-        height: auto;
-    }
+  .input-wrapper {
+    position: relative;
+    margin: 10px 0px 20px;
 
-    .marque {
+    .input-field {
+      position: relative;
+      border: 4px solid var(--orange);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background-color: white;
+      height: 60px;
+
+      .fa-magnifying-glass {
+        display: none;
+        color: var(--orange);
+        font-size: 25px;
+        margin-left: 18px;
+        margin-right: 6px;
+      }
+
+      .search-input {
+        padding: 10px;
+        height: 100%;
+        width: 100%;
+        outline: none;
+        font-size: 25px;
+        font-family: var(--font-primary);
+        color: var(--orange);
+        border: none;
+
+        &::-webkit-input-placeholder {
+          color: var(--orange);
+        }
+
+        &::-moz-placeholder {
+          color: var(--orange);
+        }
+
+        &:-ms-input-placeholder {
+          color: var(--orange);
+        }
+
+        &::-ms-input-placeholder {
+          color: var(--orange);
+        }
+      }
+
+      .ellipses {
         position: absolute;
+        left: 0;
+      }
+
+      button {
+        background-color: var(--orange);
+        color: white;
+        height: 45px;
+        margin-right: 5px;
+        padding: 0px 20px;
+        letter-spacing: 1px;
+        font-weight: 400;
+        font-family: var(--font-secondary);
+        border-radius: 5px;
+        font-size: 18px;
+        box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.15) inset, 2px 2px 10px rgba(255, 255, 255, 0.2) inset;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+          background-color: #e4521d;
+          box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.4) inset, 2px 2px 10px rgba(255, 255, 255, 0.5) inset;
+        }
+      }
     }
 
-    .marque-spacer {
-        font-size: 5rem;
-        font-family: var(--font-primary);
-        opacity: 0;
-    }
+    .suggestions-list {
+      position: absolute;
+      width: 100%;
+      top: 61px;
+      background-color: var(--orange);
+      color: var(--light);
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      z-index: 1;
 
-    .scroll-text {
+      li {
+        border-bottom: 1px solid var(--light);
+        padding-left: 10px;
+        cursor: pointer;
+        letter-spacing: 0.1rem;
+        will-change: letter-spacing;
+        transition: letter-spacing 0.3s ease-out;
+
+        &:hover {
+          font-weight: bold;
+          letter-spacing: 0.5rem;
+          color: var(--green);
+        }
+      }
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    flex-grow: 1;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-top: 1px solid var(--orange);
+    border-bottom: 1px solid var(--orange);
+
+    .tags-container {
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid var(--orange);
+      padding-right: 10px;
+      margin-right: 10px;
+      padding-top: 15px;
+      flex-shrink: 0;
+
+      .tag {
+        padding: 5px 10px;
+        border: 1px solid var(--orange);
+        border-radius: 3px;
         color: var(--orange);
-        font-size: 5rem;
-        font-family: var(--font-primary);
-        background-color: var(--light);
+        font-size: 0.75rem;
+        margin-bottom: 15px;
+        cursor: pointer;
+        text-align: center;
+        text-transform: uppercase;
+        background-color: white;
+        transition: 0.2s ease-in-out;
+
+        @media (min-width: 450px) {
+          margin-bottom: 20px;
+          font-size: 1rem;
+        }
+
+        &:hover,
+        &.selected {
+          background-color: var(--orange);
+          color: var(--light);
+          box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.15) inset, 2px 2px 10px rgba(255, 255, 255, 0.2) inset;
+        }
+      }
     }
 
+    .skills-list {
+      padding-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      justify-content: flex-start;
+      overflow-y: scroll;
+      width: 100%;
+      padding-right: 10px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--orange) transparent;
+      scrollbar-gutter: stable;
+      will-change: transform;
+
+      &.completed {
+        transform: translateY(0px) !important;
+      }
+
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--orange);
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      .pill {
+        color: var(--orange);
+        font-size: 0.75rem;
+        padding: 2px 8px 1px;
+        margin: 5px;
+        border-radius: 20px;
+        background-color: rgba(var(--orange-rgb), 0.1);
+        border: 1px solid var(--orange);
+      }
+
+      .no-results {
+        color: var(--orange);
+      }
+    }
+  }
+
+  .result-counter {
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    font-family: var(--font-primary);
+    color: var(--orange);
+  }
+
+  @media (min-width: 430px) {
     .input-wrapper {
-        position: relative;
-        margin: 10px 0px 20px;
+      .input-field {
+        height: 80px;
 
-        .input-field {
-            position: relative;
-            border: 4px solid var(--orange);
-            width: 100%;
-            display: flex;
-            align-items: center;
-            background-color: white;
-            height: 60px;
-
-            .fa-magnifying-glass {
-                display: none;
-                color: var(--orange);
-                font-size: 25px;
-                margin-left: 18px;
-                margin-right: 6px;
-            }
-
-            .search-input {
-                padding: 10px;
-                height: 100%;
-                width: 100%;
-                outline: none;
-                font-size: 25px;
-                font-family: var(--font-primary);
-                color: var(--orange);
-                border: none;
-
-                &::-webkit-input-placeholder {
-                    color: var(--orange);
-                }
-
-                &::-moz-placeholder {
-                    color: var(--orange);
-                }
-
-                &:-ms-input-placeholder {
-                    color: var(--orange);
-                }
-
-                &::-ms-input-placeholder {
-                    color: var(--orange);
-                }
-
-
-            }
-
-            .ellipses {
-                position: absolute;
-                left: 0;
-            }
-
-            button {
-                background-color: var(--orange);
-                color: white;
-                height: 45px;
-                margin-right: 5px;
-                padding: 0px 20px;
-                letter-spacing: 1px;
-                font-weight: 400;
-                font-family: var(--font-secondary);
-                border-radius: 5px;
-                font-size: 18px;
-                box-shadow: -2px -2px 10px rgba(0, 0, 0, .15) inset, 2px 2px 10px rgba(255, 255, 255, 0.2) inset;
-                transition: 0.2s ease-in-out;
-
-                &:hover {
-                    background-color: #e4521d;
-                    box-shadow: -2px -2px 10px rgba(0, 0, 0, .4) inset, 2px 2px 10px rgba(255, 255, 255, 0.5) inset;
-                }
-            }
+        .search-input {
+          font-size: 30px;
         }
 
-
-        .suggestions-list {
-            position: absolute;
-            width: 100%;
-            top: 61px;
-            background-color: var(--orange);
-            color: var(--light);
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            z-index: 1;
-
-            li {
-                border-bottom: 1px solid var(--light);
-                padding-left: 10px;
-                cursor: pointer;
-                letter-spacing: 0.1rem;
-                will-change: letter-spacing;
-                transition: letter-spacing 0.3s ease-out;
-
-                &:hover {
-                    font-weight: bold;
-                    letter-spacing: 0.5rem;
-                    color: var(--green);
-                }
-            }
+        button {
+          height: 55px;
+          margin-right: 8px;
         }
+      }
 
+      .suggestions-list {
+        top: 81px;
+      }
     }
+  }
 
+  @media (min-width: 530px) {
+    .input-wrapper .input-field {
+      .fa-magnifying-glass {
+        display: block;
+      }
 
-    .wrapper {
-        display: flex;
-        flex-grow: 1;
-        margin-bottom: 10px;
-        overflow: hidden;
-        border-top: 1px solid var(--orange);
-        border-bottom: 1px solid var(--orange);
-
-        .tags-container {
-            display: flex;
-            flex-direction: column;
-            border-right: 1px solid var(--orange);
-            padding-right: 10px;
-            margin-right: 10px;
-            padding-top: 15px;
-            flex-shrink: 0;
-
-            .tag {
-                padding: 5px 10px;
-                border: 1px solid var(--orange);
-                border-radius: 3px;
-                font-size: 1rem;
-                color: var(--orange);
-                margin-bottom: 20px;
-                cursor: pointer;
-                text-align: center;
-                text-transform: uppercase;
-                background-color: white;
-                transition: 0.2s ease-in-out;
-
-                &:hover,
-                &.selected {
-                    background-color: var(--orange);
-                    color: var(--light);
-                    box-shadow: -2px -2px 10px rgba(0, 0, 0, .15) inset, 2px 2px 10px rgba(255, 255, 255, 0.2) inset;
-                }
-            }
-
-        }
-
-        .skills-list {
-            padding-top: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            align-content: flex-start;
-            justify-content: flex-start;
-            overflow-y: scroll;
-            width: 100%;
-            padding-right: 10px;
-            scrollbar-width: thin;
-            scrollbar-color: var(--orange) transparent;
-            scrollbar-gutter: stable;
-            will-change: transform;
-
-            &.completed {
-                transform: translateY(0px) !important;
-            }
-
-            &::-webkit-scrollbar {
-                width: 8px;
-            }
-
-            &::-webkit-scrollbar-thumb {
-                background-color: var(--orange);
-                border-radius: 10px;
-            }
-
-            &::-webkit-scrollbar-track {
-                background-color: transparent;
-            }
-
-            .pill {
-                color: var(--orange);
-                font-size: 0.75rem;
-                padding: 2px 8px 1px;
-                margin: 5px;
-                border-radius: 20px;
-                background-color: rgba(var(--orange-rgb), 0.1);
-                border: 1px solid var(--orange);
-            }
-
-            .no-results {
-                color: var(--orange);
-            }
-        }
+      button {
+        padding: 0px 30px;
+      }
     }
-
-    .result-counter {
-        min-height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.4rem;
-        font-family: var(--font-primary);
-        color: var(--orange);
-    }
-
-
-
-    @media (min-width: 430px) {
-        .input-wrapper {
-
-            .input-field {
-                height: 80px;
-
-                .search-input {
-                    font-size: 30px;
-                }
-
-                button {
-                    height: 55px;
-                    margin-right: 8px;
-                }
-            }
-
-            .suggestions-list {
-                top: 81px;
-            }
-        }
-    }
-
-    @media (min-width: 530px) {
-        .input-wrapper .input-field {
-
-            .fa-magnifying-glass {
-                display: block;
-            }
-
-            button {
-                padding: 0px 30px;
-            }
-        }
-    }
+  }
 }

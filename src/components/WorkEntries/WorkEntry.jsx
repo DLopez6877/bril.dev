@@ -6,14 +6,17 @@ import {Link} from "react-router-dom";
 import "./WorkEntry.scss";
 
 const WorkEntry = ({date, label, title, description, description2, description3, link, cameraPosition, showIndicator, onClick, skills}) => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
+  const [showLearnMore, setShowLearnMore] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
+      const aspectRatio = window.innerWidth / window.innerHeight;
+      setShowLearnMore(aspectRatio <= 1 / 2.22);
       setIsMobile(window.matchMedia("(max-width: 768px)").matches);
     };
 
-    handleResize(); // Initial check
+    handleResize();
     window.addEventListener("resize", handleResize); // Update on resize
 
     return () => {
@@ -27,37 +30,59 @@ const WorkEntry = ({date, label, title, description, description2, description3,
         <p className="date">{date}</p>
         <p className="tab-label">{label}</p>
       </div>
-      <div className="contents">
-        <p className="job-title">{title}</p>
-        <p>{description}</p>
-        {description2 && <p>{description2}</p>}
-        {description3 && <p>{description3}</p>}
-        {link && (
-          <Link to={link} className="work-link">
-            Learn more
-          </Link>
-        )}
-        <h3>Featured skills:</h3>
-        <div className="skills">
-          {skills.map((skill, index) => (
-            <div key={index}>
-              <div className="skill">{skill}</div>
-            </div>
-          ))}
-        </div>
-        <div className="scene-container">
-          {isMobile ? (
-            <MobileScene />
-          ) : (
+
+      {isMobile ? (
+        <div className="contents">
+          <p className="job-title">{title}</p>
+          <p>{description}</p>
+          {description2 && <p>{description2}</p>}
+          {link && (
             <>
-              <div className={showIndicator ? "corner hidden" : "corner"}>
-                <img src={mouse} alt="Mouse icon" />
+              {showLearnMore ? (
+                <Link to={link} className="work-link">
+                  Learn more
+                </Link>
+              ) : (
+                ""
+              )}
+              <h3>Featured skills:</h3>
+              <div className="skills">
+                {skills.map((skill, index) => (
+                  <div key={index}>
+                    <div className="skill">{skill}</div>
+                  </div>
+                ))}
               </div>
-              <ThreeScene cameraPositions={cameraPosition} />
             </>
           )}
         </div>
-      </div>
+      ) : (
+        <div className="contents">
+          <p className="job-title">{title}</p>
+          <p>{description}</p>
+          {description2 && <p>{description2}</p>}
+          {description3 && <p>{description3}</p>}
+          {link && (
+            <Link to={link} className="work-link">
+              Learn more
+            </Link>
+          )}
+          <h3>Featured skills:</h3>
+          <div className="skills">
+            {skills.map((skill, index) => (
+              <div key={index}>
+                <div className="skill">{skill}</div>
+              </div>
+            ))}
+          </div>
+          <div className="scene-container">
+            <div className={showIndicator ? "corner hidden" : "corner"}>
+              <img src={mouse} alt="Mouse icon" />
+            </div>
+            <ThreeScene cameraPositions={cameraPosition} />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,105 +1,104 @@
 .work-experience-container {
-    position: relative;
-    background-color: var(--orange);
-    padding-top: 50px;
-    min-height: 100svh;
-    padding-bottom: 30px;
+  position: relative;
+  background-color: var(--orange);
+  padding-top: 50px;
+  min-height: 100svh;
+  padding-bottom: 30px;
 
+  .headline {
+    text-align: center;
+    font-size: 15svw;
+    margin: 10px;
+    margin-bottom: 0px;
+    font-weight: 200;
 
-    .headline {
-        text-align: center;
-        font-size: 15svw;
-        margin: 10px;
-        margin-bottom: 0px;
-        font-weight: 200;
+    .headerline-letter {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(100px);
+      will-change: transform;
+    }
+  }
 
-        .headerline-letter {
-            display: inline-block;
-            opacity: 0;
-            transform: translateY(100px);
-            will-change: transform;
-        }
+  .pic-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
     }
 
+    .collab {
+      grid-area: 1 / 1 / 3 / 3;
+    }
+
+    .portland {
+      grid-area: 3 / 1 / 5 / 2;
+      height: 100%;
+    }
+
+    .tablet {
+      grid-area: 5 / 1 / 6 / 2;
+    }
+
+    .working {
+      grid-area: 5 / 2 / 6 / 3;
+    }
+
+    .shoutout {
+      display: flex;
+      align-items: center;
+      grid-area: 3 / 2 / 5 / 3;
+      font-size: 8.6svw;
+      margin: 0;
+      font-family: var(--font-primary);
+      line-height: 8.8svw;
+      text-transform: uppercase;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .headline {
+      font-size: 7rem;
+    }
 
     .pic-section {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, 1fr);
-        grid-column-gap: 10px;
-        grid-row-gap: 10px;
-        margin-bottom: 10px;
-        padding: 10px;
+      max-width: 1600px;
+      margin: 0 auto;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(6, 1fr);
 
-        img {
-            width: 100%;
-            object-fit: cover;
-        }
+      .collab {
+        grid-area: 4 / 2 / 7 / 5;
+        transform: translateY(100px);
+      }
 
-        .collab {
-            grid-area: 1 / 1 / 3 / 3;
-        }
+      .portland {
+        grid-area: 2 / 5 / 5 / 8;
+      }
 
-        .portland {
-            grid-area: 3 / 1 / 5 / 2;
-            height: 100%;
-        }
+      .working {
+        grid-area: 1 / 2 / 3 / 5;
+      }
 
-        .tablet {
-            grid-area: 5 / 1 / 6 / 2;
-        }
+      .tablet {
+        grid-area: 5 / 5 / 8 / 8;
+      }
 
-        .working {
-            grid-area: 5 / 2 / 6 / 3;
-        }
-
-        .shoutout {
-            display: flex;
-            align-items: center;
-            grid-area: 3 / 2 / 5 / 3;
-            font-size: 8.6svw;
-            margin: 0;
-            font-family: var(--font-primary);
-            line-height: 8.8svw;
-            text-transform: uppercase;
-        }
+      .shoutout {
+        margin-left: 20px;
+        z-index: 1;
+        font-size: 3rem;
+        line-height: 4rem;
+        grid-area: 2 / 1 / 5 / 5;
+      }
     }
-
-    @media (min-width: 1024px) {
-        .headline {
-            font-size: 8rem;
-        }
-
-        .pic-section {
-            max-width: 1600px;
-            margin: 0 auto;
-            grid-template-columns: repeat(8, 1fr);
-            grid-template-rows: repeat(6, 1fr);
-
-            .collab {
-                grid-area: 4 / 2 / 7 / 5;
-                transform: translateY(100px);
-            }
-
-            .portland {
-                grid-area: 2 / 5 / 5 / 8;
-            }
-
-            .working {
-                grid-area: 1 / 2 / 3 / 5;
-            }
-
-            .tablet {
-                grid-area: 5 / 5 / 8 / 8;
-            }
-
-            .shoutout {
-                z-index: 1;
-                font-size: 4rem;
-                line-height: 4.5rem;
-                grid-area: 2 / 1 / 5 / 5;
-            }
-        }
-    }
+  }
 }

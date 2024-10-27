@@ -9,11 +9,11 @@ const skillsData = [
   },
   {
     name: "Storybook",
-    tags: ["frontend, product"],
+    tags: ["frontend", "product"],
   },
   {
     name: "Component Libraries",
-    tags: ["frontend, product"],
+    tags: ["frontend", "product"],
   },
   {
     name: "JavaScript",

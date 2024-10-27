@@ -5,7 +5,7 @@ import InfiniteScrollText from "../../wrappers/InfiniteScrollText/InfiniteScroll
 import coder from "../../assets/coder.png";
 import {motion as m} from "framer-motion";
 
-const ParallaxHero = () => {
+const ParallaxHero = ({opacity, scale}) => {
   const cssCode = "body { background-color: #1d1f21; color: #c5c8c6; font-family: 'Courier New', monospace; } h1 { font-size: 4em; text-shadow: 2px 2px #00ff00; }";
   const jsCode = "const generateRandomCode = () => { const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'; let code = ''; for (let i = 0; i < 8; i++) { code += chars.charAt(Math.floor(Math.random() * chars.length)); } return code; }; console.log(generateRandomCode());";
   const htmlCode = '<p>Why don\'t skeletons fight each other? <span style="visibility:hidden;">Because they don\'t have the guts!</span> But seriously, I think they just prefer to keep things < span style = "visibility:hidden;" > bare - bones.</span ></p>';
@@ -22,20 +22,20 @@ const ParallaxHero = () => {
   const [xValue, setXValue] = useState(0);
   const [yValue, setYValue] = useState(0);
 
-  useEffect(() => {
-    const forceRepaint = () => {
-      document.body.style.transform = "translateZ(0)";
-      setTimeout(() => {
-        document.body.style.transform = "";
-      }, 100);
-    };
+  // useEffect(() => {
+  //   const forceRepaint = () => {
+  //     document.body.style.transform = "translateZ(0)";
+  //     setTimeout(() => {
+  //       document.body.style.transform = "";
+  //     }, 100);
+  //   };
 
-    window.addEventListener("load", forceRepaint);
+  //   window.addEventListener("load", forceRepaint);
 
-    return () => {
-      window.removeEventListener("load", forceRepaint);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("load", forceRepaint);
+  //   };
+  // }, []);
 
   const handleMouseMove = (e) => {
     const xOffset = (window.innerWidth / 2 - e.clientX) / 25;
@@ -45,13 +45,10 @@ const ParallaxHero = () => {
   };
 
   return (
-    <m.div id="about" className="parallax-hero-container" onMouseMove={handleMouseMove} transition={{ease: "easeIn"}}>
+    <m.div id="about" className="parallax-hero-container" onMouseMove={handleMouseMove} transition={{ease: "easeIn"}} style={{opacity: opacity, scale: scale}}>
       <img className="parallax bg-img" src={bg} alt="Orange and blue background." />
-
       <h1 className="text parallax name">Bril Lopez</h1>
-      <h2 className="text parallax title-top">Web Developer</h2>
-      <h2 className="text parallax title-bottom">& Designer</h2>
-
+      <h2 className="text parallax title">Web Developer & Designer</h2>
       <>
         {/* #region __________ CODE __________ */}
         <div className="code-text">
@@ -127,7 +124,6 @@ const ParallaxHero = () => {
         </div>
       </>
       {/* #endregion CODE  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦ */}
-
       <img className="parallax coder" src={coder} alt="A headshot of a coder." style={{transform: `translate(${xValue}px, ${yValue / 8}px)`}} />
     </m.div>
   );
