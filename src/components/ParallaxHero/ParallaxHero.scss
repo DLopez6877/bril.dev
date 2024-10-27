@@ -33,9 +33,6 @@
     &::after {
       position: absolute;
       top: 0;
-
-      @media (min-width: 450px) {
-      }
     }
   }
 
@@ -53,7 +50,7 @@
 
     &.title-bottom {
       z-index: 18;
-      top: calc(70% + 3.9rem);
+      top: calc(70% + 6.2rem);
     }
   }
 
