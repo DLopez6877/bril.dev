@@ -29,53 +29,28 @@ $line-height-heading: 1.3; // Tight for headings
 // MISC
 $mouseDur: 1.6s;
 
-// Base Spacing Scale (using rems)
-$spacing-xxs: 0.25rem; // 4px
-$spacing-xs: 0.5rem; // 8px
-$spacing-sm: 1rem; // 16px
-$spacing-md: 1.5rem; // 24px
-$spacing-lg: 2rem; // 32px
-$spacing-xl: 3rem; // 48px
-$spacing-xxl: 4rem; // 64px
-
-// Container Padding/Margin Scale
-$container-padding-xs: 1rem; // 16px for mobile first
-$container-padding-sm: 2rem; // 32px for small devices
-$container-padding-md: 3rem; // 48px for medium devices
-$container-padding-lg: 4rem; // 64px for large devices
-$container-padding-xl: 5rem; // 80px for extra-large devices
-
-// Gutters (space between elements in grid layouts)
-$gutter-xs: 0.5rem; // 8px
-$gutter-sm: 1rem; // 16px
-$gutter-md: 1.5rem; // 24px
-$gutter-lg: 2rem; // 32px
-
 :root {
-    // ▓▒░ FONTS
-    --font-primary: "Anton", sans-serif;
-    --font-secondary: "Sometype Mono", monospace;
+  // ▓▒░ FONTS
+  --font-primary: "Anton", sans-serif;
+  --font-secondary: "Sometype Mono", monospace;
 
-    // ▓▒░ HEX
-    --green: #A9F43A;
-    --blue: #3eb7f8;
-    --orange: #e85f2e;
-    --dark: #272727;
-    --light: #E2E4D0;
-    --background: black;
+  // ▓▒░ HEX
+  --green: #a9f43a;
+  --blue: #3eb7f8;
+  --orange: #e85f2e;
+  --dark: #272727;
+  --light: #e2e4d0;
+  --background: #001220;
 
-    // ▓▒░ RGB
-    --green-rgb: 169, 244, 58;
-    --blue-rgb: 81, 173, 165;
-    --orange-rgb: 248, 110, 1;
-    --dark-rgb: 39, 39, 39;
-    --light-rgb: 226, 228, 208;
+  // ▓▒░ RGB
+  --green-rgb: 169, 244, 58;
+  --blue-rgb: 81, 173, 165;
+  --orange-rgb: 248, 110, 1;
+  --dark-rgb: 39, 39, 39;
+  --light-rgb: 226, 228, 208;
 
-    // ▓▒░ EASINGS
-    --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
-    --ease-in: cubic-bezier();
-    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-    // expoInOutFunc = (x) => {return x===0 ? 0: x===1 ? 1: x < 0.5 ? Math.pow(2, 20 * x - 10) / 2: (2 - Math.pow(2, -20 * x + 10)) / 2;}
-    // expoInFunc = (x)=> {return x===0 ? 0: Math.pow(2, 10 * x - 10);}
-    // expoOutFunc = (x)=> {return x===1 ? 1: 1 - Math.pow(2, -10 * x);}
+  // ▓▒░ EASINGS
+  //   --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+  //   --ease-in: cubic-bezier();
+  //   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }

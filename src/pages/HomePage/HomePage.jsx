@@ -10,6 +10,7 @@ import WorkExperience from "../../components/WorkExperience/WorkExperience";
 import WorkEntries from "../../components/WorkEntries/WorkEntries";
 import Skills from "../../components/Skills/Skills";
 import Contact from "../../components/Contact/Contact";
+import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 
 const HomePage = () => {
   const {scrollYProgress} = useScroll();
@@ -39,6 +40,7 @@ const HomePage = () => {
     // <PageTransition>
     <SmoothScroll>
       <div className="home-page-container" data-scroll-container>
+        <LoadingScreen />
         <Nav />
         <ParallaxHero opacity={opacity} scale={scale} />
         <About />

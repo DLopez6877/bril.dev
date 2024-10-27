@@ -77,7 +77,7 @@
     cursor: grab;
     border-radius: 8px;
     outline: none;
-    z-index: 899;
+    z-index: 799;
     overflow: hidden;
     filter: invert(100%);
 
@@ -156,7 +156,7 @@
     top: 0;
     bottom: 0;
     width: 75svw;
-    z-index: 900;
+    z-index: 800;
     border-color: var(--green);
   }
 
@@ -167,7 +167,7 @@
     bottom: 0;
     left: 0;
     background-color: rgba(var(--dark-rgb), 0.3);
-    z-index: 899;
+    z-index: 799;
   }
 
   .close-button {
@@ -179,7 +179,7 @@
     justify-content: flex-start;
     width: 60px;
     height: 60px;
-    z-index: 899;
+    z-index: 799;
     border-radius: 8px;
 
     &:hover {

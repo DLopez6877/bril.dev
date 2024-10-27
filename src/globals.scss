@@ -1,35 +1,33 @@
-@import './styles/container.scss';
-@import './styles/lenis.scss';
-@import './styles/normalize.scss';
-@import './styles/scrollbar.scss';
-@import './styles/typography.scss';
-@import './styles/variables.scss';
+@import "./styles/lenis.scss";
+@import "./styles/normalize.scss";
+@import "./styles/scrollbar.scss";
+@import "./styles/typography.scss";
+@import "./styles/variables.scss";
 
 body,
 html {
-    height: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    background-color: var(--background);
+  height: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  background-color: var(--background);
 }
 
 @media (min-width: 1024px) {
-    html {
-        font-size: 22px;
-    }
+  html {
+    font-size: 22px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-
-    *,
-    ::before,
-    ::after {
-        animation-delay: -1ms !important;
-        animation-duration: 1ms !important;
-        animation-iteration-count: 1 !important;
-        background-attachment: initial !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0s !important;
-        transition-delay: 0s !important;
-    }
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
 }

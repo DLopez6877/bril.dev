@@ -175,7 +175,7 @@
       line-height: 1;
       letter-spacing: 2px;
 
-      @media (min-width: 384px) {
+      @media (min-width: 404px) {
         font-size: 5rem;
         top: 60%;
       }
@@ -208,12 +208,12 @@
       font-family: var(--secondary);
 
       @media (min-width: 384px) {
-        top: calc(60% + 5rem + 20px);
+        top: calc(60% + 5rem + 30px);
         text-align: right;
       }
 
       @media (min-width: 666px) {
-        top: calc(8% + 5rem + 20px);
+        top: calc(8% + 5rem + 30px);
       }
 
       @media (min-width: 701px) {

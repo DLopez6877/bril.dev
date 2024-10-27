@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import "./ParallaxHero.scss";
-import bg from "../../assets/herobg.png";
+import bg from "../../assets/herobg.webp";
 import InfiniteScrollText from "../../wrappers/InfiniteScrollText/InfiniteScrollText";
-import coder from "../../assets/coder.png";
+import coder from "../../assets/coder.webp";
 import {motion as m} from "framer-motion";
 
 const ParallaxHero = ({opacity, scale}) => {
@@ -21,21 +21,6 @@ const ParallaxHero = ({opacity, scale}) => {
 
   const [xValue, setXValue] = useState(0);
   const [yValue, setYValue] = useState(0);
-
-  // useEffect(() => {
-  //   const forceRepaint = () => {
-  //     document.body.style.transform = "translateZ(0)";
-  //     setTimeout(() => {
-  //       document.body.style.transform = "";
-  //     }, 100);
-  //   };
-
-  //   window.addEventListener("load", forceRepaint);
-
-  //   return () => {
-  //     window.removeEventListener("load", forceRepaint);
-  //   };
-  // }, []);
 
   const handleMouseMove = (e) => {
     const xOffset = (window.innerWidth / 2 - e.clientX) / 25;

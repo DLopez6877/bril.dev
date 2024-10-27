@@ -1,124 +1,87 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 body,
 p {
-    font-family: var(--font-secondary);
-    font-size: $font-size-body;
-    font-weight: $font-weight-regular;
-    line-height: $line-height-body;
+  font-family: var(--font-secondary);
+  font-size: $font-size-body;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-body;
 }
 
 // Heading Styles
 html {
+  h1,
+  h2,
+  h3 {
+    letter-spacing: 0.1rem;
+  }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        letter-spacing: 0.1rem;
-    }
+  h1,
+  .h1 {
+    font-family: var(--font-primary);
+    font-size: $font-size-h1;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-heading;
+  }
 
-    h1,
-    .h1 {
-        font-family: var(--font-primary);
-        font-size: $font-size-h1;
-        font-weight: $font-weight-bold;
-        line-height: $line-height-heading;
-    }
-
-    h2,
-    .h2 {
-        font-family: var(--font-primary);
-        font-size: $font-size-h2;
-        font-weight: $font-weight-bold;
-        line-height: $line-height-heading;
-    }
-
-    h3,
-    .h3 {
-        font-family: var(--font-primary);
-        font-size: $font-size-h3;
-        font-weight: $font-weight-medium;
-        line-height: $line-height-heading;
-    }
-
-    h4,
-    .h4 {
-        font-family: var(--font-primary);
-        font-size: $font-size-h4;
-        font-weight: $font-weight-regular;
-        line-height: $line-height-heading;
-    }
-
-    h5,
-    .h5 {
-        font-family: var(--font-primary);
-        font-size: $font-size-h5;
-        font-weight: $font-weight-regular;
-        line-height: $line-height-heading;
-    }
-
-    h6,
-    .h6 {
-        font-family: var(--font-primary);
-        font-size: $font-size-h6;
-        font-weight: $font-weight-light;
-        line-height: $line-height-heading;
-    }
+  h2,
+  .h2 {
+    font-family: var(--font-primary);
+    font-size: $font-size-h2;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-heading;
+  }
 }
 
 .small {
-    font-family: var(--font-secondary);
-    font-size: $font-size-small;
-    line-height: 1.4;
+  font-family: var(--font-secondary);
+  font-size: $font-size-small;
+  line-height: 1.4;
 }
 
 .xsmall {
-    font-size: $font-size-xsmall;
+  font-size: $font-size-xsmall;
 }
-
 
 // ▓▒░  Media Queries
 
 // Responsive Typography for Larger Devices
 @media (min-width: $size-sm) {
-    // Adjusting font size for landscape phones and tablets
-    $font-size-h1: 3rem; // 48px
-    $font-size-h2: 2.5rem; // 40px
-    $font-size-h3: 2rem; // 32px
-    $font-size-h4: 1.75rem; // 28px
-    $font-size-h5: 1.5rem; // 24px
-    $font-size-h6: 1.25rem; // 20px
+  // Adjusting font size for landscape phones and tablets
+  $font-size-h1: 3rem; // 48px
+  $font-size-h2: 2.5rem; // 40px
+  $font-size-h3: 2rem; // 32px
+  $font-size-h4: 1.75rem; // 28px
+  $font-size-h5: 1.5rem; // 24px
+  $font-size-h6: 1.25rem; // 20px
 }
 
 @media (min-width: $size-md) {
-    // Adjusting for tablets and small laptops
-    $font-size-h1: 3.75rem; // 60px
-    $font-size-h2: 3rem; // 48px
-    $font-size-h3: 2.5rem; // 40px
-    $font-size-h4: 2rem; // 32px
-    $font-size-h5: 1.75rem; // 28px
-    $font-size-h6: 1.5rem; // 24px
+  // Adjusting for tablets and small laptops
+  $font-size-h1: 3.75rem; // 60px
+  $font-size-h2: 3rem; // 48px
+  $font-size-h3: 2.5rem; // 40px
+  $font-size-h4: 2rem; // 32px
+  $font-size-h5: 1.75rem; // 28px
+  $font-size-h6: 1.5rem; // 24px
 }
 
 @media (min-width: $size-lg) {
-    // Adjusting for laptops and desktops
-    $font-size-h1: 4.5rem; // 72px
-    $font-size-h2: 3.75rem; // 60px
-    $font-size-h3: 3rem; // 48px
-    $font-size-h4: 2.5rem; // 40px
-    $font-size-h5: 2rem; // 32px
-    $font-size-h6: 1.75rem; // 28px
+  // Adjusting for laptops and desktops
+  $font-size-h1: 4.5rem; // 72px
+  $font-size-h2: 3.75rem; // 60px
+  $font-size-h3: 3rem; // 48px
+  $font-size-h4: 2.5rem; // 40px
+  $font-size-h5: 2rem; // 32px
+  $font-size-h6: 1.75rem; // 28px
 }
 
 @media (min-width: $size-xl) {
-    // Extra-large devices (4K displays)
-    $font-size-h1: 5rem; // 80px
-    $font-size-h2: 4.25rem; // 68px
-    $font-size-h3: 3.5rem; // 56px
-    $font-size-h4: 3rem; // 48px
-    $font-size-h5: 2.5rem; // 40px
-    $font-size-h6: 2rem; // 32px
+  // Extra-large devices (4K displays)
+  $font-size-h1: 5rem; // 80px
+  $font-size-h2: 4.25rem; // 68px
+  $font-size-h3: 3.5rem; // 56px
+  $font-size-h4: 3rem; // 48px
+  $font-size-h5: 2.5rem; // 40px
+  $font-size-h6: 2rem; // 32px
 }

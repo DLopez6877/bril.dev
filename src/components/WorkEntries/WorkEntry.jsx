@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from "react";
 import ThreeScene from "../ThreeScene/ThreeScene";
-import MobileScene from "../MobileScene/MobileScene";
 import mouse from "../../assets/mouse.svg";
-import {Link} from "react-router-dom";
 import "./WorkEntry.scss";
 
 const WorkEntry = ({date, label, title, description, description2, description3, link, cameraPosition, showIndicator, onClick, skills}) => {

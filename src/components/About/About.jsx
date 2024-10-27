@@ -116,7 +116,7 @@ const About = () => {
         <h2 ref={headerRef} className="glow headline-text">
           ABOUT ME
         </h2>
-        <div ref={bioRef} className="about-bio container">
+        <div ref={bioRef} className="about-bio">
           {isBioPinned && <Typewriter className="seeking-opportunities" />}
           <p className="bio-text">I'm a PC gamer, former professional Magic the Gathering player, current Hearthstone Battlegrounds enthusiast, board game aficionado, Lord of the Rings fanboy, and all-around nerd.</p>
           <p className="bio-text">For the past seven years, I've worked as a full-stack software engineer. I started off as a frontend engineer, but as time went on, I found myself increasingly focused on backend work.</p>
