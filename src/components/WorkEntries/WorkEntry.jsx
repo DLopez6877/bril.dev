@@ -30,59 +30,36 @@ const WorkEntry = ({date, label, title, description, description2, description3,
         <p className="date">{date}</p>
         <p className="tab-label">{label}</p>
       </div>
-
-      {isMobile ? (
-        <div className="contents">
-          <p className="job-title">{title}</p>
-          <p>{description}</p>
-          {description2 && <p>{description2}</p>}
-          {link && (
-            <>
-              {showLearnMore ? (
-                <Link to={link} className="work-link">
-                  Learn more
-                </Link>
-              ) : (
-                ""
-              )}
-              <h3>Featured skills:</h3>
-              <div className="skills">
-                {skills.map((skill, index) => (
-                  <div key={index}>
-                    <div className="skill">{skill}</div>
-                  </div>
-                ))}
-              </div>
-            </>
-          )}
-        </div>
-      ) : (
-        <div className="contents">
-          <p className="job-title">{title}</p>
-          <p>{description}</p>
-          {description2 && <p>{description2}</p>}
-          {description3 && <p>{description3}</p>}
-          {link && (
-            <Link to={link} className="work-link">
-              Learn more
-            </Link>
-          )}
-          <h3>Featured skills:</h3>
-          <div className="skills">
-            {skills.map((skill, index) => (
-              <div key={index}>
-                <div className="skill">{skill}</div>
-              </div>
-            ))}
-          </div>
+      <div className="contents">
+        <p className="job-title">{title}</p>
+        <p>{description}</p>
+        {description2 && <p>{description2}</p>}
+        {description3 && <p>{description3}</p>}
+        {skills && skills.length > 0 ? (
+          <>
+            <h3>Featured skills:</h3>
+            <div className="skills">
+              {skills.map((skill, index) => (
+                <div key={index}>
+                  <div className="skill">{skill}</div>
+                </div>
+              ))}
+            </div>
+          </>
+        ) : (
+          ""
+        )}
+        {isMobile ? (
+          ""
+        ) : (
           <div className="scene-container">
             <div className={showIndicator ? "corner hidden" : "corner"}>
               <img src={mouse} alt="Mouse icon" />
             </div>
             <ThreeScene cameraPositions={cameraPosition} />
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
