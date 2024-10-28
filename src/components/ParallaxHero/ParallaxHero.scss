@@ -3,6 +3,8 @@
   height: 100svh;
   position: relative;
   overflow: hidden;
+  opacity: 1;
+  transform: scale(1);
 
   .parallax {
     position: absolute;
