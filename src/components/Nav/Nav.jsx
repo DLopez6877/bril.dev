@@ -172,7 +172,7 @@ const Nav = () => {
         <div className="grip">
           <div className="bar" />
           <div className="divets">
-            {Array(8)
+            {Array(16)
               .fill()
               .map((_, index) => (
                 <div key={index} className="divet" />

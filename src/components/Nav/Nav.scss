@@ -75,8 +75,8 @@
     position: fixed;
     top: 10px;
     right: 10px;
-    width: 60px;
-    height: 60px;
+    width: 75px;
+    height: 75px;
     padding: 15px;
     cursor: grab;
     border-radius: 8px;
@@ -113,7 +113,7 @@
 
       .divets {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(8, 1fr);
         grid-template-rows: repeat(2, 1fr);
         gap: 1px;
 
@@ -133,7 +133,7 @@
 
       .line {
         position: absolute;
-        width: 30px;
+        width: 35px;
         height: 4px;
         background-color: var(--green);
         border-radius: 3px;
@@ -142,15 +142,15 @@
       }
 
       .top {
-        top: 18px;
+        top: 25px;
       }
 
       .middle {
-        top: 27px;
+        top: 35px;
       }
 
       .bottom {
-        top: 36px;
+        top: 45px;
       }
     }
   }
