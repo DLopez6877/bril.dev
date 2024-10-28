@@ -3,8 +3,18 @@
   height: 100svh;
   position: relative;
   overflow: hidden;
-  opacity: 1;
-  transform: scale(1);
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--dark-blue);
+    z-index: 19;
+    will-change: opacity;
+    opacity: 0;
+  }
 
   .parallax {
     position: absolute;

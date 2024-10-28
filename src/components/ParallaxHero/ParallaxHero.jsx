@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import "./ParallaxHero.scss";
 import bg from "../../assets/herobg.webp";
 import InfiniteScrollText from "../../wrappers/InfiniteScrollText/InfiniteScrollText";
@@ -24,8 +24,7 @@ const ParallaxHero = () => {
 
   const {scrollYProgress} = useScroll();
 
-  const opacity = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.4], [1, 2]);
+  const opacity = useTransform(scrollYProgress, [0, 0.08], [0, 1]);
 
   const handleMouseMove = (e) => {
     const xOffset = (window.innerWidth / 2 - e.clientX) / 25;
@@ -34,21 +33,9 @@ const ParallaxHero = () => {
     setYValue(yOffset);
   };
 
-  useEffect(() => {
-    const forceRepaint = () => {
-      document.body.style.transform = "translateZ(0)";
-      setTimeout(() => {
-        document.body.style.transform = "";
-      }, 100);
-    };
-    window.addEventListener("load", forceRepaint);
-    return () => {
-      window.removeEventListener("load", forceRepaint);
-    };
-  }, []);
-
   return (
-    <m.div id="about" className="parallax-hero-container" onMouseMove={handleMouseMove} transition={{ease: "easeIn"}} style={{opacity: opacity, scale: scale}}>
+    <m.div id="about" className="parallax-hero-container" onMouseMove={handleMouseMove} transition={{ease: "easeIn"}}>
+      <m.div className="overlay" style={{opacity}}></m.div>
       <img className="parallax bg-img" src={bg} alt="Orange and blue background." />
       <h1 className="text parallax name">Bril Lopez</h1>
       <h2 className="text parallax title">Web Developer & Designer</h2>
