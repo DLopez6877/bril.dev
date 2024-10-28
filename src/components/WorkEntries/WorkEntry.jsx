@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import ThreeScene from "../ThreeScene/ThreeScene";
 import mouse from "../../assets/mouse.svg";
 import "./WorkEntry.scss";
@@ -6,6 +6,8 @@ import {Link} from "react-router-dom";
 import {motion as m} from "framer-motion";
 
 const WorkEntry = ({date, label, title, description, description2, description3, cameraPosition, showIndicator, onClick, skills}) => {
+  const [creditBarShown, setCreditBarShown] = useState(false);
+
   return (
     <div className="entry" onClick={onClick}>
       <div className="tab">
@@ -35,14 +37,19 @@ const WorkEntry = ({date, label, title, description, description2, description3,
         ) : (
           <div className="scene-credit-wrapper">
             <m.div
-              className={showIndicator ? "model-credit-container" : "model-credit-container hidden"}
+              className={`model-credit-container ${showIndicator ? "" : "hidden"} ${creditBarShown ? "visible" : ""}`}
               drag="y"
               dragConstraints={{
                 top: -200,
                 bottom: -20,
               }}
-              dragElastic={0}
-              dragTransition={{power: 0}}
+              dragElastic={0.1}
+              dragTransition={{
+                power: 0,
+                bounceStiffness: 350,
+                bounceDamping: 50,
+              }}
+              onDragStart={() => setCreditBarShown(true)}
             >
               <div className="drag-bar">
                 <div className="grip-line"></div>
