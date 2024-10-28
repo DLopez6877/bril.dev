@@ -3,7 +3,7 @@ import "./ParallaxHero.scss";
 import bg from "../../assets/herobg.webp";
 import InfiniteScrollText from "../../wrappers/InfiniteScrollText/InfiniteScrollText";
 import coder from "../../assets/coder.webp";
-import {motion as m, useScroll, useTransform} from "framer-motion";
+import {motion as m} from "framer-motion";
 
 const ParallaxHero = () => {
   const cssCode = "body { background-color: #1d1f21; color: #c5c8c6; font-family: 'Courier New', monospace; } h1 { font-size: 4em; text-shadow: 2px 2px #00ff00; }";
@@ -22,10 +22,6 @@ const ParallaxHero = () => {
   const [xValue, setXValue] = useState(0);
   const [yValue, setYValue] = useState(0);
 
-  const {scrollYProgress} = useScroll();
-
-  const opacity = useTransform(scrollYProgress, [0, 0.08], [0, 1]);
-
   const handleMouseMove = (e) => {
     const xOffset = (window.innerWidth / 2 - e.clientX) / 25;
     const yOffset = (window.innerHeight / 2 - e.clientY) / 25;
@@ -35,7 +31,6 @@ const ParallaxHero = () => {
 
   return (
     <m.div id="about" className="parallax-hero-container" onMouseMove={handleMouseMove} transition={{ease: "easeIn"}}>
-      <m.div className="overlay" style={{opacity}}></m.div>
       <img className="parallax bg-img" src={bg} alt="Orange and blue background." />
       <h1 className="text parallax name">Bril Lopez</h1>
       <h2 className="text parallax title">Web Developer & Designer</h2>
