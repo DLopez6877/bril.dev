@@ -30,7 +30,7 @@ const ParallaxHero = () => {
   };
 
   return (
-    <m.div id="about" className="parallax-hero-container" onMouseMove={handleMouseMove} transition={{ease: "easeIn"}}>
+    <m.div className="parallax-hero-container" onMouseMove={handleMouseMove} transition={{ease: "easeIn"}}>
       <img className="parallax bg-img" src={bg} alt="Orange and blue background." />
       <h1 className="text parallax name">Bril Lopez</h1>
       <h2 className="text parallax title">Web Developer & Designer</h2>

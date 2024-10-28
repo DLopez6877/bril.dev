@@ -110,7 +110,7 @@ const About = () => {
   };
 
   return (
-    <div ref={containerRef} className="about-container">
+    <div id="about" ref={containerRef} className="about-container">
       <img ref={bgImgRef} className="about-bg-img" src={aboutbg} alt="Background of orange geometric trees with a blue sunrise." />
       <div className="about-content">
         <h2 ref={headerRef} className="glow headline-text">
