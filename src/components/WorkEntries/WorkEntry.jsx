@@ -53,7 +53,7 @@ const WorkEntry = ({date, label, title, description, description2, description3,
             <div className={showIndicator ? "corner hidden" : "corner"}>
               <img src={mouse} alt="Mouse icon" />
             </div>
-            {/* <ThreeScene cameraPositions={cameraPosition} /> */}
+            <ThreeScene cameraPositions={cameraPosition} />
           </div>
         )}
       </div>
