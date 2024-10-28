@@ -139,6 +139,7 @@
     left: clamp(-75%, -75% + (15 * ((100svw - 320px) / 70)), 0%);
     bottom: -20px;
     object-fit: contain;
+    pointer-events: none;
   }
 
   @media (min-width: 450px) {

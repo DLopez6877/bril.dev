@@ -33,6 +33,7 @@ const HomePage = () => {
     // <PageTransition>
     <SmoothScroll>
       <div className="home-page-container" data-scroll-container>
+        <LoadingScreen />
         <Nav />
         <ParallaxHero />
         <About />
