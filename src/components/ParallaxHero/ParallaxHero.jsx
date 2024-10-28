@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./ParallaxHero.scss";
 import bg from "../../assets/herobg.webp";
 import InfiniteScrollText from "../../wrappers/InfiniteScrollText/InfiniteScrollText";
@@ -33,6 +33,19 @@ const ParallaxHero = () => {
     setXValue(xOffset);
     setYValue(yOffset);
   };
+
+  useEffect(() => {
+    const forceRepaint = () => {
+      document.body.style.transform = "translateZ(0)";
+      setTimeout(() => {
+        document.body.style.transform = "";
+      }, 100);
+    };
+    window.addEventListener("load", forceRepaint);
+    return () => {
+      window.removeEventListener("load", forceRepaint);
+    };
+  }, []);
 
   return (
     <m.div id="about" className="parallax-hero-container" onMouseMove={handleMouseMove} transition={{ease: "easeIn"}} style={{opacity: opacity, scale: scale}}>
