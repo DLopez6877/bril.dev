@@ -1,24 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import ThreeScene from "../ThreeScene/ThreeScene";
 import mouse from "../../assets/mouse.svg";
 import "./WorkEntry.scss";
 
 const WorkEntry = ({date, label, title, description, description2, description3, cameraPosition, showIndicator, onClick, skills}) => {
-  const [isMobile, setIsMobile] = useState(true);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.matchMedia("(max-width: 768px)").matches);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize); // Update on resize
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <div className="entry" onClick={onClick}>
       <div className="tab">
@@ -43,7 +28,7 @@ const WorkEntry = ({date, label, title, description, description2, description3,
         ) : (
           ""
         )}
-        {isMobile ? (
+        {!cameraPosition || !cameraPosition.length > 0 ? (
           ""
         ) : (
           <div className="scene-container">
