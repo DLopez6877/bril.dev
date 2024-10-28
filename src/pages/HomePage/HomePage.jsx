@@ -5,10 +5,10 @@ import Nav from "../../components/Nav/Nav";
 import SmoothScroll from "../../wrappers/SmoothScroll";
 import About from "../../components/About/About";
 import WorkExperience from "../../components/WorkExperience/WorkExperience";
-import WorkEntries from "../../components/WorkEntries/WorkEntries";
 import Skills from "../../components/Skills/Skills";
-import Contact from "../../components/Contact/Contact";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
+import Contact from "../../components/Contact/Contact";
+import WorkEntries from "../../components/WorkEntries/WorkEntries";
 
 const HomePage = () => {
   if (process.env.NODE_ENV === "production") {
@@ -33,7 +33,7 @@ const HomePage = () => {
     // <PageTransition>
     <SmoothScroll>
       <div className="home-page-container" data-scroll-container>
-        {/* <LoadingScreen /> */}
+        <LoadingScreen />
         <Nav />
         <ParallaxHero />
         <About />

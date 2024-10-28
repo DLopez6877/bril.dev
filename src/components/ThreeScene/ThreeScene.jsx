@@ -70,6 +70,7 @@ const ThreeScene = ({cameraPositions}) => {
 
     const gltfLoader = new GLTFLoader();
     let model;
+    THREE.Cache.enabled = true;
 
     gltfLoader.load("/assets/the_upper_vestibule/scene.gltf", function (gltf) {
       model = gltf.scene;

@@ -1,35 +1,20 @@
-// edit this for animation length
-// keep in mind +2s will be added on to this
-:root {
-  --intro-animation-length: 4s;
-}
 $animationLength: 4s;
-
-$_in: $animationLength * 0.3;
-$_still: $animationLength * 0.6;
-$_out: $animationLength * 0.1;
-$_delay-still: $_in + $_still;
-$_delay-out: $_in + $_still + $_out;
 
 .loading-screen-container {
   position: fixed;
   width: 100svw;
   height: 100svh;
   z-index: 900;
-  background-color: rgba(var(--background-rgb), 1);
-  animation: fadeBackground 0.4s $_in forwards;
+  background-color: rgba(var(--dark-blue-rgb), 1);
+  animation: fadeBackground 0.4s 4s forwards;
 
-  h1#progress {
+  .scroll-text {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 150px;
+    font-size: 5vsw;
     z-index: 100;
-    margin: 0;
-  }
-
-  .scroll-text {
     color: var(--orange);
     font-size: 10svh;
     display: flex;
@@ -40,7 +25,7 @@ $_delay-out: $_in + $_still + $_out;
   .intro-bar {
     height: calc(100vh / 5);
     width: 100%;
-    background-color: var(--background);
+    background-color: var(--dark-blue);
 
     &:not(:first-child) {
       border-top: 5px solid var(--orange);
@@ -55,56 +40,29 @@ $_delay-out: $_in + $_still + $_out;
     }
 
     // #region __________ ANIMATIONS __________
-    animation-fill-mode: forwards;
-    animation-direction: normal, normal, normal;
-    animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86), cubic-bezier(0.95, 0.05, 0.795, 0.035), ease;
 
-    &:nth-child(even) {
-      animation-name: translateInRight, translateOutRight, fadeBackground;
-    }
+    animation: translateInRight $animationLength cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards, fadeBackground 0.5s $animationLength forwards, fadeOut 0.8s ($animationLength + 2s) forwards;
 
     &:nth-child(odd) {
-      animation-name: translateInLeft, translateOutLeft, fadeBackground;
-    }
-
-    &:nth-child(1) {
-      // animation: translateInLeft $in cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s normal forwards;
-      animation-duration: $_in, $_still, $_out;
-      animation-delay: 0s, $_delay-still, $_delay-out;
-    }
-
-    &:nth-child(2) {
-      animation-duration: $_in, $_still, $_out;
-      animation-delay: 0s, $_delay-still, $_delay-out;
-    }
-
-    &:nth-child(3) {
-      animation-duration: $_in, $_still, $_out;
-      animation-delay: 0s, $_delay-still, $_delay-out;
-    }
-
-    &:nth-child(4) {
-      animation-duration: $_in, $_still, $_out;
-      animation-delay: 0s, $_delay-still, $_delay-out;
-    }
-
-    &:nth-child(5) {
-      animation-duration: $_in, $_still, $_out;
-      animation-delay: 0s, $_delay-still, $_delay-out;
-    }
-
-    &:nth-child(6) {
-      animation-duration: $_in, $_still, $_out;
-      animation-delay: 0s, $_delay-still, $_delay-out;
+      animation: translateInLeft $animationLength cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards, fadeBackground 0.5s ($animationLength + 1s) forwards, fadeOut 0.8s ($animationLength + 2s) forwards;
     }
   }
 
   @keyframes fadeBackground {
     from {
-      background-color: rgba(var(--background-rgb), 1);
+      background-color: rgba(var(--dark-blue-rgb), 1);
     }
     to {
-      background-color: rgba(var(--background-rgb), 0);
+      background-color: rgba(var(--dark-blue-rgb), 0);
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
     }
   }
 
@@ -123,24 +81,6 @@ $_delay-out: $_in + $_still + $_out;
     }
     to {
       transform: translateX(0%);
-    }
-  }
-
-  @keyframes translateOutLeft {
-    from {
-      transform: translateX(0%);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
-
-  @keyframes translateOutRight {
-    from {
-      transform: translateX(0%);
-    }
-    to {
-      transform: translateX(100%);
     }
   }
   // #endregion END ANIMATIONS  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦
