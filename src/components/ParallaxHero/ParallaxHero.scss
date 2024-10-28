@@ -198,6 +198,13 @@
         width: 90%;
         top: 50%;
       }
+
+      @media (min-width: 1800px) {
+        font-size: 9rem;
+        width: 100%;
+        top: 20%;
+        text-align: center;
+      }
     }
 
     &.title {
@@ -205,6 +212,7 @@
       top: 70%;
       font-size: 2.5rem;
       line-height: 0.88;
+      letter-spacing: 1px;
       font-family: var(--secondary);
 
       @media (min-width: 384px) {
@@ -222,13 +230,20 @@
       }
 
       @media (min-width: 900px) {
-        top: calc(10% + 7rem + 70px);
+        top: calc(10% + 7rem + 60px);
       }
 
       @media (min-width: 1024px) {
-        top: calc(60% + 5rem + 10px);
+        top: calc(50% + 6rem + 60px);
         width: 95%;
         left: 0;
+      }
+
+      @media (min-width: 1800px) {
+        text-align: right;
+        width: 93%;
+        font-size: 4rem;
+        top: calc(20% + 9rem + 80px);
       }
     }
   }

@@ -30,9 +30,11 @@ const WorkEntry = ({date, label, title, description, description2, description3,
       </div>
       <div className="contents">
         <p className="job-title">{title}</p>
-        <p>{description}</p>
-        {description2 && <p>{description2}</p>}
-        {description3 && <p>{description3}</p>}
+        <div className="descriptions">
+          <p>{description}</p>
+          {description2 && <p>{description2}</p>}
+          {description3 && <p>{description3}</p>}
+        </div>
         {skills && skills.length > 0 ? (
           <div className="skills">
             {skills.map((skill, index) => (
