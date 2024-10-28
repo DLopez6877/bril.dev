@@ -1,48 +1,147 @@
+// edit this for animation length
+// keep in mind +2s will be added on to this
+:root {
+  --intro-animation-length: 4s;
+}
+$animationLength: 4s;
+
+$_in: $animationLength * 0.3;
+$_still: $animationLength * 0.6;
+$_out: $animationLength * 0.1;
+$_delay-still: $_in + $_still;
+$_delay-out: $_in + $_still + $_out;
+
 .loading-screen-container {
   position: fixed;
   width: 100svw;
   height: 100svh;
   z-index: 900;
-  background-color: var(--background);
-  will-change: opacity;
-  animation: fadeToApp 8s ease forwards;
+  background-color: rgba(var(--background-rgb), 1);
+  animation: fadeBackground 0.4s $_in forwards;
 
-  #logo {
-    position: absolute;
+  h1#progress {
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 150px;
+    z-index: 100;
+    margin: 0;
   }
 
-  #waves path {
-    transform-origin: 0% 100%;
-    animation: animateWaves 8s ease-in-out forwards;
-    will-change: d, transform;
-    transform: scale(1) translateY(38%);
+  .scroll-text {
+    color: var(--orange);
+    font-size: 10svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  /* Animation Keyframes */
-  @keyframes animateWaves {
-    0% {
-      transform: scale(1) translateY(38%);
+  .intro-bar {
+    height: calc(100vh / 5);
+    width: 100%;
+    background-color: var(--background);
+
+    &:not(:first-child) {
+      border-top: 5px solid var(--orange);
     }
-    80% {
-      transform: scale(4.1) translateY(10.3%);
+
+    &:nth-child(even) {
+      transform: translateX(100%);
     }
-    100% {
-      transform: scale(4.1) translateY(10.3%);
+
+    &:nth-child(odd) {
+      transform: translateX(-100%);
+    }
+
+    // #region __________ ANIMATIONS __________
+    animation-fill-mode: forwards;
+    animation-direction: normal, normal, normal;
+    animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86), cubic-bezier(0.95, 0.05, 0.795, 0.035), ease;
+
+    &:nth-child(even) {
+      animation-name: translateInRight, translateOutRight, fadeBackground;
+    }
+
+    &:nth-child(odd) {
+      animation-name: translateInLeft, translateOutLeft, fadeBackground;
+    }
+
+    &:nth-child(1) {
+      // animation: translateInLeft $in cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s normal forwards;
+      animation-duration: $_in, $_still, $_out;
+      animation-delay: 0s, $_delay-still, $_delay-out;
+    }
+
+    &:nth-child(2) {
+      animation-duration: $_in, $_still, $_out;
+      animation-delay: 0s, $_delay-still, $_delay-out;
+    }
+
+    &:nth-child(3) {
+      animation-duration: $_in, $_still, $_out;
+      animation-delay: 0s, $_delay-still, $_delay-out;
+    }
+
+    &:nth-child(4) {
+      animation-duration: $_in, $_still, $_out;
+      animation-delay: 0s, $_delay-still, $_delay-out;
+    }
+
+    &:nth-child(5) {
+      animation-duration: $_in, $_still, $_out;
+      animation-delay: 0s, $_delay-still, $_delay-out;
+    }
+
+    &:nth-child(6) {
+      animation-duration: $_in, $_still, $_out;
+      animation-delay: 0s, $_delay-still, $_delay-out;
     }
   }
 
-  @keyframes fadeToApp {
-    0% {
-      opacity: 1;
+  @keyframes fadeBackground {
+    from {
+      background-color: rgba(var(--background-rgb), 1);
     }
-    80% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
+    to {
+      background-color: rgba(var(--background-rgb), 0);
     }
   }
+
+  @keyframes translateInLeft {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes translateInRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes translateOutLeft {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes translateOutRight {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+  // #endregion END ANIMATIONS  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦
 }

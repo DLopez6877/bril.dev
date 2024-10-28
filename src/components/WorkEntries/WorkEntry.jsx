@@ -34,16 +34,13 @@ const WorkEntry = ({date, label, title, description, description2, description3,
         {description2 && <p>{description2}</p>}
         {description3 && <p>{description3}</p>}
         {skills && skills.length > 0 ? (
-          <>
-            <h3>Featured skills:</h3>
-            <div className="skills">
-              {skills.map((skill, index) => (
-                <div key={index}>
-                  <div className="skill">{skill}</div>
-                </div>
-              ))}
-            </div>
-          </>
+          <div className="skills">
+            {skills.map((skill, index) => (
+              <div key={index}>
+                <div className="skill">{skill}</div>
+              </div>
+            ))}
+          </div>
         ) : (
           ""
         )}
