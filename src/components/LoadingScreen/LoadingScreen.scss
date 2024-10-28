@@ -13,7 +13,7 @@ $animationLength: 4s;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 5vsw;
+    font-size: 5svw;
     z-index: 100;
     color: var(--orange);
     font-size: 10svh;
@@ -23,7 +23,7 @@ $animationLength: 4s;
   }
 
   .intro-bar {
-    height: calc(100vh / 5);
+    height: calc(100svh / 5);
     width: 100%;
     background-color: var(--dark-blue);
 
