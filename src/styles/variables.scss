@@ -40,7 +40,8 @@ $mouseDur: 1.6s;
   --orange: #e85f2e;
   --dark: #272727;
   --light: #e2e4d0;
-  --background: #001220;
+  --loading-bg: #001220;
+  --background: black;
 
   // ▓▒░ RGB
   --green-rgb: 169, 244, 58;
@@ -48,7 +49,7 @@ $mouseDur: 1.6s;
   --orange-rgb: 248, 110, 1;
   --dark-rgb: 39, 39, 39;
   --light-rgb: 226, 228, 208;
-  --background-rgb: 0, 18, 32;
+  --loading-bg-rgb: 0, 18, 32;
 
   // ▓▒░ EASINGS
   //   --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);

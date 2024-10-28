@@ -22,6 +22,19 @@ const ParallaxHero = ({opacity, scale}) => {
   const [xValue, setXValue] = useState(0);
   const [yValue, setYValue] = useState(0);
 
+  useEffect(() => {
+    const forceRepaint = () => {
+      document.body.style.transform = "translateZ(0)";
+      setTimeout(() => {
+        document.body.style.transform = "";
+      }, 100);
+    };
+    window.addEventListener("load", forceRepaint);
+    return () => {
+      window.removeEventListener("load", forceRepaint);
+    };
+  }, []);
+
   const handleMouseMove = (e) => {
     const xOffset = (window.innerWidth / 2 - e.clientX) / 25;
     const yOffset = (window.innerHeight / 2 - e.clientY) / 25;
