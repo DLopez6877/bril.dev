@@ -37,20 +37,6 @@ export const NavWordVariants = {
 const DrawerContent = ({drawerSide}) => {
   return (
     <m.div className="drawer-content-container" initial="hidden" animate="visible" exit="hidden" custom={drawerSide} variants={NavContainerVariants}>
-      <div className="model-credit">
-        This work is based on The Upper Vestibule{" "}
-        <Link className="credit-link" to="https://sketchfab.com/3d-models/the-upper-vestibule-e74928dc62fe457892e52dd97b6aa6e0">
-          "The Upper Vestibule"
-        </Link>
-        by The Hallwyl Museum{" "}
-        <Link className="credit-link" to="https://sketchfab.com/TheHallwylMuseum">
-          Hallwylska museet{" "}
-        </Link>
-        licensed under{" "}
-        <Link className="credit-link" to="http://creativecommons.org/licenses/by/4.0/">
-          CC-BY-4.0
-        </Link>
-      </div>
       <m.div key="about" className="drawer-row" variants={NavWordVariants}>
         <m.div className="word-text">
           <Link to="#about" className="nav-link">

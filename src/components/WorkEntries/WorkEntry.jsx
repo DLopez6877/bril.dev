@@ -2,6 +2,8 @@ import React from "react";
 import ThreeScene from "../ThreeScene/ThreeScene";
 import mouse from "../../assets/mouse.svg";
 import "./WorkEntry.scss";
+import {Link} from "react-router-dom";
+import {motion as m} from "framer-motion";
 
 const WorkEntry = ({date, label, title, description, description2, description3, cameraPosition, showIndicator, onClick, skills}) => {
   return (
@@ -31,11 +33,43 @@ const WorkEntry = ({date, label, title, description, description2, description3,
         {!cameraPosition || !cameraPosition.length > 0 ? (
           ""
         ) : (
-          <div className="scene-container">
-            <div className={showIndicator ? "corner hidden" : "corner"}>
-              <img src={mouse} alt="Mouse icon" />
+          <div className="scene-credit-wrapper">
+            <m.div
+              className={showIndicator ? "model-credit-container" : "model-credit-container hidden"}
+              drag="y"
+              dragConstraints={{
+                top: -200,
+                bottom: -20,
+              }}
+              dragElastic={0}
+              dragTransition={{power: 0}}
+            >
+              <div className="drag-bar">
+                <div className="grip-line"></div>
+                <div className="grip-line"></div>
+              </div>
+              <div className="model-credit">
+                This work is based on The Upper Vestibule{" "}
+                <Link className="credit-link" to="https://sketchfab.com/3d-models/the-upper-vestibule-e74928dc62fe457892e52dd97b6aa6e0">
+                  "The Upper Vestibule"
+                </Link>{" "}
+                by The Hallwyl Museum{" "}
+                <Link className="credit-link" to="https://sketchfab.com/TheHallwylMuseum">
+                  Hallwylska museet{" "}
+                </Link>
+                licensed under{" "}
+                <Link className="credit-link" to="http://creativecommons.org/licenses/by/4.0/">
+                  CC-BY-4.0
+                </Link>
+              </div>
+            </m.div>
+
+            <div className="scene-container">
+              <div className={showIndicator ? "corner hidden" : "corner"}>
+                <img src={mouse} alt="Mouse icon" />
+              </div>
+              <ThreeScene cameraPositions={cameraPosition} />
             </div>
-            <ThreeScene cameraPositions={cameraPosition} />
           </div>
         )}
       </div>

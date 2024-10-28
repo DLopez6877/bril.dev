@@ -4,6 +4,7 @@ import gsap from "gsap";
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js";
 import {disposeModel} from "../../lib/Helpers";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls.js";
+import "./ThreeScene.scss";
 
 const ThreeScene = ({cameraPositions}) => {
   const containerRef = useRef(null);
@@ -157,7 +158,7 @@ camera.rotation.set(${camera.rotation.x.toFixed(2)}, ${camera.rotation.y.toFixed
   }, [cameraPositions]);
 
   return (
-    <div className="three-scene-container" style={{position: "relative", width: "100%", height: "100%"}}>
+    <div className="three-scene-container">
       <div ref={containerRef} className="scene" style={{position: "relative", width: "100%", height: "100%"}}></div>
     </div>
   );
