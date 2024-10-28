@@ -34,12 +34,16 @@ export const NavWordVariants = {
   },
 };
 
-const DrawerContent = ({drawerSide}) => {
+const DrawerContent = ({drawerSide, closeDrawer}) => {
+  const handleLinkClick = () => {
+    setTimeout(closeDrawer, 800);
+  };
+
   return (
     <m.div className="drawer-content-container" initial="hidden" animate="visible" exit="hidden" custom={drawerSide} variants={NavContainerVariants}>
       <m.div key="about" className="drawer-row" variants={NavWordVariants}>
         <m.div className="word-text">
-          <Link to="#about" className="nav-link">
+          <Link to="#about" className="nav-link" onClick={handleLinkClick}>
             <span aria-hidden="true">About</span>
             About
             <span aria-hidden="true">About</span>
@@ -49,7 +53,7 @@ const DrawerContent = ({drawerSide}) => {
 
       <m.div key="work" className="drawer-row" variants={NavWordVariants}>
         <m.div className="word-text">
-          <Link to="#work" className="nav-link">
+          <Link to="#work" className="nav-link" onClick={handleLinkClick}>
             <span aria-hidden="true">Work</span>
             Work
             <span aria-hidden="true">Work</span>
@@ -59,7 +63,7 @@ const DrawerContent = ({drawerSide}) => {
 
       <m.div key="skills" className="drawer-row" variants={NavWordVariants}>
         <m.div className="word-text">
-          <Link to="#skills" className="nav-link">
+          <Link to="#skills" className="nav-link" onClick={handleLinkClick}>
             <span aria-hidden="true">Skills</span>
             Skills
             <span aria-hidden="true">Skills</span>
@@ -69,7 +73,7 @@ const DrawerContent = ({drawerSide}) => {
 
       <m.div key="contact" className="drawer-row" variants={NavWordVariants}>
         <m.div className="word-text">
-          <Link to="#contact" className="nav-link">
+          <Link to="#contact" className="nav-link" onClick={handleLinkClick}>
             <span aria-hidden="true">Contact</span>
             Contact
             <span aria-hidden="true">Contact</span>
