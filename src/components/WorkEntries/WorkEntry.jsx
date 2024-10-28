@@ -3,14 +3,11 @@ import ThreeScene from "../ThreeScene/ThreeScene";
 import mouse from "../../assets/mouse.svg";
 import "./WorkEntry.scss";
 
-const WorkEntry = ({date, label, title, description, description2, description3, link, cameraPosition, showIndicator, onClick, skills}) => {
+const WorkEntry = ({date, label, title, description, description2, description3, cameraPosition, showIndicator, onClick, skills}) => {
   const [isMobile, setIsMobile] = useState(true);
-  const [showLearnMore, setShowLearnMore] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
-      const aspectRatio = window.innerWidth / window.innerHeight;
-      setShowLearnMore(aspectRatio <= 1 / 2.22);
       setIsMobile(window.matchMedia("(max-width: 768px)").matches);
     };
 

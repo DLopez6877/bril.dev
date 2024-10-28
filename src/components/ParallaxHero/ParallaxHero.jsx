@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import "./ParallaxHero.scss";
 import bg from "../../assets/herobg.webp";
 import InfiniteScrollText from "../../wrappers/InfiniteScrollText/InfiniteScrollText";
 import coder from "../../assets/coder.webp";
-import {motion as m} from "framer-motion";
+import {motion as m, useScroll, useTransform} from "framer-motion";
 
-const ParallaxHero = ({opacity, scale}) => {
+const ParallaxHero = () => {
   const cssCode = "body { background-color: #1d1f21; color: #c5c8c6; font-family: 'Courier New', monospace; } h1 { font-size: 4em; text-shadow: 2px 2px #00ff00; }";
   const jsCode = "const generateRandomCode = () => { const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'; let code = ''; for (let i = 0; i < 8; i++) { code += chars.charAt(Math.floor(Math.random() * chars.length)); } return code; }; console.log(generateRandomCode());";
   const htmlCode = '<p>Why don\'t skeletons fight each other? <span style="visibility:hidden;">Because they don\'t have the guts!</span> But seriously, I think they just prefer to keep things < span style = "visibility:hidden;" > bare - bones.</span ></p>';
@@ -22,18 +22,10 @@ const ParallaxHero = ({opacity, scale}) => {
   const [xValue, setXValue] = useState(0);
   const [yValue, setYValue] = useState(0);
 
-  useEffect(() => {
-    const forceRepaint = () => {
-      document.body.style.transform = "translateZ(0)";
-      setTimeout(() => {
-        document.body.style.transform = "";
-      }, 100);
-    };
-    window.addEventListener("load", forceRepaint);
-    return () => {
-      window.removeEventListener("load", forceRepaint);
-    };
-  }, []);
+  const {scrollYProgress} = useScroll();
+
+  const opacity = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.4], [1, 2]);
 
   const handleMouseMove = (e) => {
     const xOffset = (window.innerWidth / 2 - e.clientX) / 25;
