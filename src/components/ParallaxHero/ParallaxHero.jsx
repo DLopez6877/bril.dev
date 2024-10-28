@@ -38,7 +38,7 @@ const ParallaxHero = () => {
         {/* #region __________ CODE __________ */}
         <div className="code-text">
           {/* css */}
-          <div className="parallax code css" style={{transform: `translate(${xValue / 0.5}px, ${yValue / 0.5}px)`}}>
+          <div className="parallax code css">
             <InfiniteScrollText scrollSpeed={0.08} direction="right">
               {cssCode}
             </InfiniteScrollText>
@@ -62,34 +62,34 @@ const ParallaxHero = () => {
           </div>
 
           {/* csharp */}
-          <div className="parallax code csharp" style={{transform: `translate(${xValue / 0.9}px, ${yValue / 0.9}px)`}}>
+          <div className="parallax code csharp">
             <InfiniteScrollText scrollSpeed={0.08}>{csharpCode}</InfiniteScrollText>
           </div>
 
           {/* sql */}
-          <div className="parallax code sql" style={{transform: `translate(${xValue / 1.0}px, ${yValue / 1.0}px)`}}>
+          <div className="parallax code sql">
             <InfiniteScrollText scrollSpeed={0.08}>{sqlCode}</InfiniteScrollText>
           </div>
 
           {/* java */}
-          <div className="parallax code java" style={{transform: `translate(${xValue / 1.1}px, ${yValue / 1.1}px)`}}>
+          <div className="parallax code java">
             <InfiniteScrollText scrollSpeed={0.08}>{javaCode}</InfiniteScrollText>
           </div>
 
           {/* test */}
-          <div className="parallax code test" style={{transform: `translate(${xValue / 1.3}px, ${yValue / 1.3}px)`}}>
+          <div className="parallax code test">
             <InfiniteScrollText scrollSpeed={0.08} direction="right">
               {testCode}
             </InfiniteScrollText>
           </div>
 
           {/* powershell */}
-          <div className="parallax code powershell" style={{transform: `translate(${xValue / 1.5}px, ${yValue / 1.5}px)`}}>
+          <div className="parallax code powershell">
             <InfiniteScrollText scrollSpeed={0.08}>{powershellCode}</InfiniteScrollText>
           </div>
 
           {/* go */}
-          <div className="parallax code go" style={{transform: `translate(${xValue / 1.8}px, ${yValue / 1.8}px)`}}>
+          <div className="parallax code go">
             <InfiniteScrollText scrollSpeed={0.08} direction="right">
               {goCode}
             </InfiniteScrollText>

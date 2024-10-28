@@ -54,8 +54,7 @@ $entry-padding: 10px;
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       grid-template-rows: auto auto 1fr;
-      grid-column-gap: 0px;
-      grid-row-gap: 0px;
+      grid-column-gap: 20px;
       margin-right: 0px;
       padding-right: 0px;
 
@@ -65,9 +64,14 @@ $entry-padding: 10px;
       .descriptions {
         grid-area: 3 / 1 / 4 / 4;
       }
-      div.scene-container {
+      .scene-credit-wrapper {
         grid-area: 3 / 4 / 4 / 6;
-        margin: auto;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
       }
       .skills {
         grid-area: 2 / 1 / 3 / 6;
@@ -144,6 +148,14 @@ $entry-padding: 10px;
       border-bottom: none;
       transform: translateY(-20px);
 
+      @media (min-width: 1024px) {
+        position: relative;
+        top: 0;
+        border: none;
+        transform: translateY(0);
+        padding-bottom: 10px;
+      }
+
       &.hidden {
         transform: translateY(0);
       }
@@ -174,12 +186,23 @@ $entry-padding: 10px;
           height: 2px;
           margin-bottom: 3px;
         }
+
+        @media (min-width: 1024px) {
+          display: none;
+        }
       }
       .model-credit {
         height: 300px;
         padding: 5px;
         color: var(--light);
         background-color: #26232b;
+        @media (min-width: 1024px) {
+          height: auto;
+          background-color: transparent;
+          color: var(--dark);
+          font-size: 0.5rem;
+          max-width: 700px;
+        }
       }
     }
 
@@ -199,6 +222,9 @@ $entry-padding: 10px;
       max-width: 700px;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
       transition: box-shadow 0.3s;
+      @media (min-width: 1024px) {
+        margin-top: 0px;
+      }
 
       &:hover {
         box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
