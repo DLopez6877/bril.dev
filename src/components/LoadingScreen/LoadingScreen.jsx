@@ -125,7 +125,7 @@ const LoadingScreen = () => {
   };
 
   if (!isVisible) {
-    // return null;
+    return null;
   }
 
   return (
