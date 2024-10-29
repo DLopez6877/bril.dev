@@ -39,7 +39,6 @@ const HomePage = () => {
     });
   };
 
-  // Example usage with a component’s load time
   useEffect(() => {
     const start = Date.now();
     return () => {

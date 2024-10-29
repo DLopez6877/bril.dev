@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLenis } from "@studio-freight/react-lenis";
-import { motion, useAnimation } from "framer-motion";
+import { useAnimation } from "framer-motion";
 import "./LoadingScreen.scss";
 
 const LoadingScreen = () => {
