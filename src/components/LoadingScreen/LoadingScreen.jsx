@@ -60,9 +60,7 @@ const LoadingScreen = () => {
     }
 
     const progressInterval = setInterval(() => {
-      setProgress((prev) =>
-        Math.min(100, Math.floor(prev + 100 / (6000 / 100)))
-      );
+      setProgress((prev) => Math.min(100, prev + 1));
 
       setBars((prevBars) =>
         prevBars.map((bar) => {
@@ -80,7 +78,7 @@ const LoadingScreen = () => {
           };
         })
       );
-    }, 100);
+    }, 50);
 
     return () => {
       clearInterval(progressInterval);
@@ -90,10 +88,10 @@ const LoadingScreen = () => {
 
   useEffect(() => {
     if (progress === 100) {
+      if (lenis) lenis.start();
       const timer = setTimeout(() => {
         setIsVisible(false);
-        if (lenis) lenis.start();
-      }, 1500);
+      }, 2000);
 
       return () => clearTimeout(timer);
     }
@@ -124,9 +122,7 @@ const LoadingScreen = () => {
     return <span className="scroll-text">{bar.progress}</span>;
   };
 
-  if (!isVisible) {
-    return null;
-  }
+  if (!isVisible) return null;
 
   return (
     <div className="loading-screen-container">

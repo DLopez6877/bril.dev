@@ -1,6 +1,6 @@
 @import "../../styles/placeholders.scss";
 
-$animationLength: 8s;
+$animationLength: 4s;
 
 .loading-screen-container {
   position: fixed;
@@ -9,6 +9,7 @@ $animationLength: 8s;
   z-index: 900;
   background-color: rgba(var(--dark-blue-rgb), 1);
   animation: fadeBackground 0.4s $animationLength forwards;
+  pointer-events: none;
 
   .intro-bar {
     @extend %glitch-effect;
@@ -37,7 +38,6 @@ $animationLength: 8s;
       transform: translateX(-100%);
     }
 
-    // #region __________ ANIMATIONS __________
     animation: translateInRight $animationLength
         cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards,
       fadeBackground 0.5s $animationLength forwards,
@@ -60,6 +60,7 @@ $animationLength: 8s;
     }
   }
 
+  // #region __________ ANIMATIONS __________
   @keyframes slideOut {
     0% {
       transform: scale(1) translateX(0);
