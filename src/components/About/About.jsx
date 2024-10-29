@@ -5,7 +5,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Typewriter from "../Typewriter/Typewriter";
 import WordSplitter from "../../wrappers/WordSplitter";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 const About = () => {
   const containerRef = useRef(null);

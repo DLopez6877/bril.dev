@@ -4,7 +4,7 @@ import GradientCanvas from "../GradientCanvas/GradientCanvas";
 import { motion as m } from "framer-motion";
 import { Link } from "react-router-dom";
 import useIsWideAspectRatio from "../../hooks/useIsWideAspectRatio";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 const Contact = () => {
   const isWideAspectRatio = useIsWideAspectRatio();
@@ -51,6 +51,20 @@ const Contact = () => {
       <div className="visible-content-container">
         <div className="content">
           <GradientCanvas id="contact-gradient" />
+          <div className="handles">
+            <p>
+              <i className="fa-solid fa-envelope"></i>
+              bril.dev@outlook.com
+            </p>
+            <p>
+              <i className="fab fa-linkedin" />
+              /in/dlopez6877
+            </p>
+            <p>
+              <i className="fab fa-github" />
+              dlopez6877
+            </p>
+          </div>
           <h2>LET'S</h2>
           <h2>CONNECT</h2>
           <div className="pills-container">
@@ -95,15 +109,15 @@ const Contact = () => {
             to="https://www.linkedin.com/in/dlopez6877"
             onClick={handleLinkedInClick}
           >
-            <i className="fab fa-linkedin" aria-hidden="true" />
+            <i className="fab fa-linkedin" />
           </Link>
 
           <Link
             className="github"
-            to="https://www.linkedin.com/in/dlopez6877"
+            to="https://github.com/dlopez6877"
             onClick={handleGithubClick}
           >
-            <i className="fab fa-github" aria-hidden="true" />
+            <i className="fab fa-github" />
           </Link>
         </footer>
       </div>

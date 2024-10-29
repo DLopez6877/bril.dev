@@ -9,10 +9,11 @@ import Skills from "../../components/Skills/Skills";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 import Contact from "../../components/Contact/Contact";
 import WorkEntries from "../../components/WorkEntries/WorkEntries";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 const HomePage = () => {
   if (process.env.NODE_ENV === "production") {
+    ReactGA.send("pageview");
     console.log(`
     HH   HH  III       III '  MM    MM
     HH   HH   I         I  '  MMM  MMM
@@ -31,9 +32,9 @@ const HomePage = () => {
   }
 
   const trackComponentLoadTime = (loadTime) => {
-    ReactGA.timing({
+    ReactGA.event({
       category: "Load Performance",
-      variable: "Page Load Time",
+      action: "Page Load Time",
       value: loadTime,
       label: "Home Page",
     });

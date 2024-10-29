@@ -6,10 +6,10 @@ $animationLength: 4s;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   font-size: clamp(2rem, 10svh, 20svw);
   color: rgba(var(--orange-rgb), 1);
   animation: slideOut 5s ($animationLength + 3s) linear forwards;
+  transform: translate(-50%, -50%);
   z-index: 901;
 }
 
@@ -21,7 +21,6 @@ $animationLength: 4s;
   background-color: rgba(var(--dark-blue-rgb), 1);
   animation: fadeBackground 0.4s $animationLength forwards;
   pointer-events: none;
-  transform-origin: top left;
 
   .intro-bar {
     display: flex;
@@ -70,17 +69,20 @@ $animationLength: 4s;
 
   @keyframes slideOut {
     0% {
-      transform: scale(1) translate(-50%, -50%);
+      transform: translate(-50%, -50%);
       opacity: 1;
+      font-size: clamp(2rem, 10svh, 20svw);
     }
     15% {
-      transform: scale(0.3) translate(-50%, -50%);
+      transform: translate(-50%, -50%);
       opacity: 0.5;
       z-index: 1;
+      font-size: clamp(0.5rem, 1.2rem, 20svw);
     }
     100% {
       opacity: 0.5;
-      transform: scale(0.3) translate(-300svw, -50%);
+      transform: translate(-300svw, -50%);
+      font-size: clamp(0.5rem, 1.2rem, 20svw);
       z-index: 1;
     }
   }
