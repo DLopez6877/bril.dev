@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useLenis } from "@studio-freight/react-lenis";
+import { motion, useAnimation } from "framer-motion";
 import "./LoadingScreen.scss";
 
 const LoadingScreen = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [progress, setProgress] = useState(0);
   const lenis = useLenis();
+  const controls = useAnimation();
 
   const icons = [
     "fa-skull",
@@ -91,13 +93,16 @@ const LoadingScreen = () => {
       if (lenis) lenis.start();
       const timer = setTimeout(() => {
         setIsVisible(false);
-      }, 2000);
+      }, 12000);
 
       return () => clearTimeout(timer);
     }
   }, [progress, lenis]);
 
   const renderProgressWithIcon = (bar) => {
+    if (bar.progress === 100) {
+      return <span className="scroll-text">100</span>;
+    }
     const progressStr = bar.progress.toString();
 
     if (bar.replaceIcon && progressStr.length > 1) {
@@ -125,15 +130,20 @@ const LoadingScreen = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="loading-screen-container">
-      {bars.map((bar, index) => (
-        <div className="intro-bar" key={"bar" + index}>
-          <span aria-hidden="true">{progress}</span>
-          {renderProgressWithIcon(bar)}
-          <span aria-hidden="true">{progress}</span>
+    <>
+      <div className="loading-screen-container">
+        <div className="bars">
+          {bars.map((bar, index) => (
+            <div className="intro-bar" key={"bar" + index}>
+              <span aria-hidden="true">{progress}</span>
+              {renderProgressWithIcon(bar)}
+              <span aria-hidden="true">{progress}</span>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+      <div className="center-progress">{renderProgressWithIcon(bars[2])}%</div>
+    </>
   );
 };
 

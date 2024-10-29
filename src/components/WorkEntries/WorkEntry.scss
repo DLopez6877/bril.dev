@@ -156,6 +156,15 @@ $entry-padding: 10px;
         padding-bottom: 10px;
       }
 
+      p {
+        margin-left: 8px;
+      }
+      .credit {
+        font-size: 0.75rem;
+        padding: 0px 16px;
+        line-height: 1.2rem;
+      }
+
       &.hidden {
         transform: translateY(0);
       }

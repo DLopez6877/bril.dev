@@ -3,32 +3,21 @@ import gsap from "gsap";
 import { useLenis } from "@studio-freight/react-lenis";
 import { photos, stairs, photos2, bottom } from "../../lib/Scenes";
 import WorkEntry from "./WorkEntry";
+import useIsMobile from "../../hooks/useIsMobile";
+import useIsWideAspectRatio from "../../hooks/useIsWideAspectRatio";
 
 const WorkEntries = () => {
   const containerRef = useRef(null);
   const lenis = useLenis();
   const entryScrollPositionsRef = useRef({});
   const [canvasClicked, setCanvasClicked] = useState(false);
-  const [isMobile, setIsMobile] = useState(true);
-  const [isLandscape, setIsLandscape] = useState(true);
+  const isMobile = useIsMobile();
+  const isWideAspectRatio = useIsWideAspectRatio();
+  const animationsRef = useRef([]);
 
   const handleEntryClick = () => {
     setCanvasClicked(true);
   };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsLandscape(window.innerWidth > window.innerHeight);
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   // #region __________ ENTRIES __________
   const entries = [
@@ -143,7 +132,13 @@ const WorkEntries = () => {
   // #endregion END ENTRIES  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦
 
   useEffect(() => {
-    if (isLandscape && isMobile) return;
+    animationsRef.current.forEach((animation) =>
+      animation.scrollTrigger?.kill()
+    );
+    animationsRef.current = [];
+
+    if (isWideAspectRatio) return;
+
     const container = containerRef.current;
     const entryElements = gsap.utils.toArray(".entry");
 
@@ -151,7 +146,7 @@ const WorkEntries = () => {
       const entryId = `entry-${index}`;
       const offset = index * 70;
 
-      gsap.to(entry, {
+      const animation = gsap.to(entry, {
         scrollTrigger: {
           trigger: entry,
           start: `top top+=${offset}`,
@@ -169,8 +164,17 @@ const WorkEntries = () => {
           },
         },
       });
+
+      animationsRef.current.push(animation);
     });
-  }, [isLandscape, isMobile]);
+
+    return () => {
+      animationsRef.current.forEach((animation) =>
+        animation.scrollTrigger?.kill()
+      );
+      animationsRef.current = [];
+    };
+  }, [isWideAspectRatio]);
 
   useEffect(() => {
     const container = containerRef.current;
