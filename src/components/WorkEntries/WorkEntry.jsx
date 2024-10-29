@@ -53,7 +53,7 @@ const WorkEntry = ({
               } ${creditBarShown ? "visible" : ""}`}
               drag="y"
               dragConstraints={{
-                top: -200,
+                top: -150,
                 bottom: -20,
               }}
               dragElastic={0.1}
@@ -70,20 +70,21 @@ const WorkEntry = ({
               </div>
               <div className="model-credit">
                 <p>3D MODEL CREDIT:</p>
+                {/* This work is based on "MTV VMA gallery 2016"
+                (https://sketchfab.com/3d-models/mtv-vma-gallery-2016-310ed031ca9646a587c2f934460ef27f)
+                by MTV (https://sketchfab.com/MTV) licensed under CC-BY-4.0
+                (http://creativecommons.org/licenses/by/4.0/) */}
                 <div className="credit">
-                  This work is based on The Upper Vestibule{" "}
+                  This work is based on{" "}
                   <Link
                     className="credit-link"
-                    to="https://sketchfab.com/3d-models/the-upper-vestibule-e74928dc62fe457892e52dd97b6aa6e0"
+                    to="https://sketchfab.com/3d-models/mtv-vma-gallery-2016-310ed031ca9646a587c2f934460ef27f"
                   >
-                    "The Upper Vestibule"
+                    "MTV VMA gallery 2016"
                   </Link>{" "}
-                  by The Hallwyl Museum{" "}
-                  <Link
-                    className="credit-link"
-                    to="https://sketchfab.com/TheHallwylMuseum"
-                  >
-                    Hallwylska museet
+                  by{" "}
+                  <Link className="credit-link" to="https://sketchfab.com/MTV">
+                    MTV
                   </Link>{" "}
                   licensed under{" "}
                   <Link

@@ -1,4 +1,176 @@
-const bottom = [
+const vma_full = [
+  {
+    posX: -0.89,
+    posY: 0.55,
+    posZ: 3.79,
+    rotateX: 0.13,
+    rotateY: -0.19,
+    rotateZ: 0.02,
+  },
+  {
+    posX: 4.83,
+    posY: 1.53,
+    posZ: 3.79,
+    rotateX: -0.0,
+    rotateY: 0.02,
+    rotateZ: 0.0,
+  },
+  {
+    posX: 9.54,
+    posY: 1.94,
+    posZ: 1.8,
+    rotateX: -0.79,
+    rotateY: -1.53,
+    rotateZ: -0.79,
+  },
+  {
+    posX: -1.54,
+    posY: 1.86,
+    posZ: 3.09,
+    rotateX: -0.8,
+    rotateY: -1.39,
+    rotateZ: -0.8,
+  },
+  {
+    posX: -0.29,
+    posY: 1.91,
+    posZ: 0.06,
+    rotateX: -0.03,
+    rotateY: -0.03,
+    rotateZ: -0.0,
+  },
+];
+
+const vma_names = [
+  {
+    posX: 9.28,
+    posY: 0.99,
+    posZ: -0.62,
+    rotateX: -0.09,
+    rotateY: 0.06,
+    rotateZ: 0.01,
+  },
+  {
+    posX: 7.39,
+    posY: 0.87,
+    posZ: -0.49,
+    rotateX: -0.09,
+    rotateY: 0.06,
+    rotateZ: 0.01,
+  },
+  {
+    posX: 8.63,
+    posY: 1.78,
+    posZ: -0.12,
+    rotateX: -0.09,
+    rotateY: 0.06,
+    rotateZ: 0.01,
+  },
+  {
+    posX: 8.63,
+    posY: 1.78,
+    posZ: 2.52,
+    rotateX: -0.09,
+    rotateY: 0.06,
+    rotateZ: 0.01,
+  },
+  {
+    posX: 8.57,
+    posY: 2.62,
+    posZ: 0.38,
+    rotateX: -0.16,
+    rotateY: 0.06,
+    rotateZ: 0.01,
+  },
+];
+
+const vma_britney = [
+  {
+    posX: 2.72,
+    posY: 2.09,
+    posZ: 3.16,
+    rotateX: -3.08,
+    rotateY: 0.03,
+    rotateZ: 3.14,
+  },
+  {
+    posX: 1.88,
+    posY: 1.26,
+    posZ: 3.08,
+    rotateX: -3.08,
+    rotateY: 0.03,
+    rotateZ: 3.14,
+  },
+  {
+    posX: 3.66,
+    posY: 1.86,
+    posZ: 2.62,
+    rotateX: -3.08,
+    rotateY: 0.03,
+    rotateZ: 3.14,
+  },
+  {
+    posX: 2.22,
+    posY: 2.61,
+    posZ: 3.17,
+    rotateX: -3.08,
+    rotateY: 0.03,
+    rotateZ: 3.14,
+  },
+  {
+    posX: 1.85,
+    posY: 1.76,
+    posZ: 1.12,
+    rotateX: -3.11,
+    rotateY: -0.06,
+    rotateZ: 3.14,
+  },
+];
+
+const vma_nicki = [
+  {
+    posX: 8.56,
+    posY: 2.26,
+    posZ: 3.28,
+    rotateX: 3.14,
+    rotateY: -0.09,
+    rotateZ: 3.14,
+  },
+  {
+    posX: 5.99,
+    posY: 1.43,
+    posZ: 2.99,
+    rotateX: 3.14,
+    rotateY: -0.09,
+    rotateZ: 3.14,
+  },
+  {
+    posX: 4.55,
+    posY: 1.84,
+    posZ: 2.35,
+    rotateX: 3.07,
+    rotateY: -0.38,
+    rotateZ: 3.12,
+  },
+  {
+    posX: 7.55,
+    posY: 1.84,
+    posZ: 0.65,
+    rotateX: 3.11,
+    rotateY: -0.0,
+    rotateZ: 3.14,
+  },
+  {
+    posX: 7.55,
+    posY: 2.43,
+    posZ: 2.53,
+    rotateX: 3.11,
+    rotateY: -0.0,
+    rotateZ: 3.14,
+  },
+];
+
+const vestibule_bottom = [
   {
     posX: -0.41,
     posY: 1.12,
@@ -41,7 +213,7 @@ const bottom = [
   },
 ];
 
-const stairs = [
+const vestibule_stairs = [
   {
     posX: -2.18,
     posY: 4.86,
@@ -84,7 +256,7 @@ const stairs = [
   },
 ];
 
-const photos = [
+const vestibule_photos = [
   {
     posX: 0.56,
     posY: 5.22,
@@ -119,7 +291,7 @@ const photos = [
   },
 ];
 
-const photos2 = [
+const vestibule_photos2 = [
   {
     posX: 2.58,
     posY: 5.48,
@@ -154,7 +326,7 @@ const photos2 = [
   },
 ];
 
-const kapprum = [
+const vestibule_kapprum = [
   {
     posX: 0.89,
     posY: 1.15,
@@ -189,4 +361,14 @@ const kapprum = [
   },
 ];
 
-export {kapprum, photos, stairs, photos2, bottom};
+export {
+  vestibule_kapprum,
+  vestibule_photos,
+  vestibule_stairs,
+  vestibule_photos2,
+  vestibule_bottom,
+  vma_full,
+  vma_britney,
+  vma_nicki,
+  vma_names,
+};

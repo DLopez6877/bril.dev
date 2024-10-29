@@ -24,7 +24,6 @@ $animationLength: 4s;
   transform-origin: top left;
 
   .intro-bar {
-    // @extend %glitch-effect;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,17 +58,16 @@ $animationLength: 4s;
     animation: translateInRight $animationLength
         cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards,
       fadeBackground 0.5s ($animationLength + 1s) forwards,
-      translateInLeft 0.8s ($animationLength + 2s) forwards reverse;
+      translateInLeft 0.6s ($animationLength + 1.4s) ease-in forwards reverse;
 
     &:nth-child(odd) {
       animation: translateInLeft $animationLength
           cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards,
         fadeBackground 0.5s $animationLength forwards,
-        translateInRight 0.8s ($animationLength + 1s) forwards reverse;
+        translateInRight 0.6s ($animationLength + 1.4s) ease-in forwards reverse;
     }
   }
 
-  // #region __________ ANIMATIONS __________
   @keyframes slideOut {
     0% {
       transform: scale(1) translate(-50%, -50%);
@@ -122,5 +120,4 @@ $animationLength: 4s;
       transform: translateX(0%);
     }
   }
-  // #endregion END ANIMATIONS  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useLenis } from "@studio-freight/react-lenis";
-import { photos, stairs, photos2, bottom } from "../../lib/Scenes";
+import { vma_full, vma_britney, vma_nicki, vma_names } from "../../lib/Scenes";
 import WorkEntry from "./WorkEntry";
 import useIsMobile from "../../hooks/useIsMobile";
 import useIsWideAspectRatio from "../../hooks/useIsWideAspectRatio";
@@ -42,7 +42,7 @@ const WorkEntries = () => {
       description3:
         "As a part of this project, I was responsible for both frontend and backend development, ensuring smooth integration between the components. I worked closely with the product team to build features that addressed real customer pain points, including managing vast amounts of litigation data and streamlining the data review process.",
       link: "https://zapproved.com/about-us/recognition/",
-      cameraPosition: isMobile ? [] : photos2,
+      cameraPosition: isMobile ? [] : vma_britney,
       showIndicator: canvasClicked,
       skills: [
         "AngularJS",
@@ -66,7 +66,7 @@ const WorkEntries = () => {
       description2:
         "Additionally, I oversaw the use of SonarQube, leading an effort to eliminate code smells and mitigate security risks across their services. My work had a direct impact on improving code quality, security, and best practices.",
       link: "https://www.serverlessguru.com/",
-      cameraPosition: isMobile ? [] : photos,
+      cameraPosition: isMobile ? [] : vma_nicki,
       showIndicator: canvasClicked,
       skills: [
         "AWS",
@@ -90,7 +90,7 @@ const WorkEntries = () => {
       description2:
         "I worked on the internal applications team. One major task I worked on was to redesign and restructure a large part of the monolithic frontend application that was causing production delays. The existing codebase suffered from poor state management and implicit types, which hindered feature development. My work modernized the application, significantly improving developer productivity.",
       link: "https://www.ruby.com",
-      cameraPosition: isMobile ? [] : stairs,
+      cameraPosition: isMobile ? [] : vma_names,
       showIndicator: canvasClicked,
       skills: [
         "Frontend Architecture",
@@ -117,7 +117,7 @@ const WorkEntries = () => {
       description3:
         "I managed the production environment, including Google Analytics, monitoring production logs, and handling outages with 24-hour on-call support. Whether it was day or night, I ensured that PureChat was stable and functioning correctly.",
       link: "https://www.purechat.com",
-      cameraPosition: bottom,
+      cameraPosition: vma_full,
       showIndicator: canvasClicked,
       skills: [
         "React",
@@ -132,6 +132,7 @@ const WorkEntries = () => {
   // #endregion END ENTRIES  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦
 
   useEffect(() => {
+    // Clean up existing animations when `isWideAspectRatio` changes
     animationsRef.current.forEach((animation) =>
       animation.scrollTrigger?.kill()
     );

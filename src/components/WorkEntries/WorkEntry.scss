@@ -137,6 +137,8 @@ $entry-padding: 10px;
     .scene-credit-wrapper {
       position: relative;
       overflow: hidden;
+      margin: 0 auto;
+      max-width: 700px;
     }
 
     .model-credit-container {
@@ -147,6 +149,8 @@ $entry-padding: 10px;
       border: 2px solid #454348;
       border-bottom: none;
       transform: translateY(-20px);
+      width: 100%;
+      margin: 0 auto;
 
       @media (min-width: 1024px) {
         position: relative;
@@ -181,6 +185,8 @@ $entry-padding: 10px;
         align-items: center;
         flex-direction: column;
         justify-content: center;
+        max-width: 700px;
+        margin: 0 auto;
         &:hover {
           background-color: #26232b;
         }

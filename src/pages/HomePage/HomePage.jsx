@@ -30,7 +30,6 @@ const HomePage = () => {
   }
 
   return (
-    // <PageTransition>
     <SmoothScroll>
       <div className="home-page-container" data-scroll-container>
         <LoadingScreen />
@@ -43,7 +42,6 @@ const HomePage = () => {
         <Contact />
       </div>
     </SmoothScroll>
-    // </PageTransition>
   );
 };
 

@@ -1,12 +1,12 @@
-import React, {useEffect, useRef} from "react";
+import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
-import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js";
-import {disposeModel} from "../../lib/Helpers";
-import {OrbitControls} from "three/examples/jsm/controls/OrbitControls.js";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { disposeModel } from "../../lib/Helpers";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import "./ThreeScene.scss";
 
-const ThreeScene = ({cameraPositions}) => {
+const ThreeScene = ({ cameraPositions }) => {
   const containerRef = useRef(null);
   const rendererRef = useRef(null);
   const controlsRef = useRef(null);
@@ -14,13 +14,14 @@ const ThreeScene = ({cameraPositions}) => {
 
   useEffect(() => {
     const canvas = document.createElement("canvas");
-    const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+    const gl =
+      canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
     if (!gl) return;
 
     const container = containerRef.current;
 
     if (!rendererRef.current) {
-      const renderer = new THREE.WebGLRenderer({antialias: true});
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
       const dpr = window.devicePixelRatio || 1;
       renderer.setPixelRatio(Math.min(dpr, 2));
       renderer.setSize(container.clientWidth, container.clientHeight);
@@ -43,7 +44,12 @@ const ThreeScene = ({cameraPositions}) => {
     directionalLight.position.set(10, 10, 10);
     scene.add(directionalLight);
 
-    const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(
+      45,
+      container.clientWidth / container.clientHeight,
+      0.1,
+      1000
+    );
 
     if (!cameraPositions) {
       //////////////////////// TUNING AREA
@@ -58,12 +64,15 @@ const ThreeScene = ({cameraPositions}) => {
       const cameraDirection = new THREE.Vector3();
       camera.getWorldDirection(cameraDirection);
       const targetPosition = new THREE.Vector3();
-      targetPosition.copy(camera.position).add(cameraDirection.multiplyScalar(10));
+      targetPosition
+        .copy(camera.position)
+        .add(cameraDirection.multiplyScalar(10));
       controls.target.copy(targetPosition);
       controls.update();
       controlsRef.current = controls;
     } else {
-      const {posX, posY, posZ, rotateX, rotateY, rotateZ} = cameraPositions[cameraPositions.length - 1];
+      const { posX, posY, posZ, rotateX, rotateY, rotateZ } =
+        cameraPositions[cameraPositions.length - 1];
       camera.position.set(posX, posY, posZ);
       camera.rotation.set(rotateX, rotateY, rotateZ);
     }
@@ -72,7 +81,7 @@ const ThreeScene = ({cameraPositions}) => {
     let model;
     THREE.Cache.enabled = true;
 
-    gltfLoader.load("/assets/the_upper_vestibule/scene.gltf", function (gltf) {
+    gltfLoader.load("/assets/mtv_vma_gallery_2016/scene.gltf", function (gltf) {
       model = gltf.scene;
       scene.add(model);
     });
@@ -82,8 +91,12 @@ const ThreeScene = ({cameraPositions}) => {
 
       if (!cameraPositions) {
         console.log(`
-camera.position.set(${camera.position.x.toFixed(2)}, ${camera.position.y.toFixed(2)}, ${camera.position.z.toFixed(2)});
-camera.rotation.set(${camera.rotation.x.toFixed(2)}, ${camera.rotation.y.toFixed(2)}, ${camera.rotation.z.toFixed(2)});
+camera.position.set(${camera.position.x.toFixed(
+          2
+        )}, ${camera.position.y.toFixed(2)}, ${camera.position.z.toFixed(2)});
+camera.rotation.set(${camera.rotation.x.toFixed(
+          2
+        )}, ${camera.rotation.y.toFixed(2)}, ${camera.rotation.z.toFixed(2)});
 
 {
     posX: ${camera.position.x.toFixed(2)},
@@ -95,7 +108,8 @@ camera.rotation.set(${camera.rotation.x.toFixed(2)}, ${camera.rotation.y.toFixed
 },
 `);
       } else {
-        const {posX, posY, posZ, rotateX, rotateY, rotateZ} = cameraPositions[position];
+        const { posX, posY, posZ, rotateX, rotateY, rotateZ } =
+          cameraPositions[position];
         moveCamera(posX, posY, posZ);
         rotateCamera(rotateX, rotateY, rotateZ);
         position = (position + 1) % cameraPositions.length;
@@ -160,7 +174,11 @@ camera.rotation.set(${camera.rotation.x.toFixed(2)}, ${camera.rotation.y.toFixed
 
   return (
     <div className="three-scene-container">
-      <div ref={containerRef} className="scene" style={{position: "relative", width: "100%", height: "100%"}}></div>
+      <div
+        ref={containerRef}
+        className="scene"
+        style={{ position: "relative", width: "100%", height: "100%" }}
+      ></div>
     </div>
   );
 };
