@@ -9,7 +9,7 @@ const useIsLandscape = () => {
     const handleResize = () =>
       setIsLandscape(window.innerWidth > window.innerHeight);
 
-    handleResize(); // Initialize the state on mount
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {

@@ -10,7 +10,7 @@ const useIsWideAspectRatio = () => {
       setIsWideAspectRatio(aspectRatio > targetAspectRatio);
     };
 
-    checkAspectRatio(); // Initial check
+    checkAspectRatio();
     window.addEventListener("resize", checkAspectRatio);
 
     return () => {

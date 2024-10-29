@@ -10,7 +10,7 @@ const useIsMobileLandscape = () => {
       setIsMobileLandscape(isLandscape && isMobile);
     };
 
-    handleResize(); // Initialize the state on mount
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
