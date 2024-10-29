@@ -13,12 +13,11 @@ const ThreeScene = ({ cameraPositions }) => {
   let position = 0;
 
   useEffect(() => {
+    const container = containerRef.current;
     const canvas = document.createElement("canvas");
     const gl =
       canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
     if (!gl) return;
-
-    const container = containerRef.current;
 
     if (!rendererRef.current) {
       const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -52,22 +51,13 @@ const ThreeScene = ({ cameraPositions }) => {
     );
 
     if (!cameraPositions) {
-      //////////////////////// TUNING AREA
       camera.position.set(0, 0, 0);
       camera.rotation.set(-2.01, -0.9, -2.11);
-      ////////////////////////////////////
 
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
       controls.dampingFactor = 0.5;
       controls.enableZoom = true;
-      const cameraDirection = new THREE.Vector3();
-      camera.getWorldDirection(cameraDirection);
-      const targetPosition = new THREE.Vector3();
-      targetPosition
-        .copy(camera.position)
-        .add(cameraDirection.multiplyScalar(10));
-      controls.target.copy(targetPosition);
       controls.update();
       controlsRef.current = controls;
     } else {
@@ -97,15 +87,6 @@ camera.position.set(${camera.position.x.toFixed(
 camera.rotation.set(${camera.rotation.x.toFixed(
           2
         )}, ${camera.rotation.y.toFixed(2)}, ${camera.rotation.z.toFixed(2)});
-
-{
-    posX: ${camera.position.x.toFixed(2)},
-    posY: ${camera.position.y.toFixed(2)},
-    posZ: ${camera.position.z.toFixed(2)},
-    rotateX: ${camera.rotation.x.toFixed(2)},
-    rotateY: ${camera.rotation.y.toFixed(2)},
-    rotateZ: ${camera.rotation.z.toFixed(2)}
-},
 `);
       } else {
         const { posX, posY, posZ, rotateX, rotateY, rotateZ } =
@@ -119,21 +100,11 @@ camera.rotation.set(${camera.rotation.x.toFixed(
     window.addEventListener("mouseup", handleMouseUp);
 
     function moveCamera(x, y, z) {
-      gsap.to(camera.position, {
-        x,
-        y,
-        z,
-        duration: 3,
-      });
+      gsap.to(camera.position, { x, y, z, duration: 3 });
     }
 
     function rotateCamera(x, y, z) {
-      gsap.to(camera.rotation, {
-        x,
-        y,
-        z,
-        duration: 3.2,
-      });
+      gsap.to(camera.rotation, { x, y, z, duration: 3.2 });
     }
 
     function animate() {
@@ -142,19 +113,19 @@ camera.rotation.set(${camera.rotation.x.toFixed(
 
     renderer.setAnimationLoop(animate);
 
-    const handleResize = () => {
+    // Set up ResizeObserver to handle size changes in the container
+    const resizeObserver = new ResizeObserver(() => {
       const width = container.clientWidth;
       const height = container.clientHeight;
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
-    };
+    });
 
-    window.addEventListener("resize", handleResize);
+    resizeObserver.observe(container);
 
     return () => {
       window.removeEventListener("mouseup", handleMouseUp);
-      window.removeEventListener("resize", handleResize);
 
       if (rendererRef.current) {
         rendererRef.current.setAnimationLoop(null);
@@ -169,6 +140,8 @@ camera.rotation.set(${camera.rotation.x.toFixed(
       if (controlsRef.current) {
         controlsRef.current.dispose();
       }
+
+      resizeObserver.disconnect();
     };
   }, [cameraPositions]);
 
