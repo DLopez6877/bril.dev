@@ -105,20 +105,25 @@ const Contact = () => {
             />
           </m.button>
 
-          <Link
-            to="https://www.linkedin.com/in/dlopez6877"
-            onClick={handleLinkedInClick}
-          >
-            <i className="fab fa-linkedin" />
-          </Link>
+          <div className="socials">
+            <Link
+              to="https://www.linkedin.com/in/dlopez6877"
+              className="icon-container"
+              onClick={handleLinkedInClick}
+            >
+              <i className="fab fa-linkedin icon background" />
+              <i className="fab fa-linkedin icon overlay" />
+            </Link>
 
-          <Link
-            className="github"
-            to="https://github.com/dlopez6877"
-            onClick={handleGithubClick}
-          >
-            <i className="fab fa-github" />
-          </Link>
+            <Link
+              to="https://github.com/dlopez6877"
+              className="icon-container"
+              onClick={handleGithubClick}
+            >
+              <i className="fab fa-github icon background" />
+              <i className="fab fa-github icon overlay" />
+            </Link>
+          </div>
         </footer>
       </div>
     </div>

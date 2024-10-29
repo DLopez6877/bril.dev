@@ -128,15 +128,49 @@
       border-radius: 3px;
     }
 
-    a {
-      font-size: 3em;
-      color: var(--light);
-      margin-left: auto;
-      padding-top: 7px;
+    .socials {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 150px;
     }
 
-    .github {
-      margin-left: 20px;
+    .icon-container {
+      position: relative;
+      width: 100%;
+      height: 3rem;
+      text-align: right;
+    }
+
+    .icon {
+      font-size: 3rem;
+      transition: color 0.5s ease;
+    }
+
+    .icon.background {
+      color: var(--light);
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .icon.overlay {
+      color: transparent;
+      background: linear-gradient(0deg, var(--blue) 0%, var(--blue) 100%);
+      background-size: 100% 0%;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: background-size 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .icon-container:hover .icon.overlay {
+      background-size: 100% 100%; /* Fill gradient from bottom to top */
     }
   }
 }
