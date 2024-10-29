@@ -8,6 +8,10 @@ import {
 } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import React from "react";
+import ReactGA from "react-ga";
+
+ReactGA.initialize("G-X6RH8KNPG6");
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -21,6 +25,7 @@ function AnimatedRoutes() {
 }
 
 function App() {
+  ReactGA.pageview(window.location.pathname + window.location.search);
   return (
     <>
       <Router>

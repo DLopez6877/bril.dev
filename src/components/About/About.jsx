@@ -5,6 +5,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Typewriter from "../Typewriter/Typewriter";
 import WordSplitter from "../../wrappers/WordSplitter";
+import ReactGA from "react-ga";
 
 const About = () => {
   const containerRef = useRef(null);
@@ -104,6 +105,11 @@ const About = () => {
   });
 
   const handleIconClick = (e) => {
+    ReactGA.event({
+      category: "Outbound",
+      action: "Clicked External Link",
+      label: "Awwwards",
+    });
     if (e.target.id === "awwwards-link") {
       window.location.href = "https://www.awwwards.com/";
     }

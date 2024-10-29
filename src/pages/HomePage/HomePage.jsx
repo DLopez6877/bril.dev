@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./HomePage.scss";
 import ParallaxHero from "../../components/ParallaxHero/ParallaxHero";
 import Nav from "../../components/Nav/Nav";
@@ -9,6 +9,7 @@ import Skills from "../../components/Skills/Skills";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 import Contact from "../../components/Contact/Contact";
 import WorkEntries from "../../components/WorkEntries/WorkEntries";
+import ReactGA from "react-ga";
 
 const HomePage = () => {
   if (process.env.NODE_ENV === "production") {
@@ -28,6 +29,24 @@ const HomePage = () => {
     BBBB   R   R  III  LLLLL    !!
     `);
   }
+
+  const trackComponentLoadTime = (loadTime) => {
+    ReactGA.timing({
+      category: "Load Performance",
+      variable: "Page Load Time",
+      value: loadTime,
+      label: "Home Page",
+    });
+  };
+
+  // Example usage with a component’s load time
+  useEffect(() => {
+    const start = Date.now();
+    return () => {
+      const loadTime = Date.now() - start;
+      trackComponentLoadTime(loadTime);
+    };
+  }, []);
 
   return (
     <SmoothScroll>

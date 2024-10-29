@@ -4,12 +4,34 @@ import GradientCanvas from "../GradientCanvas/GradientCanvas";
 import { motion as m } from "framer-motion";
 import { Link } from "react-router-dom";
 import useIsWideAspectRatio from "../../hooks/useIsWideAspectRatio";
+import ReactGA from "react-ga";
 
 const Contact = () => {
   const isWideAspectRatio = useIsWideAspectRatio();
 
   const handleEmailClick = () => {
+    ReactGA.event({
+      category: "User",
+      action: "Clicked Send Email Button",
+      label: "Contact Send Email",
+    });
     window.location.href = "mailto:bril.dev@outlook.com";
+  };
+
+  const handleGithubClick = () => {
+    ReactGA.event({
+      category: "Outbound",
+      action: "Clicked External Link",
+      label: "GitHub Profile",
+    });
+  };
+
+  const handleLinkedInClick = () => {
+    ReactGA.event({
+      category: "Outbound",
+      action: "Clicked External Link",
+      label: "LinkedIn Profile",
+    });
   };
 
   const arrowVariants = {
@@ -69,11 +91,18 @@ const Contact = () => {
             />
           </m.button>
 
-          <Link to="https://www.linkedin.com/in/dlopez6877">
+          <Link
+            to="https://www.linkedin.com/in/dlopez6877"
+            onClick={handleLinkedInClick}
+          >
             <i className="fab fa-linkedin" aria-hidden="true" />
           </Link>
 
-          <Link className="github" to="https://www.linkedin.com/in/dlopez6877">
+          <Link
+            className="github"
+            to="https://www.linkedin.com/in/dlopez6877"
+            onClick={handleGithubClick}
+          >
             <i className="fab fa-github" aria-hidden="true" />
           </Link>
         </footer>
