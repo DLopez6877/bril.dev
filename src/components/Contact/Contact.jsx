@@ -9,8 +9,7 @@ const Contact = () => {
   const isWideAspectRatio = useIsWideAspectRatio();
 
   const handleEmailClick = () => {
-    window.location.href =
-      "mailto:dlopez6877@gmail.com?subject=Contact&body=Hello";
+    window.location.href = "mailto:bril.dev@outlook.com";
   };
 
   const arrowVariants = {
