@@ -1,4 +1,6 @@
-$animationLength: 4s;
+@import "../../styles/placeholders.scss";
+
+$animationLength: 8s;
 
 .loading-screen-container {
   position: fixed;
@@ -6,29 +8,25 @@ $animationLength: 4s;
   height: 100svh;
   z-index: 900;
   background-color: rgba(var(--dark-blue-rgb), 1);
-  animation: fadeBackground 0.4s 4s forwards;
-
-  .scroll-text {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 5svw;
-    z-index: 100;
-    color: var(--orange);
-    font-size: 10svh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  animation: fadeBackground 0.4s $animationLength forwards;
 
   .intro-bar {
+    @extend %glitch-effect;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10svh;
     height: calc(100svh / 5);
     width: 100%;
+    color: rgba(var(--orange-rgb), 1);
     background-color: var(--dark-blue);
 
+    span {
+      position: absolute;
+    }
+
     &:not(:first-child) {
-      border-top: 5px solid var(--orange);
+      border-top: 5px solid rgba(var(--orange-rgb), 1);
     }
 
     &:nth-child(even) {
@@ -40,11 +38,40 @@ $animationLength: 4s;
     }
 
     // #region __________ ANIMATIONS __________
-
-    animation: translateInRight $animationLength cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards, fadeBackground 0.5s $animationLength forwards, fadeOut 0.8s ($animationLength + 2s) forwards;
+    animation: translateInRight $animationLength
+        cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards,
+      fadeBackground 0.5s $animationLength forwards,
+      fadeOut 0.8s ($animationLength + 1s) forwards;
 
     &:nth-child(odd) {
-      animation: translateInLeft $animationLength cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards, fadeBackground 0.5s ($animationLength + 1s) forwards, fadeOut 0.8s ($animationLength + 2s) forwards;
+      animation: translateInLeft $animationLength
+          cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards,
+        fadeBackground 0.5s ($animationLength + 1s) forwards,
+        fadeBorder 0.5s ($animationLength + 1s) forwards,
+        fadeOut 0.8s ($animationLength + 2s) forwards;
+    }
+
+    &:nth-child(3) {
+      animation: translateInLeft $animationLength
+          cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards,
+        fadeBackground 0.5s ($animationLength + 1s) forwards,
+        fadeBorder 0.5s ($animationLength + 1s) forwards,
+        slideOut 3s ($animationLength + 3s) forwards;
+    }
+  }
+
+  @keyframes slideOut {
+    0% {
+      transform: scale(1) translateX(0);
+      opacity: 1;
+    }
+    25% {
+      transform: scale(0.3) translateX(0);
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0.5;
+      transform: scale(0.3) translateX(-300svw);
     }
   }
 
@@ -63,6 +90,15 @@ $animationLength: 4s;
     }
     to {
       opacity: 0;
+    }
+  }
+
+  @keyframes fadeBorder {
+    from {
+      border-color: rgba(var(--orange-rgb), 1);
+    }
+    to {
+      border-color: rgba(var(--orange-rgb), 0);
     }
   }
 
