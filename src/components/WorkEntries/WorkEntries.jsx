@@ -1,7 +1,7 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import {useLenis} from "@studio-freight/react-lenis";
-import {photos, stairs, photos2, bottom} from "../../lib/Scenes";
+import { useLenis } from "@studio-freight/react-lenis";
+import { photos, stairs, photos2, bottom } from "../../lib/Scenes";
 import WorkEntry from "./WorkEntry";
 
 const WorkEntries = () => {
@@ -10,6 +10,7 @@ const WorkEntries = () => {
   const entryScrollPositionsRef = useRef({});
   const [canvasClicked, setCanvasClicked] = useState(false);
   const [isMobile, setIsMobile] = useState(true);
+  const [isLandscape, setIsLandscape] = useState(true);
 
   const handleEntryClick = () => {
     setCanvasClicked(true);
@@ -17,7 +18,8 @@ const WorkEntries = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.matchMedia("(max-width: 768px)").matches);
+      setIsLandscape(window.innerWidth > window.innerHeight);
+      setIsMobile(window.innerWidth <= 768);
     };
 
     handleResize();
@@ -28,12 +30,14 @@ const WorkEntries = () => {
     };
   }, []);
 
+  // #region __________ ENTRIES __________
   const entries = [
     {
       date: "2006 - 2014",
       label: "Army National Guard",
       title: "25U - Signal Support Systems Specialist",
-      description: "As a Signal Support Systems Specialist in the Washington Army National Guard, I maintained and troubleshooted communication systems, including radios, satellites, and networks. I ensured secure, reliable connections and trained others to use the equipment, keeping operations running smoothly.",
+      description:
+        "As a Signal Support Systems Specialist in the Washington Army National Guard, I maintained and troubleshooted communication systems, including radios, satellites, and networks. I ensured secure, reliable connections and trained others to use the equipment, keeping operations running smoothly.",
       cameraPosition: [],
       showIndicator: canvasClicked,
       skills: [],
@@ -42,51 +46,104 @@ const WorkEntries = () => {
       date: "2017 - 2020",
       label: "Zapproved",
       title: "Software Engineer",
-      description: "Zapproved is a Portland-based SaaS company that specializes in cloud-based e-discovery software. During my time there, Zapproved was recognized as one of the fastest growing and most admired companies in Oregon, according to Portland Business Journal.",
-      description2: "One of the major projects I worked on at Zapproved was Digital Discovery Pro, a cloud-based e-discovery software. My role included integrating cutting-edge cloud solutions and collaborating with other engineers to ensure the platform was scalable and robust.",
-      description3: "As a part of this project, I was responsible for both frontend and backend development, ensuring smooth integration between the components. I worked closely with the product team to build features that addressed real customer pain points, including managing vast amounts of litigation data and streamlining the data review process.",
+      description:
+        "Zapproved is a Portland-based SaaS company that specializes in cloud-based e-discovery software. During my time there, Zapproved was recognized as one of the fastest growing and most admired companies in Oregon, according to Portland Business Journal.",
+      description2:
+        "One of the major projects I worked on at Zapproved was Digital Discovery Pro, a cloud-based e-discovery software. My role included integrating cutting-edge cloud solutions and collaborating with other engineers to ensure the platform was scalable and robust.",
+      description3:
+        "As a part of this project, I was responsible for both frontend and backend development, ensuring smooth integration between the components. I worked closely with the product team to build features that addressed real customer pain points, including managing vast amounts of litigation data and streamlining the data review process.",
       link: "https://zapproved.com/about-us/recognition/",
       cameraPosition: isMobile ? [] : photos2,
       showIndicator: canvasClicked,
-      skills: ["AngularJS", "Angular", "Full-Stack Development", "Component Libraries", "Platform Architecture", "Cloud Integration", "Design Patterns", "Scrum/Agile", "C#", ".NET"],
+      skills: [
+        "AngularJS",
+        "Angular",
+        "Full-Stack Development",
+        "Component Libraries",
+        "Platform Architecture",
+        "Cloud Integration",
+        "Design Patterns",
+        "Scrum/Agile",
+        "C#",
+        ".NET",
+      ],
     },
     {
       date: "2020 - 2021",
       label: "Serverless Guru",
       title: "Senior Serverless Engineer",
-      description: "Serverless Guru is a cloud consulting company specializing in AWS serverless architecture. My role involved working closely with enterprise clients, including Air Canada, to architect, build, and deploy scalable serverless applications, as well as providing consulting services to enhance cloud adoption strategies.",
-      description2: "Additionally, I oversaw the use of SonarQube, leading an effort to eliminate code smells and mitigate security risks across their services. My work had a direct impact on improving code quality, security, and best practices.",
+      description:
+        "Serverless Guru is a cloud consulting company specializing in AWS serverless architecture. My role involved working closely with enterprise clients, including Air Canada, to architect, build, and deploy scalable serverless applications, as well as providing consulting services to enhance cloud adoption strategies.",
+      description2:
+        "Additionally, I oversaw the use of SonarQube, leading an effort to eliminate code smells and mitigate security risks across their services. My work had a direct impact on improving code quality, security, and best practices.",
       link: "https://www.serverlessguru.com/",
       cameraPosition: isMobile ? [] : photos,
       showIndicator: canvasClicked,
-      skills: ["AWS", "Serverless Architecture", "CloudFormation", "Lambda", "SonarQube", "CI/CD", "Cloud Security", "Code Reviews", "DevOps", "Infrastructure as Code"],
+      skills: [
+        "AWS",
+        "Serverless Architecture",
+        "CloudFormation",
+        "Lambda",
+        "SonarQube",
+        "CI/CD",
+        "Cloud Security",
+        "Code Reviews",
+        "DevOps",
+        "Infrastructure as Code",
+      ],
     },
     {
       date: "2021 - 2023",
       label: "Ruby",
       title: "Senior Fullstack Engineer",
-      description: "Ruby is a leading provider of virtual receptionist and live chat services. I contributed to the development of internal applications used by receptionists for efficiently handling calls, scheduling appointments, and performing essential customer service tasks.",
-      description2: "I worked on the internal applications team. One major task I worked on was to redesign and restructure a large part of the monolithic frontend application that was causing production delays. The existing codebase suffered from poor state management and implicit types, which hindered feature development. My work modernized the application, significantly improving developer productivity.",
+      description:
+        "Ruby is a leading provider of virtual receptionist and live chat services. I contributed to the development of internal applications used by receptionists for efficiently handling calls, scheduling appointments, and performing essential customer service tasks.",
+      description2:
+        "I worked on the internal applications team. One major task I worked on was to redesign and restructure a large part of the monolithic frontend application that was causing production delays. The existing codebase suffered from poor state management and implicit types, which hindered feature development. My work modernized the application, significantly improving developer productivity.",
       link: "https://www.ruby.com",
       cameraPosition: isMobile ? [] : stairs,
       showIndicator: canvasClicked,
-      skills: ["Frontend Architecture", "State Management", "TypeScript", ".NET", "Backend Development", "Cloud Migration", "CI/CD", "Cloud Security", "Angular", "C#", "Dotnet"],
+      skills: [
+        "Frontend Architecture",
+        "State Management",
+        "TypeScript",
+        ".NET",
+        "Backend Development",
+        "Cloud Migration",
+        "CI/CD",
+        "Cloud Security",
+        "Angular",
+        "C#",
+        "Dotnet",
+      ],
     },
     {
       date: "2022 - 2023",
       label: "Pure Chat",
       title: "Senior Fullstack Engineer",
-      description: "After Ruby acquired Pure Chat, I took the lead on maintaining the product, ensuring its seamless integration into Ruby’s internal applications. I managed both the integration and continued support for Pure Chat’s existing customers, overseeing its functionality while maintaining its core features for real-time customer engagement and live chat service.",
-      description2: "I worked with several departments, including finance, legal, product, marketing, and engineering management. This wide-ranging responsibility gave me a comprehensive understanding of the product and its impact on Ruby’s broader ecosystem. I wrote thorough documentation outlining all maintenance tasks, as well as onboarding materials, which I used to rapidly onboard three developers to the project.",
-      description3: "I managed the production environment, including Google Analytics, monitoring production logs, and handling outages with 24-hour on-call support. Whether it was day or night, I ensured that PureChat was stable and functioning correctly.",
+      description:
+        "After Ruby acquired Pure Chat, I took the lead on maintaining the product, ensuring its seamless integration into Ruby’s internal applications. I managed both the integration and continued support for Pure Chat’s existing customers, overseeing its functionality while maintaining its core features for real-time customer engagement and live chat service.",
+      description2:
+        "I worked with several departments, including finance, legal, product, marketing, and engineering management. This wide-ranging responsibility gave me a comprehensive understanding of the product and its impact on Ruby’s broader ecosystem. I wrote thorough documentation outlining all maintenance tasks, as well as onboarding materials, which I used to rapidly onboard three developers to the project.",
+      description3:
+        "I managed the production environment, including Google Analytics, monitoring production logs, and handling outages with 24-hour on-call support. Whether it was day or night, I ensured that PureChat was stable and functioning correctly.",
       link: "https://www.purechat.com",
       cameraPosition: bottom,
       showIndicator: canvasClicked,
-      skills: ["React", "Javascript/Typescript", "Google Analytics", "Team lead / Mentorship", "Cross-departmental Collaboration", "Monitoring and Prodcution support"],
+      skills: [
+        "React",
+        "Javascript/Typescript",
+        "Google Analytics",
+        "Team lead / Mentorship",
+        "Cross-departmental Collaboration",
+        "Monitoring and Prodcution support",
+      ],
     },
   ];
+  // #endregion END ENTRIES  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦
 
   useEffect(() => {
+    if (isLandscape && isMobile) return;
     const container = containerRef.current;
     const entryElements = gsap.utils.toArray(".entry");
 
@@ -113,7 +170,7 @@ const WorkEntries = () => {
         },
       });
     });
-  }, []);
+  }, [isLandscape, isMobile]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -130,7 +187,12 @@ const WorkEntries = () => {
       tabs.forEach((tab) => {
         const rect = tab.getBoundingClientRect();
 
-        if (clickX >= rect.left && clickX <= rect.right && clickY >= rect.top && clickY <= rect.bottom) {
+        if (
+          clickX >= rect.left &&
+          clickX <= rect.right &&
+          clickY >= rect.top &&
+          clickY <= rect.bottom
+        ) {
           foundTab = tab;
         }
       });
@@ -144,7 +206,7 @@ const WorkEntries = () => {
           const savedScrollY = entryScrollPositionsRef.current[entryId];
 
           if (savedScrollY !== null && savedScrollY !== undefined) {
-            lenis.scrollTo(savedScrollY, {duration: 0.3});
+            lenis.scrollTo(savedScrollY, { duration: 0.3 });
           }
         }
       }
@@ -157,7 +219,7 @@ const WorkEntries = () => {
   }, [lenis]);
 
   return (
-    <div id="work" ref={containerRef} style={{background: "#E2E4D0"}}>
+    <div id="work" ref={containerRef} style={{ background: "#E2E4D0" }}>
       {entries.map((entry, index) => (
         <WorkEntry key={index} {...entry} onClick={() => handleEntryClick()} />
       ))}
