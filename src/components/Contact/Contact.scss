@@ -6,10 +6,12 @@
   height: 60svh;
 
   &.wide {
-    height: 100svh;
-
-    .visible-content-container {
+    @media (max-height: 600px) {
       height: 100svh;
+
+      .visible-content-container {
+        height: 100svh;
+      }
     }
   }
 
@@ -76,8 +78,12 @@
       @media (min-width: 1024px) {
         position: absolute;
         width: 48%;
-        left: 50%;
+        left: 400px;
         top: 30px;
+      }
+
+      @media (min-width: 1500px) {
+        top: 30%;
       }
     }
 
