@@ -1,4 +1,14 @@
-const vma_full = [
+const keyboard_cats = [
+  //cats
+  {
+    posX: -0.24,
+    posY: 2.23,
+    posZ: 0.16,
+    rotateX: -0.03,
+    rotateY: -0.03,
+    rotateZ: -0.0,
+  },
+  // back left
   {
     posX: -0.89,
     posY: 0.55,
@@ -7,22 +17,16 @@ const vma_full = [
     rotateY: -0.19,
     rotateZ: 0.02,
   },
+  // faces
   {
-    posX: 4.83,
-    posY: 1.53,
-    posZ: 3.79,
-    rotateX: -0.0,
-    rotateY: 0.02,
-    rotateZ: 0.0,
-  },
-  {
-    posX: 9.54,
+    posX: 6.54,
     posY: 1.94,
     posZ: 1.8,
     rotateX: -0.79,
     rotateY: -1.53,
     rotateZ: -0.79,
   },
+  // corner
   {
     posX: -1.54,
     posY: 1.86,
@@ -31,40 +35,49 @@ const vma_full = [
     rotateY: -1.39,
     rotateZ: -0.8,
   },
+  // main
   {
-    posX: -0.29,
-    posY: 1.91,
-    posZ: 0.06,
-    rotateX: -0.03,
-    rotateY: -0.03,
-    rotateZ: -0.0,
+    posX: 4.83,
+    posY: 1.53,
+    posZ: 3.79,
+    rotateX: -0.0,
+    rotateY: 0.02,
+    rotateZ: 0.0,
   },
 ];
 
-const vma_names = [
+const faces = [
   {
-    posX: 9.28,
-    posY: 0.99,
-    posZ: -0.62,
+    posX: 8.68,
+    posY: 0.95,
+    posZ: 0.09,
     rotateX: -0.09,
+    rotateY: 0.16,
+    rotateZ: -0.04,
+  },
+  {
+    posX: 8.17,
+    posY: 2.72,
+    posZ: -0.48,
+    rotateX: -0.16,
     rotateY: 0.06,
     rotateZ: 0.01,
   },
   {
-    posX: 7.39,
-    posY: 0.87,
-    posZ: -0.49,
-    rotateX: -0.09,
-    rotateY: 0.06,
-    rotateZ: 0.01,
+    posX: 9.27,
+    posY: 2.62,
+    posZ: 1.48,
+    rotateX: -0.16,
+    rotateY: -1.56,
+    rotateZ: -0.16,
   },
   {
-    posX: 8.63,
-    posY: 1.78,
-    posZ: -0.12,
-    rotateX: -0.09,
-    rotateY: 0.06,
-    rotateZ: 0.01,
+    posX: 6.27,
+    posY: 1.58,
+    posZ: 1.48,
+    rotateX: -0.16,
+    rotateY: -1.56,
+    rotateZ: -0.16,
   },
   {
     posX: 8.63,
@@ -74,29 +87,21 @@ const vma_names = [
     rotateY: 0.06,
     rotateZ: 0.01,
   },
-  {
-    posX: 8.57,
-    posY: 2.62,
-    posZ: 0.38,
-    rotateX: -0.16,
-    rotateY: 0.06,
-    rotateZ: 0.01,
-  },
 ];
 
-const vma_britney = [
+const mountain = [
   {
-    posX: 2.72,
-    posY: 2.09,
-    posZ: 3.16,
-    rotateX: -3.08,
-    rotateY: 0.03,
+    posX: -0.35,
+    posY: 1.96,
+    posZ: 2.92,
+    rotateX: -3.11,
+    rotateY: 0.08,
     rotateZ: 3.14,
   },
   {
-    posX: 1.88,
-    posY: 1.26,
-    posZ: 3.08,
+    posX: 1.92,
+    posY: 1.09,
+    posZ: 2.65,
     rotateX: -3.08,
     rotateY: 0.03,
     rotateZ: 3.14,
@@ -110,24 +115,16 @@ const vma_britney = [
     rotateZ: 3.14,
   },
   {
-    posX: 2.22,
-    posY: 2.61,
-    posZ: 3.17,
-    rotateX: -3.08,
-    rotateY: 0.03,
-    rotateZ: 3.14,
-  },
-  {
     posX: 1.85,
     posY: 1.76,
-    posZ: 1.12,
+    posZ: 0.92,
     rotateX: -3.11,
     rotateY: -0.06,
     rotateZ: 3.14,
   },
 ];
 
-const vma_nicki = [
+const raptor = [
   {
     posX: 8.56,
     posY: 2.26,
@@ -137,9 +134,9 @@ const vma_nicki = [
     rotateZ: 3.14,
   },
   {
-    posX: 5.99,
-    posY: 1.43,
-    posZ: 2.99,
+    posX: 6.19,
+    posY: 0.85,
+    posZ: 2.49,
     rotateX: 3.14,
     rotateY: -0.09,
     rotateZ: 3.14,
@@ -154,7 +151,7 @@ const vma_nicki = [
   },
   {
     posX: 7.55,
-    posY: 1.84,
+    posY: 1.34,
     posZ: 0.65,
     rotateX: 3.11,
     rotateY: -0.0,
@@ -170,205 +167,4 @@ const vma_nicki = [
   },
 ];
 
-const vestibule_bottom = [
-  {
-    posX: -0.41,
-    posY: 1.12,
-    posZ: -2.15,
-    rotateX: -0.66,
-    rotateY: -0.3,
-    rotateZ: -0.23,
-  },
-  {
-    posX: -1.18,
-    posY: 1.82,
-    posZ: -2.02,
-    rotateX: 0.02,
-    rotateY: 0.29,
-    rotateZ: -0.01,
-  },
-  {
-    posX: 1.83,
-    posY: 1.03,
-    posZ: -0.61,
-    rotateX: -1.15,
-    rotateY: 0.66,
-    rotateZ: 0.93,
-  },
-  {
-    posX: 0.79,
-    posY: 0.96,
-    posZ: -0.53,
-    rotateX: 0.85,
-    rotateY: 0.6,
-    rotateZ: -0.57,
-  },
-  {
-    posX: 3.24,
-    posY: 1.82,
-    posZ: 1.07,
-    rotateX: -0.17,
-    rotateY: 0.89,
-    rotateZ: 0.13,
-  },
-];
-
-const vestibule_stairs = [
-  {
-    posX: -2.18,
-    posY: 4.86,
-    posZ: 0.23,
-    rotateX: -2.41,
-    rotateY: 0.05,
-    rotateZ: 3.1,
-  },
-  {
-    posX: -0.37,
-    posY: 2.43,
-    posZ: 4.03,
-    rotateX: 0.15,
-    rotateY: -0.24,
-    rotateZ: 0.04,
-  },
-  {
-    posX: 1.01,
-    posY: 2.0,
-    posZ: 0.38,
-    rotateX: -2.47,
-    rotateY: 1.23,
-    rotateZ: 2.5,
-  },
-  {
-    posX: -0.21,
-    posY: 5.8,
-    posZ: 1.26,
-    rotateX: -3.14,
-    rotateY: 0.48,
-    rotateZ: 3.14,
-  },
-  {
-    posX: 1.33,
-    posY: 5.56,
-    posZ: -1.22,
-    rotateX: -0.35,
-    rotateY: 1.26,
-    rotateZ: 0.33,
-  },
-];
-
-const vestibule_photos = [
-  {
-    posX: 0.56,
-    posY: 5.22,
-    posZ: 2.91,
-    rotateX: -3.1,
-    rotateY: -1.09,
-    rotateZ: -3.1,
-  },
-  {
-    posX: 0.36,
-    posY: 6.12,
-    posZ: 3.23,
-    rotateX: 3.05,
-    rotateY: -1.09,
-    rotateZ: 3.06,
-  },
-  {
-    posX: 1.08,
-    posY: 6.13,
-    posZ: 1.84,
-    rotateX: 3.05,
-    rotateY: -1.09,
-    rotateZ: 3.06,
-  },
-  {
-    posX: 1.18,
-    posY: 5.16,
-    posZ: 2.01,
-    rotateX: -3.09,
-    rotateY: -1.09,
-    rotateZ: -3.1,
-  },
-];
-
-const vestibule_photos2 = [
-  {
-    posX: 2.58,
-    posY: 5.48,
-    posZ: -0.0,
-    rotateX: 0.09,
-    rotateY: -0.44,
-    rotateZ: 0.04,
-  },
-  {
-    posX: -0.68,
-    posY: 6.26,
-    posZ: -2.14,
-    rotateX: -0.07,
-    rotateY: -0.5,
-    rotateZ: -0.03,
-  },
-  {
-    posX: -0.84,
-    posY: 4.6,
-    posZ: -1.32,
-    rotateX: 0.02,
-    rotateY: -0.48,
-    rotateZ: 0.01,
-  },
-  {
-    posX: 2.22,
-    posY: 5.63,
-    posZ: -0.97,
-    rotateX: -2.99,
-    rotateY: -1.12,
-    rotateZ: -3.0,
-  },
-];
-
-const vestibule_kapprum = [
-  {
-    posX: 0.89,
-    posY: 1.15,
-    posZ: 0.46,
-    rotateX: 0.06,
-    rotateY: -0.71,
-    rotateZ: 0.04,
-  },
-  {
-    posX: -0.03,
-    posY: 5.79,
-    posZ: 1.53,
-    rotateX: -0.02,
-    rotateY: 1.44,
-    rotateZ: 0.02,
-  },
-  {
-    posX: 0.49,
-    posY: 5.84,
-    posZ: 1.38,
-    rotateX: -3.12,
-    rotateY: 0.48,
-    rotateZ: 3.13,
-  },
-  {
-    posX: -1.06,
-    posY: 1.94,
-    posZ: 0.18,
-    rotateX: -0.2,
-    rotateY: 1.14,
-    rotateZ: 0.19,
-  },
-];
-
-export {
-  vestibule_kapprum,
-  vestibule_photos,
-  vestibule_stairs,
-  vestibule_photos2,
-  vestibule_bottom,
-  vma_full,
-  vma_britney,
-  vma_nicki,
-  vma_names,
-};
+export { keyboard_cats, mountain, raptor, faces };

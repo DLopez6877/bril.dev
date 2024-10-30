@@ -5,6 +5,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { disposeModel } from "../../lib/Helpers";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import "./ThreeScene.scss";
+import ReactGA from "react-ga4";
 
 const ThreeScene = ({ cameraPositions }) => {
   const containerRef = useRef(null);
@@ -36,7 +37,7 @@ const ThreeScene = ({ cameraPositions }) => {
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xb3f1f5);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
     scene.add(ambientLight);
 
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
@@ -78,6 +79,11 @@ const ThreeScene = ({ cameraPositions }) => {
 
     const handleMouseUp = (event) => {
       if (!container.contains(event.target)) return;
+      ReactGA.event({
+        category: "Click",
+        action: "Clicked Scene",
+        label: event.target,
+      });
 
       if (!cameraPositions) {
         console.log(`
