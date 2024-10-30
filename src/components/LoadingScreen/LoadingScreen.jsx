@@ -1,47 +1,45 @@
 import { useEffect, useState } from "react";
 import { useLenis } from "@studio-freight/react-lenis";
-import { useAnimation } from "framer-motion";
 import "./LoadingScreen.scss";
 
 const LoadingScreen = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [progress, setProgress] = useState(0);
   const lenis = useLenis();
-  const controls = useAnimation();
 
   const icons = [
-    "fa-skull",
-    "fa-skull-crossbones",
-    "fa-dice-d20",
-    "fa-dice",
-    "fa-gamepad",
-    "fa-chess-knight",
-    "fa-chess-board",
-    "fa-music",
-    "fa-wizards-of-the-coast",
-    "fa-hat-wizard",
-    "fa-github",
-    "fa-pen-nib",
-    "fa-ghost",
-    "fa-docker",
-    "fa-plane",
-    "fa-power-off",
-    "fa-react",
-    "fa-rebel",
-    "fa-twitch",
-    "fa-yin-yang",
-    "fa-radiation",
-    "fa-pizza-slice",
-    "fa-headphones",
-    "fa-guitar",
-    "fa-face-surprise",
-    "fa-face-smile-wink",
-    "fa-face-laugh-beam",
-    "fa-face-dizzy",
-    "fa-cat",
-    "fa-bowling-ball",
-    "fa-xbox",
-    "fa-seedling",
+    "fa-solid fa-skull",
+    "fa-solid fa-skull-crossbones",
+    "fa-solid fa-dice-d20",
+    "fa-solid fa-dice",
+    "fa-solid fa-gamepad",
+    "fa-solid fa-chess-knight",
+    "fa-solid fa-chess-board",
+    "fa-solid fa-music",
+    "fa-brands fa-wizards-of-the-coast",
+    "fa-solid fa-hat-wizard",
+    "fa-brands fa-github",
+    "fa-solid fa-pen-nib",
+    "fa-solid fa-ghost",
+    "fa-brands fa-docker",
+    "fa-solid fa-plane",
+    "fa-solid fa-power-off",
+    "fa-brands fa-react",
+    "fa-brands fa-rebel",
+    "fa-brands fa-twitch",
+    "fa-solid fa-yin-yang",
+    "fa-solid fa-radiation",
+    "fa-solid fa-pizza-slice",
+    "fa-solid fa-headphones",
+    "fa-solid fa-guitar",
+    "fa-solid fa-face-surprise",
+    "fa-solid fa-face-smile-wink",
+    "fa-solid fa-face-laugh-beam",
+    "fa-solid fa-face-dizzy",
+    "fa-solid fa-cat",
+    "fa-solid fa-bowling-ball",
+    "fa-brands fa-xbox",
+    "fa-solid fa-seedling",
   ];
 
   const [bars, setBars] = useState(
@@ -115,7 +113,7 @@ const LoadingScreen = () => {
             .split("")
             .map((digit, index) =>
               index === randomIndex ? (
-                <i key={index} className={`fa-solid ${randomIcon}`}></i>
+                <i key={index} className={randomIcon}></i>
               ) : (
                 digit
               )
