@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ThreeScene from "../ThreeScene/ThreeScene";
 import mouse from "../../assets/mouse.svg";
 import "./WorkEntry.scss";
@@ -18,6 +18,27 @@ const WorkEntry = ({
   skills,
 }) => {
   const [creditBarShown, setCreditBarShown] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef(null);
+
+  // lazy load scene
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Stop observing once loaded
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="entry" onClick={onClick}>
@@ -93,11 +114,11 @@ const WorkEntry = ({
               </div>
             </m.div>
 
-            <div className="scene-container">
+            <div ref={containerRef} className="scene-container">
               <div className={showIndicator ? "corner hidden" : "corner"}>
                 <img src={mouse} alt="Mouse icon" />
               </div>
-              <ThreeScene cameraPositions={cameraPosition} />
+              {isVisible && <ThreeScene cameraPositions={cameraPosition} />}
             </div>
           </div>
         )}

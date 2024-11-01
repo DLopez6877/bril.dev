@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
@@ -11,6 +11,7 @@ const ThreeScene = ({ cameraPositions }) => {
   const containerRef = useRef(null);
   const rendererRef = useRef(null);
   const controlsRef = useRef(null);
+  const [loading, setLoading] = useState(true);
   let position = 0;
 
   useEffect(() => {
@@ -35,7 +36,7 @@ const ThreeScene = ({ cameraPositions }) => {
 
     const renderer = rendererRef.current;
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xb3f1f5);
+    scene.background = new THREE.Color(0xe2e4d0);
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
     scene.add(ambientLight);
@@ -72,10 +73,20 @@ const ThreeScene = ({ cameraPositions }) => {
     let model;
     THREE.Cache.enabled = true;
 
-    gltfLoader.load("/assets/mtv_vma_gallery_2016/scene.gltf", function (gltf) {
-      model = gltf.scene;
-      scene.add(model);
-    });
+    gltfLoader.load(
+      "/assets/mtv_vma_gallery_2016/scene.gltf",
+      (gltf) => {
+        model = gltf.scene;
+        scene.add(model);
+        setLoading(false);
+      },
+      undefined,
+      (error) => {
+        console.error("Error loading model:", error);
+        setLoading(false);
+        // three provides error state
+      }
+    );
 
     const handleMouseUp = (event) => {
       if (!container.contains(event.target)) return;
@@ -119,7 +130,6 @@ camera.rotation.set(${camera.rotation.x.toFixed(
 
     renderer.setAnimationLoop(animate);
 
-    // Set up ResizeObserver to handle size changes in the container
     const resizeObserver = new ResizeObserver(() => {
       const width = container.clientWidth;
       const height = container.clientHeight;
@@ -153,6 +163,13 @@ camera.rotation.set(${camera.rotation.x.toFixed(
 
   return (
     <div className="three-scene-container">
+      {loading && (
+        <div className="loading-message">
+          <span>Loading 3d scene</span>
+          <div className="ellipsis">...</div>
+        </div>
+      )}
+
       <div
         ref={containerRef}
         className="scene"
