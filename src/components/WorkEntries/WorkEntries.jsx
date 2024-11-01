@@ -4,7 +4,6 @@ import { useLenis } from "@studio-freight/react-lenis";
 import { keyboard_cats, mountain, raptor, faces } from "../../lib/Scenes";
 import WorkEntry from "./WorkEntry";
 import useIsMobile from "../../hooks/useIsMobile";
-import useIsWideAspectRatio from "../../hooks/useIsWideAspectRatio";
 
 const WorkEntries = () => {
   const containerRef = useRef(null);
@@ -12,7 +11,6 @@ const WorkEntries = () => {
   const entryScrollPositionsRef = useRef({});
   const [canvasClicked, setCanvasClicked] = useState(false);
   const isMobile = useIsMobile();
-  const isWideAspectRatio = useIsWideAspectRatio();
   const animationsRef = useRef([]);
 
   const handleEntryClick = () => {
@@ -131,17 +129,28 @@ const WorkEntries = () => {
   ];
   // #endregion END ENTRIES  ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦
 
-  useEffect(() => {
-    // Clean up existing animations when `isWideAspectRatio` changes
+  const setupScrollTriggers = () => {
     animationsRef.current.forEach((animation) =>
       animation.scrollTrigger?.kill()
     );
     animationsRef.current = [];
 
-    if (isWideAspectRatio) return;
-
     const container = containerRef.current;
     const entryElements = gsap.utils.toArray(".entry");
+
+    let disableScrollTriggers = false;
+
+    entryElements.forEach((entry, index) => {
+      if (index === entryElements.length - 1) return;
+      const offset = index * 70;
+      const entryHeight = entry.offsetHeight;
+
+      if (entryHeight > window.innerHeight - offset) {
+        disableScrollTriggers = true;
+      }
+    });
+
+    if (disableScrollTriggers) return;
 
     entryElements.forEach((entry, index) => {
       const entryId = `entry-${index}`;
@@ -168,14 +177,25 @@ const WorkEntries = () => {
 
       animationsRef.current.push(animation);
     });
+  };
+
+  useEffect(() => {
+    setupScrollTriggers();
+
+    const handleResize = () => {
+      setupScrollTriggers();
+    };
+
+    window.addEventListener("resize", handleResize);
 
     return () => {
+      window.removeEventListener("resize", handleResize);
       animationsRef.current.forEach((animation) =>
         animation.scrollTrigger?.kill()
       );
       animationsRef.current = [];
     };
-  }, [isWideAspectRatio]);
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
