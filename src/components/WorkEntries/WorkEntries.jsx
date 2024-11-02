@@ -144,7 +144,7 @@ const WorkEntries = () => {
 
     entryElements.forEach((entry, index) => {
       if (index === entryElements.length - 1) return;
-      const offset = index * 70 + 15;
+      const offset = index * 70;
       const entryHeight = entry.offsetHeight;
 
       if (entryHeight > window.innerHeight - offset) {
