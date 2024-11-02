@@ -36,9 +36,10 @@ const WorkEntries = () => {
       description:
         "Zapproved is a Portland-based SaaS company that specializes in cloud-based e-discovery software. During my time there, Zapproved was recognized as one of the fastest growing and most admired companies in Oregon, according to Portland Business Journal.",
       description2:
-        "One of the major projects I worked on at Zapproved was Digital Discovery Pro, a cloud-based e-discovery software. My role included integrating cutting-edge cloud solutions and collaborating with other engineers to ensure the platform was scalable and robust.",
+        "One of the major projects I worked on at Zapproved was Digital Discovery Pro, a cloud-based e-discovery software. My role included integrating cutting-edge cloud solutions and collaborating with other engineers to ensure the platform was scalable and robust in order to manage vast amounts of litigation data.",
       description3:
-        "As a part of this project, I was responsible for both frontend and backend development, ensuring smooth integration between the components. I worked closely with the product team to build features that addressed real customer pain points, including managing vast amounts of litigation data and streamlining the data review process.",
+        "As a part of this project, I was responsible for both frontend and backend development, ensuring smooth integration between the components. I worked closely with the product team to build features and streamline the data review process.",
+
       link: "https://zapproved.com/about-us/recognition/",
       cameraPosition: isMobile ? [] : mountain,
       showIndicator: canvasClicked,
