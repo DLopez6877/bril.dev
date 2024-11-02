@@ -188,7 +188,7 @@ const WorkEntries = () => {
       const currentHeight = window.innerHeight;
       const heightChange = Math.abs(currentHeight - previousHeight.current);
 
-      if (heightChange > 100) {
+      if (heightChange > 200) {
         setupScrollTriggers();
       }
 
