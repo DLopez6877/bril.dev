@@ -4,6 +4,7 @@ import { useLenis } from "@studio-freight/react-lenis";
 import { keyboard_cats, mountain, raptor, faces } from "../../lib/Scenes";
 import WorkEntry from "./WorkEntry";
 import useIsMobile from "../../hooks/useIsMobile";
+import { debounce } from "../../lib/Helpers";
 
 const WorkEntries = () => {
   const containerRef = useRef(null);
@@ -12,6 +13,7 @@ const WorkEntries = () => {
   const [canvasClicked, setCanvasClicked] = useState(false);
   const isMobile = useIsMobile();
   const animationsRef = useRef([]);
+  const previousHeight = useRef(window.innerHeight);
 
   const handleEntryClick = () => {
     setCanvasClicked(true);
@@ -182,9 +184,16 @@ const WorkEntries = () => {
   useEffect(() => {
     setupScrollTriggers();
 
-    const handleResize = () => {
-      setupScrollTriggers();
-    };
+    const handleResize = debounce(() => {
+      const currentHeight = window.innerHeight;
+      const heightChange = Math.abs(currentHeight - previousHeight.current);
+
+      if (heightChange > 100) {
+        setupScrollTriggers();
+      }
+
+      previousHeight.current = currentHeight;
+    }, 200);
 
     window.addEventListener("resize", handleResize);
 
