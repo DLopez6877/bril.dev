@@ -9,7 +9,8 @@ html {
   height: 100%;
   overflow-x: hidden;
   margin: 0;
-  overscroll-behavior: contain; /* Prevents the rubber-band effect and scroll chaining */
+  overscroll-behavior: contain;
+  overscroll-behavior-y: none;
 }
 
 @media (min-width: 1024px) {
