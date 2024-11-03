@@ -86,7 +86,7 @@
         align-items: center;
         background-color: var(--orange);
         color: white;
-        height: 65px;
+        height: 45px;
         margin-right: 5px;
         padding: 0px 30px;
         letter-spacing: 1px;
@@ -218,8 +218,8 @@
           font-size: 30px;
         }
 
-        button {
-          height: 55px;
+        .fake-button {
+          height: 56px;
           margin-right: 8px;
         }
       }

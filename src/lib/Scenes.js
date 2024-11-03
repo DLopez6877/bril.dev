@@ -167,4 +167,114 @@ const raptor = [
   },
 ];
 
-export { keyboard_cats, mountain, raptor, faces };
+const all = [
+  {
+    posX: 6.19,
+    posY: 0.85,
+    posZ: 2.49,
+    rotateX: 3.14,
+    rotateY: -0.09,
+    rotateZ: 3.14,
+  },
+  // raptor
+  {
+    posX: 7.55,
+    posY: 1.34,
+    posZ: 0.65,
+    rotateX: 3.11,
+    rotateY: -0.0,
+    rotateZ: 3.14,
+  },
+  // faces
+  {
+    posX: 6.27,
+    posY: 1.58,
+    posZ: 1.48,
+    rotateX: -0.16,
+    rotateY: -1.56,
+    rotateZ: -0.16,
+  },
+  // name wall
+  {
+    posX: 8.63,
+    posY: 1.78,
+    posZ: 2.52,
+    rotateX: -0.09,
+    rotateY: 0.06,
+    rotateZ: 0.01,
+  },
+  // name
+  {
+    posX: 8.17,
+    posY: 2.72,
+    posZ: -0.48,
+    rotateX: -0.16,
+    rotateY: 0.06,
+    rotateZ: 0.01,
+  },
+  // zoomed faces
+  {
+    posX: 9.27,
+    posY: 2.62,
+    posZ: 1.48,
+    rotateX: -0.16,
+    rotateY: -1.56,
+    rotateZ: -0.16,
+  },
+  // back left
+  {
+    posX: -0.89,
+    posY: 0.55,
+    posZ: 3.79,
+    rotateX: 0.13,
+    rotateY: -0.19,
+    rotateZ: 0.02,
+  },
+  // main
+  {
+    posX: 4.83,
+    posY: 1.53,
+    posZ: 3.79,
+    rotateX: -0.0,
+    rotateY: 0.02,
+    rotateZ: 0.0,
+  },
+  // red hood
+  {
+    posX: -0.35,
+    posY: 1.96,
+    posZ: 2.92,
+    rotateX: -3.11,
+    rotateY: 0.08,
+    rotateZ: 3.14,
+  },
+  // cat sphere
+  {
+    posX: 1.85,
+    posY: 1.76,
+    posZ: 0.92,
+    rotateX: -3.11,
+    rotateY: -0.06,
+    rotateZ: 3.14,
+  },
+  // mtv
+  {
+    posX: 3.66,
+    posY: 1.86,
+    posZ: 2.62,
+    rotateX: -3.08,
+    rotateY: 0.03,
+    rotateZ: 3.14,
+  },
+  // corner
+  {
+    posX: -1.54,
+    posY: 1.86,
+    posZ: 3.09,
+    rotateX: -0.8,
+    rotateY: -1.39,
+    rotateZ: -0.8,
+  },
+];
+
+export { keyboard_cats, mountain, raptor, faces, all };

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useLenis } from "@studio-freight/react-lenis";
-import { keyboard_cats, mountain, raptor, faces } from "../../lib/Scenes";
+import { keyboard_cats, mountain, raptor, faces, all } from "../../lib/Scenes";
 import WorkEntry from "./WorkEntry";
 import useIsMobile from "../../hooks/useIsMobile";
 
@@ -114,7 +114,7 @@ const WorkEntries = () => {
       description3:
         "I managed the production environment, including Google Analytics, monitoring production logs, and handling outages with 24-hour on-call support. Whether it was day or night, I ensured that PureChat was stable and functioning correctly.",
       link: "https://www.purechat.com",
-      cameraPosition: keyboard_cats,
+      cameraPosition: isMobile ? all : keyboard_cats,
       showIndicator: canvasClicked,
       skills: [
         "React",
