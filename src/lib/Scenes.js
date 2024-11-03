@@ -168,22 +168,23 @@ const raptor = [
 ];
 
 const all = [
-  {
-    posX: 6.19,
-    posY: 0.85,
-    posZ: 2.49,
-    rotateX: 3.14,
-    rotateY: -0.09,
-    rotateZ: 3.14,
-  },
   // raptor
   {
     posX: 7.55,
-    posY: 1.34,
+    posY: 1.94,
     posZ: 0.65,
-    rotateX: 3.11,
+    rotateX: -3.11,
     rotateY: -0.0,
-    rotateZ: 3.14,
+    rotateZ: -3.14,
+  },
+  // raptor zoomed
+  {
+    posX: 8.56,
+    posY: 2.26,
+    posZ: 2.92,
+    rotateX: -3.14,
+    rotateY: -0.09,
+    rotateZ: -3.14,
   },
   // faces
   {
@@ -245,8 +246,8 @@ const all = [
     posY: 1.96,
     posZ: 2.92,
     rotateX: -3.11,
-    rotateY: 0.08,
-    rotateZ: 3.14,
+    rotateY: -0.08,
+    rotateZ: -3.14,
   },
   // cat sphere
   {
@@ -255,7 +256,7 @@ const all = [
     posZ: 0.92,
     rotateX: -3.11,
     rotateY: -0.06,
-    rotateZ: 3.14,
+    rotateZ: -3.14,
   },
   // mtv
   {
@@ -263,8 +264,8 @@ const all = [
     posY: 1.86,
     posZ: 2.62,
     rotateX: -3.08,
-    rotateY: 0.03,
-    rotateZ: 3.14,
+    rotateY: -0.03,
+    rotateZ: -3.14,
   },
   // corner
   {
