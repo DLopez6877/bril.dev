@@ -44,9 +44,7 @@ const WorkEntries = () => {
       cameraPosition: isMobile ? [] : mountain,
       showIndicator: canvasClicked,
       skills: [
-        "AngularJS",
         "Angular",
-        "Full-Stack Development",
         "Component Libraries",
         "Platform Architecture",
         "Cloud Integration",

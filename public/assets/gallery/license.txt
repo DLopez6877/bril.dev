@@ -1,0 +1,11 @@
+Model Information:
+* title:	Art Gallery Test
+* source:	https://sketchfab.com/3d-models/art-gallery-test-af1ae413eccd42fe8d7229a2d1268ec6
+* author:	leriil (https://sketchfab.com/leriil)
+
+Model License:
+* license type:	CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions can not be distributed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Art Gallery Test" (https://sketchfab.com/3d-models/art-gallery-test-af1ae413eccd42fe8d7229a2d1268ec6) by leriil (https://sketchfab.com/leriil) licensed under CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)

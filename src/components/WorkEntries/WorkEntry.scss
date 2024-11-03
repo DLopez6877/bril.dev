@@ -121,8 +121,8 @@ $entry-padding: 10px;
     }
 
     .skills {
-      display: flex;
       flex-wrap: wrap;
+      display: none;
       .skill {
         color: var(--orange);
         font-size: 0.75rem;
@@ -131,6 +131,10 @@ $entry-padding: 10px;
         border-radius: 20px;
         background-color: rgba(var(--orange-rgb), 0.1);
         border: 1px solid var(--orange);
+      }
+
+      @media (min-height: 650px) and (min-width: 500px) {
+        display: flex;
       }
     }
 

@@ -4,6 +4,18 @@ const skillsData = [
     tags: ["frontend"],
   },
   {
+    name: "Next.js",
+    tags: ["frontend", "backend"],
+  },
+  {
+    name: "Tailwind CSS",
+    tags: ["frontend"],
+  },
+  {
+    name: "Angular",
+    tags: ["frontend"],
+  },
+  {
     name: "React",
     tags: ["frontend"],
   },
@@ -118,6 +130,10 @@ const skillsData = [
   {
     name: "SQL Server",
     tags: ["backend"],
+  },
+  {
+    name: "SSR (Server-side rendering)",
+    tags: ["frontend"],
   },
   {
     name: "Redis",
