@@ -1,9 +1,5 @@
 const skillsData = [
   {
-    name: "Angular",
-    tags: ["frontend"],
-  },
-  {
     name: "Next.js",
     tags: ["frontend", "backend"],
   },

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { disposeModel } from "../../lib/Helpers";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import "./ThreeScene.scss";
@@ -70,11 +71,16 @@ const ThreeScene = ({ cameraPositions }) => {
     }
 
     const gltfLoader = new GLTFLoader();
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath(
+      "https://www.gstatic.com/draco/versioned/decoders/1.4.3/"
+    );
+    gltfLoader.setDRACOLoader(dracoLoader);
     let model;
     THREE.Cache.enabled = true;
 
     gltfLoader.load(
-      "/assets/mtv_vma_gallery_2016/scene.gltf",
+      "/assets/bril_gallery/scene.gltf",
       (gltf) => {
         model = gltf.scene;
         scene.add(model);
